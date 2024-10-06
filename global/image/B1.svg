@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.0"
+   width="320"
+   height="320"
+   viewBox="0 0 64.000000 64.000000"
+   id="svg930"
+   sodipodi:docname="B1.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs934">
+    <linearGradient
+       id="linearGradient5962"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#989898;stop-opacity:1;"
+         offset="0"
+         id="stop5960" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview932"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="3.1775611"
+     inkscape:cx="38.394226"
+     inkscape:cy="167.58136"
+     inkscape:window-width="3840"
+     inkscape:window-height="2071"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g928" />
+  <g
+     transform="translate(0,-0.13195806)"
+     id="g928">
+    <path
+       d="m 31.499774,8.0944751 h 0.932634 l 0.932635,1.8652679 0.932633,3.730535 0.932634,5.595806 v 2.797902 h 15.388461 l 10.258975,1.865267 0.932634,1.865269 -19.585315,1.865268 h -7.461071 l -0.932635,4.663169 -0.932633,13.98951 v 3.730536 h 3.730535 l 4.663171,0.932635 0.466316,0.932634 v 0.932633 H 31.499774 l 0.466318,1.865268 0.466316,-1.865268 H 22.173435 l 0.466317,-0.932633 V 50.99564 l 4.66317,-0.932635 h 3.730536 V 46.332469 L 30.100824,32.342959 29.16819,27.67979 H 21.707118 L 2.1218041,25.814522 3.0544382,23.949253 13.313411,22.083986 h 15.388461 v -2.797902 l 0.932634,-5.595806 0.932635,-3.730535 z"
+       fill="#6ba7ff"
+       stroke="#6ba7ff"
+       stroke-width="0.1"
+       id="path926"
+       style="fill:#6ba7ff;fill-opacity:1;stroke:#414141;stroke-width:2.23833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:20;stroke-opacity:1;paint-order:stroke fill markers" />
+  </g>
+</svg>

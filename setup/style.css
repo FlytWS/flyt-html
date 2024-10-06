@@ -1,0 +1,111 @@
+#page-title header {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+padding: 1.4rem;
+    height: 18px;
+    padding-bottom: 0.7rem;
+}
+#page-title h1 {
+    font-size: 0.8rem;
+    line-height: 0;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+	display: flex;
+}
+#page-title h1:before {content:"\00a0"; font-size: 0;}
+#page-title svg {
+	cursor:pointer;
+}
+
+
+#page-body header {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding:1rem;
+}
+#page-footer header {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding:2rem;
+	padding-bottom:3rem;
+	font-size:0.8rem;
+	font-weight: 400;
+	position:fixed;
+	width:calc(100% - 16px - 4.2rem);
+	bottom:0rem;
+	background-color:#222431;
+}
+
+.large-panel-button {
+	width:6rem; height:6rem;  background-color:#ffffff10; border-radius:0.75rem; flex-direction: column; padding:0;
+}
+.large-panel-button:hover {
+	background-color:#ffffff20;
+	cursor:pointer;
+}
+.large-panel-button.active {
+	background-color:#ffffff20;
+}
+
+sub {
+	margin-bottom: 2rem;
+    color: #fbfbfb80;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+
+.page {
+    position: absolute;
+    width: 100%;
+}
+
+.lets-go-div-ssid {
+	cursor:pointer;
+}
+#wifiSSIDInput {
+background-color: #ffffff10;
+    border-radius: 0.75rem;
+	    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+	border: 0;
+	color:#fbfbfbCC;
+	width:13rem;
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+}
+#wifiPassphraseInput {
+background-color: #ffffff10;
+    border-radius: 0.75rem;
+	    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+	border: 0;
+	color:#fbfbfbCC;
+	width:13rem;	
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	
+}
+#network-wifi-connect {
+    border-radius: 0.75rem;
+	    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+	background-color: #ffffff10;
+	width:15rem;
+		margin-top: 0.5rem;
+}
+#network-wifi-connect:hover {
+	background-color:#ffffff20;
+	cursor:pointer;
+	font-size: 0.75rem;
+}
+#wifiback {
+	visibility: hidden;
+}
