@@ -1,0 +1,278 @@
+html, body {
+background-color:#222431;
+font-family: 'Quicksand', sans-serif;
+color:#fbfbfb;
+letter-spacing: 0.01rem;
+line-height: 1.4rem;
+margin:0;
+}
+
+#page-title header {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.4rem;
+    height: 18px;
+    padding-bottom: 0.7rem;
+}
+#page-title h1 {
+    font-size: 0.8rem;
+    line-height: 0;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+	display: flex;
+}
+#page-title h1:before {content:"\00a0"; font-size: 0;}
+#page-title svg {
+	cursor:pointer;
+}
+
+
+#page-body header {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding:1rem;
+}
+#page-footer header {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding:0rem;
+	font-size:0.8rem;
+	font-weight: 400;
+	position:fixed;
+	width:100%;
+	bottom:0rem;
+	background-color:#222431;
+}
+
+#menu-body {
+	height:100%;
+}
+#menu-body header {
+	padding:1rem;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+	height:100%;
+}
+.menuBoundry {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100% - 7rem);
+}
+
+
+.slideout-menu {
+	width:100vw;
+	height:100vh;
+	background-color:#222431;
+	position:fixed;
+	top:0;
+	left:-100vw;
+	z-index:200;
+	
+}
+.slideout-menu header {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:1rem;
+	margin:8px;
+}
+.slideout-menu h1 {
+    font-size: 0.8rem;
+    line-height: 0;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+	color:#fbfbfb;
+	display: flex;
+	justify-content: center;
+}
+.slideout-menu h1:before {content:"\00a0"; font-size: 0;}
+.slideout-menu svg {
+	cursor:pointer;
+}
+
+
+
+.slideleft-menu {
+	width:100vw;
+	height:100vh;
+	background-color:#222431;
+	position:fixed;
+	top:0;
+	right:-100vw;
+	z-index:200;
+	
+}
+.slideleft-menu header {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:1rem;
+	margin:8px;
+}
+.slideleft-menu h1 {
+    font-size: 0.8rem;
+    line-height: 0;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+	color:#fbfbfb;
+	display: flex;
+	justify-content: center;
+}
+.slideleft-menu h1:before {content:"\00a0"; font-size: 0;}
+.slideleft-menu svg {
+	cursor:pointer;
+}
+
+
+
+
+sub {
+	margin-bottom: 2rem;
+    color: #fbfbfb80;
+    text-align: center;
+    font-size: 0.6rem;
+}
+
+
+#wingbits-name {
+    color: #fbfbfb80;
+    text-align: center;
+    font-size: 0.75rem;
+	width:100%;
+}
+
+
+
+
+
+
+
+#cockpit-hero {
+    width: 100%;
+    min-height: 4rem;
+    padding-bottom: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.principle-container {
+    padding-bottom: 2rem;
+}
+
+.cockpit-hero-sub {
+    width: 50%;
+    position: relative;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    height: auto;
+	align-content: center;
+}
+.cockpit-hero-sub-canvas {
+margin-bottom: 2rem;
+    color: #fbfbfb80;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.standard-icon {
+	 color:#fbfbfbCC;
+	 }
+.health-poor {
+	stroke:#ff696190;
+}
+
+.cockpit-hero-sub-svg  {
+display: flex; align-items: flex-end;  justify-content: center; position: relative; max-width:26rem; text-align:center; padding:0rem; 
+}
+
+#dash-stat {
+color: #fbfbfb80;
+    text-align: center;
+    font-size: 0.75rem;
+    width: 100%;
+}
+
+#announcement-body {
+position: relative;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6rem;
+
+}
+.announcement-body-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.announcement-body-row-text > a {
+    text-decoration: none;
+    color: #e5e5e5;
+}
+
+
+.large-panel-button {
+
+    background-color: #ffffff10;
+    border-radius: 0.75rem;
+    flex-direction: column;
+    padding: 0;
+	flex-grow:1;
+}
+
+
+
+.load{
+    animation-name: ckw;
+    animation-duration: 2s;
+    /* Things added */
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+    display: inline-block;
+    /* <--- */
+}
+@keyframes ckw {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+#cMap {
+	
+	height:20rem;
+	width:100%;
+	z-index: 10;
+
+}
+.leaflet-right{
+	display:none;
+}
+.leaflet-container {
+	background-color:#222431;
+	font-family: 'Quicksand', sans-serif !important;
+}
+.leaflet-tile {
+    filter:invert(1.2) sepia(1) hue-rotate(190deg)  opacity(0.3);
+}
