@@ -2,9 +2,9 @@
 
 	if ($_POST['request'] == "get-wingbits-name") {
 		
-		$file = '/etc/flyt/data/wingbits';
+		$file = '/etc/flyt/wingbits';
 		if (file_exists($file)) {
-			echo file_get_contents('/etc/flyt/data/wingbits');
+			echo file_get_contents('/etc/flyt/wingbits');
 		};
 		
 	}

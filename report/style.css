@@ -227,13 +227,22 @@ position: relative;
 
 
 .large-panel-button {
-    width: 6rem;
-    height: 6rem;
+    width: 10rem;
+    height: 8rem;
     background-color: #ffffff10;
     border-radius: 0.75rem;
     flex-direction: column;
     padding: 0;
 	flex-grow:1;
+}
+
+
+
+.menu-top-manual-sub {
+    color: #fbfbfb80;
+    text-align: center;
+    font-size: 0.7rem;
+    margin-bottom: 0;
 }
 
 

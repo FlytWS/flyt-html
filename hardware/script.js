@@ -1,86 +1,3 @@
-$(document).ready(function () {
-
-    $('.slideout-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.slideout-menu');
-    	var slideoutMenuWidth = $('.slideout-menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	left: "0px"
-	    	});	
-    	} else {
-	    	slideoutMenu.animate({
-		    	left: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	$('.slideleft-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideleftMenu = $('.slideleft-menu');
-    	var slideleftMenuWidth = $('.slideleft-menu').width();
-    	
-    	// toggle open class
-    	slideleftMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideleftMenu.hasClass("open")) {
-	    	slideleftMenu.animate({
-		    	right: "0px"
-	    	});	
-    	} else {
-	    	slideleftMenu.animate({
-		    	right: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	
-	
-});
-
-
-
-
-/*
-location + side panel set location
-*/
-
-
-
-function copyStat(get) {
-		
-		$("#notification-clipboard").attr("style", "display:initial");
-		
-		var range = document.createRange();
-		range.selectNode(get);
-		window.getSelection().removeAllRanges(); // clear current selection
-		window.getSelection().addRange(range); // to select text
-		document.execCommand("copy");
-		window.getSelection().removeAllRanges();// to deselect
-
-		$("#notification-clipboard").fadeOut(400);
-}
-		
-
-
-
-
-
-
-
-
-
-
 var chartCPU;
 var chartRAM;
 var chartStorage;
@@ -298,7 +215,11 @@ function fetch() {
  chartTemperature.data.datasets[0].data[1] = (100 - (result.temperature/1));
  chartTemperature.update();
  
- document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(result.boot_timestamp);
+ if (document.getElementById('uptime').innerHTML == "") {
+	 
+ } else {
+	document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(result.boot_timestamp);
+ }
  
  
  

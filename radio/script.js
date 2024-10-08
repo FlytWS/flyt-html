@@ -1,80 +1,3 @@
-$(document).ready(function () {
-
-    $('.slideout-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.slideout-menu');
-    	var slideoutMenuWidth = $('.slideout-menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	left: "0px"
-	    	});	
-    	} else {
-	    	slideoutMenu.animate({
-		    	left: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	$('.slideleft-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideleftMenu = $('.slideleft-menu');
-    	var slideleftMenuWidth = $('.slideleft-menu').width();
-    	
-    	// toggle open class
-    	slideleftMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideleftMenu.hasClass("open")) {
-	    	slideleftMenu.animate({
-		    	right: "0px"
-	    	});	
-    	} else {
-	    	slideleftMenu.animate({
-		    	right: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	
-	
-});
-
-
-
-
-/*
-location + side panel set location
-*/
-
-
-
-function copyStat(get) {
-		
-		$("#notification-clipboard").attr("style", "display:initial");
-		
-		var range = document.createRange();
-		range.selectNode(get);
-		window.getSelection().removeAllRanges(); // clear current selection
-		window.getSelection().addRange(range); // to select text
-		document.execCommand("copy");
-		window.getSelection().removeAllRanges();// to deselect
-
-		$("#notification-clipboard").fadeOut(400);
-}
-		
-
-		
-		
-
 (async function() {
   const data = [
     { element: "Gain dB", count: 0 },
@@ -406,6 +329,7 @@ function string_between_strings(startStr, endStr, str) {
     pos = str.indexOf(startStr) + startStr.length;
     return str.substring(pos, str.indexOf(endStr, pos));
 }
+var receiverString = '';
 function fetchReceiver() {
 
   	$.ajax({
@@ -423,7 +347,7 @@ function fetchReceiver() {
 
 
 		var receiverOnline = 0;
-		var receiverString = 'Receiver : No Receiver Detected';
+		
 		for (const element of lines) {
 			
 			const vendorID = string_between_strings("Vendor=", "ProdID=", element);
@@ -440,11 +364,11 @@ function fetchReceiver() {
 			
 			
 			if (receiverArrayIDString in receiverArrayID) {
-				receiverString = receiverArrayID[receiverArrayIDString];
+				var updatedReceiverString = receiverArrayID[receiverArrayIDString];
 				receiverOnline = 1;
 			};
 			if (receiverArrayString in receiverArray) {
-				receiverString = receiverArray[receiverArrayString];
+				var updatedReceiverString = receiverArray[receiverArrayString];
 				receiverOnline = 1;
 			};
 			
@@ -453,21 +377,29 @@ function fetchReceiver() {
 			
 		}
 		
-		document.getElementById('receiver').innerHTML = receiverString;
+		//document.getElementById('receiver').innerHTML = receiverString;
+		
 		
 		if (receiverOnline == 0) {
-			
-			chartState.data.datasets[0].data[0] = 0;
-			chartState.data.datasets[0].data[1] = 1;
-			chartState.update();
+			updatedReceiverString = "Receiver : No Receiver Detected";
+			//chartState.data.datasets[0].data[0] = 0;
+			//chartState.data.datasets[0].data[1] = 1;
+			//chartState.update();
 		
 		} else {
 			
-			chartState.data.datasets[0].data[0] = 1;
-			chartState.data.datasets[0].data[1] = 0;
-			chartState.update();			
+			//chartState.data.datasets[0].data[0] = 1;
+			//chartState.data.datasets[0].data[1] = 0;
+			//chartState.update();			
 			
 		}
+		
+		if (receiverString != updatedReceiverString) {
+			$('#receiver').hide().html(updatedReceiverString).fadeIn();
+		}
+
+		receiverString = updatedReceiverString
+		
 		
 		
 
@@ -799,18 +731,3 @@ const intervalFetchStatus = setInterval(function() {
 
 
 
-
-function showStats() {
-	
-	if (document.getElementById("stat_container").style.display === "none") {
-		
-		document.getElementById("statsChev").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>';
-		$('#stat_container').slideDown("fast");
-		
-	} else {
-			
-		document.getElementById("statsChev").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>';
-		$('#stat_container').slideUp("fast");
-	}
-	
-}

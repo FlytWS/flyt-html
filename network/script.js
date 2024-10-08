@@ -1,86 +1,8 @@
-$(document).ready(function () {
-
-    $('.slideout-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.slideout-menu');
-    	var slideoutMenuWidth = $('.slideout-menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	left: "0px"
-	    	});	
-    	} else {
-	    	slideoutMenu.animate({
-		    	left: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	$('.slideleft-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideleftMenu = $('.slideleft-menu');
-    	var slideleftMenuWidth = $('.slideleft-menu').width();
-    	
-    	// toggle open class
-    	slideleftMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideleftMenu.hasClass("open")) {
-	    	slideleftMenu.animate({
-		    	right: "0px"
-	    	});	
-    	} else {
-	    	slideleftMenu.animate({
-		    	right: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	
-	
-});
-
-
-
-
-/*
-location + side panel set location
-*/
-
-
-
-
 function fn10sec() {
     getflytstats();
 }
 fn10sec();
 setInterval(fn10sec, 10*1000);
-
-
-
-
-function copyStat(get) {
-		
-		$("#notification-clipboard").attr("style", "display:initial");
-		
-		var range = document.createRange();
-		range.selectNode(get);
-		window.getSelection().removeAllRanges(); // clear current selection
-		window.getSelection().addRange(range); // to select text
-		document.execCommand("copy");
-		window.getSelection().removeAllRanges();// to deselect
-
-		$("#notification-clipboard").fadeOut(400);
-}
-		
 
 
 
@@ -144,3 +66,59 @@ function getflytstats() {
 	
 };
 
+
+
+
+
+
+
+
+
+
+
+
+const xValues = ["Last Month Upload", "Last Month Download", "This Month Upload", "This Month Download"];
+const yValues = [183.47, 5.28, 40.78, 1.18];
+const zValues = [0, 0, 130.78, 51.18];
+
+
+new Chart("myChart", {
+type: "bar",
+data: {
+labels: xValues,
+datasets: [{
+label: 'Data Use In GB',
+data: yValues,
+borderColor: "#fbfbfb40",
+backgroundColor: "#fbfbfb30",
+borderWidth: 2,
+borderRadius: 8,
+},
+{
+label: 'Predicted Use In GB',
+data: zValues,
+borderColor: "#fbfbfb20",
+backgroundColor: "#fbfbfb10",
+borderWidth: 2,
+borderRadius: 8,
+}]
+},
+options: {
+
+responsive: true,
+scales: {
+x: {
+stacked: true,
+},
+y: {
+stacked: true,
+}
+},
+
+plugins: {
+legend: {
+display: false
+}
+}
+}
+});

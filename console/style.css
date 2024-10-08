@@ -1,146 +1,6 @@
-html, body {
-background-color:#222431;
-font-family: 'Quicksand', sans-serif;
-color:#fbfbfb;
-letter-spacing: 0.01rem;
-line-height: 1.4rem;
-margin:0;
-}
-
-#page-title header {
-	display:flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1.4rem;
-    height: 18px;
-    padding-bottom: 0.7rem;
-}
-#page-title h1 {
-    font-size: 0.8rem;
-    line-height: 0;
-    letter-spacing: 0.8rem;
-    text-transform: uppercase;
-    font-weight: 400;
-	display: flex;
-}
-#page-title h1:before {content:"\00a0"; font-size: 0;}
-#page-title svg {
-	cursor:pointer;
-}
-
-
-#page-body header {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	padding:1rem;
-}
-#page-footer header {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	padding:0rem;
-	font-size:0.8rem;
-	font-weight: 400;
-	position:fixed;
-	width:100%;
-	bottom:0rem;
-	background-color:#222431;
-}
-
-
-
-
-
-sub {
-	margin-bottom: 2rem;
-    color: #fbfbfb80;
-    text-align: center;
-    font-size: 0.6rem;
-}
-
-
-#wingbits-name {
-    color: #fbfbfb80;
-    text-align: center;
-    font-size: 0.75rem;
-	width:100%;
-}
-
-
-
-
-
-
-
-#cockpit-hero {
-    width: 100%;
-    min-height: 4rem;
-    padding-bottom: 0rem;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.principle-container {
-    padding-bottom: 2rem;
-}
-
-.cockpit-hero-sub {
-    width: 50%;
-    position: relative;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    height: auto;
-	align-content: center;
-}
-.cockpit-hero-sub-canvas {
-margin-bottom: 2rem;
-    color: #fbfbfb80;
-    text-align: center;
-    font-size: 0.75rem;
-}
-
-.standard-icon {
-	 color:#fbfbfbCC;
-	 }
 .health-poor {
 	stroke:#ff696190;
 }
-
-.cockpit-hero-sub-svg  {
-display: flex; align-items: flex-end;  justify-content: center; position: relative; max-width:26rem; text-align:center; padding:0rem; 
-}
-
-#dash-stat {
-color: #fbfbfb80;
-    text-align: center;
-    font-size: 0.75rem;
-    width: 100%;
-}
-
-#announcement-body {
-position: relative;
-    display: flex;
-    height: auto;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: 6rem;
-
-}
-.announcement-body-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-.announcement-body-row-text > a {
-    text-decoration: none;
-    color: #e5e5e5;
-}
-
-
 .large-panel-button {
     width: 6rem;
     height: 6rem;
@@ -150,37 +10,11 @@ position: relative;
     padding: 0;
 	flex-grow:1;
 }
-
-
-
-.load{
-    animation-name: ckw;
-    animation-duration: 2s;
-    /* Things added */
-    animation-iteration-count: infinite;
-    transform-origin: 50% 50%;
-    display: inline-block;
-    /* <--- */
-}
-@keyframes ckw {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-
-
-
-
 #cMap {
 	
 	height:20rem;
 	width:100%;
 	z-index: 10;
-
 }
 .leaflet-right{
 	display:none;

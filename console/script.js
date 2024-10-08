@@ -1,52 +1,7 @@
 $(document).ready(function () {
-
-    $('.slideout-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.slideout-menu');
-    	var slideoutMenuWidth = $('.slideout-menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	left: "0px"
-	    	});	
-    	} else {
-	    	slideoutMenu.animate({
-		    	left: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	$('.slideleft-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideleftMenu = $('.slideleft-menu');
-    	var slideleftMenuWidth = $('.slideleft-menu').width();
-    	
-    	// toggle open class
-    	slideleftMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideleftMenu.hasClass("open")) {
-	    	slideleftMenu.animate({
-		    	right: "0px"
-	    	});	
-    	} else {
-	    	slideleftMenu.animate({
-		    	right: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	
 	
 	getWingbitsName();
+	getMap();
     getLocation();
 	getNews();
 	
@@ -55,56 +10,32 @@ $(document).ready(function () {
 
 
 
+function getMap() {
+
+	let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false });
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		className: 'cockpit-tiles'
+	}).addTo(cockpitMap);
+
+	let markers = L.layerGroup().addTo(cockpitMap);
+	cockpitMap.dragging.disable();
+
+	var markerFrom = L.circleMarker([53.902561,-2.775290], { color: "#6ba7ff", radius: 20 });
+	var from = markerFrom.getLatLng();
+
+	cockpitMap.addLayer(markerFrom);
+
+	markerFrom.bindPopup('Radio ' + (from).toString());
+	cockpitMap.addLayer(markerFrom);					
+
+	cockpitMap.setView([53.902561,-2.775290], 14);
+
+
+};
 
 
 
 
-
-
-
-
-
-//let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false }).setView([51.5072,0.1276], 18);
-let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false });
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	className: 'cockpit-tiles'
-}).addTo(cockpitMap);
-
-let markers = L.layerGroup().addTo(cockpitMap);
-cockpitMap.dragging.disable();
-
-
-
-
-
-
-				var markerFrom = L.circleMarker([53.902561,-2.775290], { color: "#6ba7ff", radius: 20 });
-				var from = markerFrom.getLatLng();
-
-				cockpitMap.addLayer(markerFrom);
-
-				markerFrom.bindPopup('Radio ' + (from).toString());
-				cockpitMap.addLayer(markerFrom);		
-								
-				
-				cockpitMap.setView([53.902561,-2.775290], 14);
-
-
-
-
-
-
-
-
-
-
-
-
-function registerLocation() {
-	
-	window.location.replace('/flyt/location');
-	
-}
 
 
 
@@ -136,7 +67,8 @@ function getNews() {
 
 		}
 		
-		document.getElementById('broadcast-events').innerHTML = htmlNews;
+		//document.getElementById('broadcast-events').innerHTML = htmlNews;
+		$('#broadcast-events').hide().html(htmlNews).fadeIn();
 		
 	});
 

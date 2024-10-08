@@ -8,7 +8,7 @@ if (isset($_GET['clearcache'])) {
 }
 
 if (file_exists($filenameComplete) || file_exists($filenameSkipped)) {
-    header("Location: /flyt/cockpit");
+    header("Location: /flyt/console");
 	die();
 } else {
     header("Location: /flyt/setup");
