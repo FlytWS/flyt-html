@@ -243,8 +243,8 @@ data: { request: 'get-flyt-stats' },
  chartRAM.update();
 
 
- chartStorage.data.datasets[0].data[0] = (result['storage_usage_used_/dev/sdd']/1000000).toFixed(0);
- chartStorage.data.datasets[0].data[1] = (result['storage_usage_free_/dev/sdd']/1000000).toFixed(0);
+ chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_/dev/sdd']/1000000).toFixed(0);
+ chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_/dev/sdd']/1000000).toFixed(0);
  chartStorage.update();
  
  
