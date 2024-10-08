@@ -190,9 +190,12 @@ function fetch() {
  
 
  $.ajax({
- url: "/flyt-data/flyt-stats.json",
- type: "GET",
+url: 'ajax.php',
+type: 'POST',
+cache: false,
+data: { request: 'get-flyt-stats' },
  success: function(result) {
+
 
  console.log(result);
 

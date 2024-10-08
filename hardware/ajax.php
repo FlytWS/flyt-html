@@ -1,21 +1,14 @@
 <?php
 
-	if ($_POST['request'] == "get-wingbits-name") {
+	
+	if ($_POST['request'] == "get-flyt-stats") {
 		
-		$file = '/etc/flyt/data/wingbits';
+		$file = '/etc/flyt/data/flyt-stats.json';
 		if (file_exists($file)) {
-			echo file_get_contents('/etc/flyt/data/wingbits');
+			echo file_get_contents('/etc/flyt/data/flyt-stats.json');
 		};
 		
 	}
 
-	if ($_POST['request'] == "get-location") {
-		
-		$file = '/etc/flyt/data/location';
-		if (file_exists($file)) {
-			echo file_get_contents('/etc/flyt/data/location');
-		};
-		
-	}
 	
 ?>
