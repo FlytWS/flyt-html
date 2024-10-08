@@ -197,10 +197,8 @@ data: { request: 'get-flyt-model' },
  console.log(result);
  
  if (document.getElementById('model').innerHTML == "") {
-	 
- } else {
-	document.getElementById('model').innerHTML = result;
- } 
+	 document.getElementById('model').innerHTML = result;
+ }
 
 
  },
@@ -254,11 +252,7 @@ data: { request: 'get-flyt-stats' },
  chartTemperature.data.datasets[0].data[1] = (100 - (obj.temperature/1));
  chartTemperature.update();
  
- if (document.getElementById('uptime').innerHTML == "") {
-	 
- } else {
 	document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(obj.boot_timestamp);
- }
  
  
  

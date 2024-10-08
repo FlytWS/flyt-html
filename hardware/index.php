@@ -31,7 +31,7 @@
 <header style="margin-bottom:1rem; border-radius:0.75rem; display: flex;    flex-wrap: wrap;    grid-gap: 1rem;    padding: 0;    justify-content: center;">
 
 <header id="network-wifi" class="large-panel-button active" style="height:3rem;">
-<div id="receiver" style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><span id="model"></span><br><span id="uptime" style="color:#fbfbfb90;">-</span></div>
+<div id="receiver" style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><span id="model"></span><br><span id="uptime" style="color:#fbfbfb90;"></span></div>
 </header>
 
 </header>
