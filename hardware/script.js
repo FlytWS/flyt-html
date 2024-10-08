@@ -198,7 +198,7 @@ data: { request: 'get-flyt-stats' },
 
 
  console.log(result);
- var obj = JSON.parse(response);
+ var obj = JSON.parse(result);
 
  chartCPU.data.datasets[0].data[0] = obj.cpu_usage_percent;
  chartCPU.data.datasets[0].data[1] = (100 - (obj.cpu_usage_percent/1));
