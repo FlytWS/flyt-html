@@ -198,14 +198,15 @@ data: { request: 'get-flyt-stats' },
 
 
  console.log(result);
+ var obj = JSON.parse(response);
 
- chartCPU.data.datasets[0].data[0] = result.cpu_usage_percent;
- chartCPU.data.datasets[0].data[1] = (100 - (result.cpu_usage_percent/1));
+ chartCPU.data.datasets[0].data[0] = obj.cpu_usage_percent;
+ chartCPU.data.datasets[0].data[1] = (100 - (obj.cpu_usage_percent/1));
  chartCPU.update();
  
  
- chartRAM.data.datasets[0].data[0] = ((result.memory_total/1000) - (result.memory_available/1000)).toFixed(0);
- chartRAM.data.datasets[0].data[1] = (result.memory_available/1000).toFixed(0);
+ chartRAM.data.datasets[0].data[0] = ((obj.memory_total/1000) - (obj.memory_available/1000)).toFixed(0);
+ chartRAM.data.datasets[0].data[1] = (obj.memory_available/1000).toFixed(0);
  chartRAM.update();
 
 
@@ -214,14 +215,14 @@ data: { request: 'get-flyt-stats' },
  chartStorage.update();
  
  
- chartTemperature.data.datasets[0].data[0] = result.temperature;
- chartTemperature.data.datasets[0].data[1] = (100 - (result.temperature/1));
+ chartTemperature.data.datasets[0].data[0] = obj.temperature;
+ chartTemperature.data.datasets[0].data[1] = (100 - (obj.temperature/1));
  chartTemperature.update();
  
  if (document.getElementById('uptime').innerHTML == "") {
 	 
  } else {
-	document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(result.boot_timestamp);
+	document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(obj.boot_timestamp);
  }
  
  
