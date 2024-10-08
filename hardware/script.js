@@ -184,6 +184,41 @@ function secondsToDHM(seconds) {
 
 
 
+function fetchModel() {
+
+
+ $.ajax({
+url: 'ajax.php',
+type: 'POST',
+cache: false,
+data: { request: 'get-flyt-model' },
+ success: function(result) {
+
+ console.log(result);
+ 
+ if (document.getElementById('model').innerHTML == "") {
+	 
+ } else {
+	document.getElementById('model').innerHTML = result;
+ } 
+
+
+ },
+	error: function(err)
+ {
+	console.log(err); 
+ }
+ 
+ 
+ })
+ 
+}
+
+
+fetchModel();
+
+
+
 
 function fetch() {
  //console.log("Fetching");

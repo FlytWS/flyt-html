@@ -5,10 +5,21 @@
 		
 		$file = '/etc/flyt/data/flyt-stats.json';
 		if (file_exists($file)) {
-			echo file_get_contents('/etc/flyt/data/flyt-stats.json');
+			echo file_get_contents($file);
 		};
 		
 	}
 
+
+	if ($_POST['request'] == "get-flyt-model") {
+		
+		$file = '/etc/flyt/model';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+		
+	}
+	
+	
 	
 ?>
