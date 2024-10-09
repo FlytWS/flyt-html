@@ -24,4 +24,17 @@
 	}
 
 
+	if ($_POST['request'] == "get-usb") {
+		
+		$file = '/run/readsb/status.json';
+		if (file_exists($file)) {
+			echo file_get_contents('/etc/flyt/data/flyt-usb');
+		} else {
+			echo "No File";
+		};
+		
+	}
+
 ?>
+
+

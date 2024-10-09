@@ -333,10 +333,11 @@ var receiverString = '';
 function fetchReceiver() {
 
   	$.ajax({
-    url: "/flyt-data/stats_usb.json",
-    type: "GET",
+    url: "ajax.php",
+    type: "POST",
 	cache: false,
 	dataType: "text",
+	data: { request: 'get-usb' },
     success: function(result, textStatus, jqXHR) {
 		
 		let text = result;

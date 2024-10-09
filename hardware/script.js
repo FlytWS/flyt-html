@@ -252,7 +252,7 @@ data: { request: 'get-flyt-stats' },
  chartTemperature.data.datasets[0].data[1] = (100 - (obj.temperature/1));
  chartTemperature.update();
  
-	document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(obj.boot_timestamp);
+ document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(obj.boot_timestamp);
  
  
  
