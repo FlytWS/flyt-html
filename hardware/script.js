@@ -252,10 +252,10 @@ data: { request: 'get-flyt-stats-0' },
  chartStorage.update();
  
  
- if (obj.temperature_current_cpu_thermal > 30) {
+ if (obj.temperature_current_cpu_thermal > 60) {
 	 var max_temperature_current_cpu_thermal = (obj.temperature_current_cpu_thermal).toFixed();
  } else {
-	 var max_temperature_current_cpu_thermal = 30;
+	 var max_temperature_current_cpu_thermal = 60;
  }
  
  chartTemperature.data.datasets[0].data[0] = (obj.temperature_current_cpu_thermal).toFixed();
