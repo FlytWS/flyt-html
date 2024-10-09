@@ -248,8 +248,14 @@ data: { request: 'get-flyt-stats-0' },
  chartStorage.update();
  
  
- chartTemperature.data.datasets[0].data[0] = obj.temperature;
- chartTemperature.data.datasets[0].data[1] = (100 - (obj.temperature/1));
+ if (obj.temperature_current_cpu_thermal > 60) {
+	 var temperature_current_cpu_thermal = 60;
+ } else {
+	 var temperature_current_cpu_thermal = obj.temperature_current_cpu_thermal;
+ }
+ 
+ chartTemperature.data.datasets[0].data[0] = temperature_current_cpu_thermal;
+ chartTemperature.data.datasets[0].data[1] = (60 - (temperature_current_cpu_thermal/1));
  chartTemperature.update();
  
  document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(obj.boot_timestamp);
