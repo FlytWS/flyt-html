@@ -233,13 +233,13 @@ data: { request: 'get-flyt-stats-0' },
  console.log(result);
  var obj = JSON.parse(result);
 
- chartCPU.data.datasets[0].data[0] = obj.cpu_usage_percent;
- chartCPU.data.datasets[0].data[1] = (100 - (obj.cpu_usage_percent/1));
+ chartCPU.data.datasets[0].data[0] = (obj.cpu_usage_percent).toFixed();
+ chartCPU.data.datasets[0].data[1] = (100 - (obj.cpu_usage_percent/1).toFixed());
  chartCPU.update();
  
  
- chartRAM.data.datasets[0].data[0] = ((obj.memory_total/1000) - (obj.memory_available/1000)).toFixed(0);
- chartRAM.data.datasets[0].data[1] = (obj.memory_available/1000).toFixed(0);
+ chartRAM.data.datasets[0].data[0] = ((obj.memory_total/1000000) - (obj.memory_available/1000000)).toFixed();
+ chartRAM.data.datasets[0].data[1] = (obj.memory_available/1000000).toFixed();
  chartRAM.update();
 
 
@@ -247,8 +247,8 @@ data: { request: 'get-flyt-stats-0' },
  const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
  console.log(keyStoragePartition);
 
- chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_/dev/sdd']/1000000).toFixed(0);
- chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_/dev/sdd']/1000000).toFixed(0);
+ chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_/dev/sdd']/1000000).toFixed();
+ chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_/dev/sdd']/1000000).toFixed();
  chartStorage.update();
  
  
