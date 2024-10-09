@@ -1,9 +1,9 @@
 <?php
 
 	
-	if ($_POST['request'] == "get-flyt-stats") {
+	if ($_POST['request'] == "get-flyt-stats-0") {
 		
-		$file = '/etc/flyt/data/flyt-stats.json';
+		$file = '/etc/flyt/data/flyt-stats-0.json';
 		if (file_exists($file)) {
 			echo file_get_contents($file);
 		};

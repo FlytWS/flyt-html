@@ -226,7 +226,7 @@ function fetch() {
 url: 'ajax.php',
 type: 'POST',
 cache: false,
-data: { request: 'get-flyt-stats' },
+data: { request: 'get-flyt-stats-0' },
  success: function(result) {
 
 
