@@ -308,10 +308,10 @@ var s_flag_node = 0;
 try {
 	
 	var s_cpu = (obj.cpu_usage_percent).toFixed();
-	if (s_cpu > 3) {
+	if (s_cpu > 90) {
 		s_flag_node = 1;
 		if ($("#n_cpu").length == 0) {
-			notifyConsole("<div id='n_cpu'></div>CPU usage high.");
+			notifyConsole("<div id='n_cpu'></div>CPU usage high. Please consider rebooting your node if usage remains high for a prolonged period.");
 		}
 	}
 	
