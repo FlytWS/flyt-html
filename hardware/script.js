@@ -218,7 +218,7 @@ fetchModel();
 
 
 
-function fetch() {
+function fetchFS2() {
  //console.log("Fetching");
  
 
@@ -226,7 +226,7 @@ function fetch() {
 url: 'ajax.php',
 type: 'POST',
 cache: false,
-data: { request: 'get-flyt-stats-0' },
+data: { request: 'get-flyt-stats-2' },
  success: function(result) {
 
 
@@ -243,26 +243,6 @@ data: { request: 'get-flyt-stats-0' },
  chartRAM.update();
 
 
-
- const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
- console.log(keyStoragePartition);
- console.log(obj[keyStoragePartition]);
-	var primaryStore = obj[keyStoragePartition];
-
- chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_'+primaryStore]/100000000).toFixed(2);
- chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed(2);
- chartStorage.update();
- 
- 
- if (obj.temperature_current_cpu_thermal > 60) {
-	 var max_temperature_current_cpu_thermal = (obj.temperature_current_cpu_thermal).toFixed();
- } else {
-	 var max_temperature_current_cpu_thermal = 60;
- }
- 
- chartTemperature.data.datasets[0].data[0] = (obj.temperature_current_cpu_thermal).toFixed();
- chartTemperature.data.datasets[0].data[1] = (max_temperature_current_cpu_thermal - (obj.temperature_current_cpu_thermal/1).toFixed());
- chartTemperature.update();
  
  document.getElementById('uptime').innerHTML = 'Up for ' + secondsToDHM(obj.boot_timestamp);
  
@@ -288,9 +268,79 @@ data: { request: 'get-flyt-stats-0' },
  
 }
 
-fetch();
+fetchFS2();
 const intervalFetch = setInterval(function() {
- fetch();
+ fetchFS2();
 }, 10000);
 
+
+
+
+
+
+
+
+
+
+function fetchFS1() {
+ //console.log("Fetching");
+ 
+
+ $.ajax({
+url: 'ajax.php',
+type: 'POST',
+cache: false,
+data: { request: 'get-flyt-stats-1' },
+ success: function(result) {
+
+
+ console.log(result);
+ var obj = JSON.parse(result);
+
+
+
+ 
+ if (obj.temperature_current_cpu_thermal > 60) {
+	 var max_temperature_current_cpu_thermal = (obj.temperature_current_cpu_thermal).toFixed();
+ } else {
+	 var max_temperature_current_cpu_thermal = 60;
+ }
+ 
+ chartTemperature.data.datasets[0].data[0] = (obj.temperature_current_cpu_thermal/1).toFixed();
+ chartTemperature.data.datasets[0].data[1] = ((max_temperature_current_cpu_thermal/1) - (obj.temperature_current_cpu_thermal/1).toFixed());
+ chartTemperature.update();
+ 
+ 
+
+ const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
+ console.log(keyStoragePartition);
+ console.log(obj[keyStoragePartition]);
+	var primaryStore = obj[keyStoragePartition];
+
+ chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_'+primaryStore]/100000000).toFixed(2);
+ chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed(2);
+ chartStorage.update();
+ 
+ 
+ 
+
+
+ },
+ error: function(err)
+ {
+
+ console.log(err); 
+
+ }
+ 
+ 
+ 
+ })
+ 
+}
+
+fetchFS1();
+const intervalFetch = setInterval(function() {
+ fetchFS1();
+}, 30000);
 

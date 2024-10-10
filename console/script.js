@@ -1,13 +1,15 @@
 $(document).ready(function () {
 	
 	getWingbitsName();
-	fetchStats0();
+	fetchStats2();
+	fetchStats1();
 	getMap();
     getLocation();
 	getGNSSLocation();
 	getNews();
 	
-	setInterval(fetchStats0, 10000);
+	setInterval(fetchStats2, 10000);
+	setInterval(fetchStats1, 30000);
 	setInterval(getLocation, 10000);
 	setInterval(getGNSSLocation, 10000);
 	setInterval(getNews, 60000);
@@ -282,7 +284,7 @@ function getGNSSLocation() {
 
 
 
-function fetchStats0() {
+function fetchStats2() {
  //console.log("Fetching");
  
 
@@ -290,7 +292,7 @@ function fetchStats0() {
 url: 'ajax.php',
 type: 'POST',
 cache: false,
-data: { request: 'get-flyt-stats-0' },
+data: { request: 'get-flyt-stats-2' },
  success: function(result) {
 
 
@@ -338,6 +340,8 @@ try {
 
 
 
+/*
+//stat-1
 try {
 
  const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
@@ -357,7 +361,7 @@ try {
 	
 	
 }
-
+*/
 
 
 
@@ -374,6 +378,63 @@ if (s_flag_node == 1) {
 
 
 
+
+
+
+ 
+
+
+ },
+ error: function(err)
+ {
+
+ console.log(err); 
+
+ }
+ 
+ 
+ 
+ })
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function fetchStats1() {
+ //console.log("Fetching");
+ 
+
+ $.ajax({
+url: 'ajax.php',
+type: 'POST',
+cache: false,
+data: { request: 'get-flyt-stats-2' },
+ success: function(result) {
+
+
+ console.log(result);
+ var obj = JSON.parse(result);
 
 
 
