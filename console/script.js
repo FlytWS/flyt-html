@@ -1,18 +1,31 @@
 $(document).ready(function () {
 	
 	getWingbitsName();
+	fetchStats0();
 	getMap();
     getLocation();
+	getGNSSLocation();
 	getNews();
+	
+	setInterval(fetchStats0, 10000);
+	setInterval(getLocation, 10000);
+	setInterval(getGNSSLocation, 10000);
+	setInterval(getNews, 60000);
 	
 	
 });
 
 
 
+let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false });
+
+var markerGroupL = L.layerGroup().addTo(cockpitMap);
+var markerGroupG = L.layerGroup().addTo(cockpitMap);
+
+
 function getMap() {
 
-	let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false });
+	
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		className: 'cockpit-tiles'
 	}).addTo(cockpitMap);
@@ -20,15 +33,15 @@ function getMap() {
 	let markers = L.layerGroup().addTo(cockpitMap);
 	cockpitMap.dragging.disable();
 
-	var markerFrom = L.circleMarker([53.902561,-2.775290], { color: "#6ba7ff", radius: 20 });
-	var from = markerFrom.getLatLng();
+	//var markerFrom = L.circleMarker([53.902561,-2.775290], { color: "#6ba7ff", radius: 20 });
+	//var from = markerFrom.getLatLng();
 
-	cockpitMap.addLayer(markerFrom);
+	//cockpitMap.addLayer(markerFrom);
 
-	markerFrom.bindPopup('Radio ' + (from).toString());
-	cockpitMap.addLayer(markerFrom);					
+	//markerFrom.bindPopup('Radio ' + (from).toString());
+	//cockpitMap.addLayer(markerFrom);					
 
-	cockpitMap.setView([53.902561,-2.775290], 14);
+	cockpitMap.setView([0,0], 1);
 
 
 };
@@ -36,6 +49,21 @@ function getMap() {
 
 
 
+
+
+
+function notifyConsole(message) {
+	
+var divMessage = `
+<header id="network-wifi" class="large-panel-button active" style="height:3rem; width:100%; padding:0; background-color:#00e7ff10;">
+<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;">`+message+`</div>
+</header>
+`;
+
+	$('#notification').append(divMessage);
+	
+	
+}
 
 
 
@@ -108,6 +136,8 @@ function getWingbitsName() {
 
 
 
+var isLocationSet = 0;
+
 
 function getLocation() {
 	
@@ -121,48 +151,32 @@ function getLocation() {
 			try {
 			var resParse = JSON.parse(response);
 			
-			if (resParse.lat) {
+			if (resParse.latitude) {
 				
-				var markerFrom = L.circleMarker([resParse.lat,resParse.lon], { color: "#6ba7ff20", fillColor: 'transparent', radius: 160 });
-				var from = markerFrom.getLatLng();
+				isLocationSet = 1;
 
-				cockpitMap.addLayer(markerFrom);
-
-				var markerFrom = L.circleMarker([resParse.lat,resParse.lon], { color: "#6ba7ff20", fillColor: 'transparent', radius: 320 });
-				var from = markerFrom.getLatLng();
-
-				cockpitMap.addLayer(markerFrom);
-
-				var markerFrom = L.circleMarker([resParse.lat,resParse.lon], { color: "#6ba7ff20", fillColor: 'transparent', radius: 640 });
-				var from = markerFrom.getLatLng();
-
-				cockpitMap.addLayer(markerFrom);
-
-				var markerFrom = L.circleMarker([resParse.lat,resParse.lon], { color: "#6ba7ff20", fillColor: 'transparent', radius: 1280 });
-				var from = markerFrom.getLatLng();
-
-				cockpitMap.addLayer(markerFrom);
-
-				var markerFrom = L.circleMarker([resParse.lat,resParse.lon], { color: "#6ba7ff", radius: 20 });
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#6ba7ff", radius: 10 });
 				var from = markerFrom.getLatLng();
 
 				markerFrom.bindPopup('Radio ' + (from).toString());
-				cockpitMap.addLayer(markerFrom);
-								
-								
+				//cockpitMap.addLayer(markerFrom);
 				
-				cockpitMap.setView([resParse.lat,resParse.lon], 14);
-				$('#cMapRegister').fadeOut();
+				markerGroupL.clearLayers();
+				markerFrom.addTo(markerGroupL);
+				
+
+				cockpitMap.setView([resParse.latitude,resParse.longitude], 16);				
+				
 			
 			} else {
-
-				$('#cMapRegister').html('Register your Flyt Node location').fadeIn();
-
+				
+				if ($("#n_locationset").length == 0) {
+					notifyConsole("<div id='n_locationset'></div>Map location is not set. Please set your map location in the settings.");
+				}
+				
 			}
 			} catch (err) {
-				
-				$('#cMapRegister').html('Flight Deck Not Found<br><br>Click To Set Antenna Location').fadeIn();
-
+				console.log(err);
 			}				
 			
 			
@@ -171,9 +185,182 @@ function getLocation() {
 			//Unable to save
 			console.log(err);
 			
-				$('#cMapRegister').html('Flight Deck Not Found').fadeIn();			
+		}
+	});
+	
+};
+
+
+
+
+
+
+function getGNSSLocation() {
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-gnss' },
+		success: function(response) {
+			
+			console.log(response);
+			
+			try {
+			var resParse = JSON.parse(response);
+			
+			if (resParse.latitude) {
+				
+
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd96", radius: 6 });
+				var from = markerFrom.getLatLng();
+
+				markerFrom.bindPopup('GNSS ' + (from).toString());
+				//cockpitMap.addLayer(markerFrom);
+				
+				markerGroupG.clearLayers();
+				markerFrom.addTo(markerGroupG);
+				
+				
+				if (isLocationSet == 0) {
+					cockpitMap.setView([resParse.latitude,resParse.longitude], 16);
+				}
+
+
+			} else {
+				
+				if ($("#n_gnssnotdetected").length == 0) {
+					notifyConsole("<div id='n_gnssnotdetected'></div>GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
+				}
+			}
+			
+			if (resParse.satellites) {
+				if (resParse.satellites < 6 && $("#n_limitedgnss").length == 0) {
+					notifyConsole("<div id='n_limitedgnss'></div>Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+				}
+			}
+			
+			} catch (err) {				
+				console.log(err);
+			}				
+			
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+				
 			
 		}
 	});
 	
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function fetchStats0() {
+ //console.log("Fetching");
+ 
+
+ $.ajax({
+url: 'ajax.php',
+type: 'POST',
+cache: false,
+data: { request: 'get-flyt-stats-0' },
+ success: function(result) {
+
+
+ console.log(result);
+ var obj = JSON.parse(result);
+
+
+
+
+try {
+	
+	var s_cpu = (obj.cpu_usage_percent).toFixed();
+	if (s_cpu > 3 && $("#n_cpu").length == 0) {
+		notifyConsole("<div id='n_cpu'></div>CPU usage high.");
+	}
+	
+} catch (err) {
+	
+	
+}
+
+
+try {
+	
+	var s_ram = (obj.memory_available/1000000).toFixed();
+	if (s_ram < 1000 && $("#n_ram").length == 0) {
+		notifyConsole("<div id='n_ram'></div>RAM usage high.");
+	}
+	
+} catch (err) {
+	
+	
+}
+
+
+
+try {
+
+ const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
+ console.log(obj[keyStoragePartition]);
+	
+	var s_storage = (obj['storage_usage_free_/dev/sdd']/1000000).toFixed();
+	if (s_storage < 1000 && $("#n_storage").length == 0) {
+		notifyConsole("<div id='n_storage'></div>Storage low.");
+	}
+	
+
+} catch (err) {
+	
+	
+}
+
+
+
+
+try {
+	
+	var s_temperature = (obj.temperature_current_cpu_thermal).toFixed();
+	if (s_temperature > 20 && $("#n_temperature").length == 0) {
+		notifyConsole("<div id='n_temperature'></div>Node temperature high.");
+	}
+	
+} catch (err) {
+	
+	
+}
+
+
+
+ 
+
+
+ },
+ error: function(err)
+ {
+
+ console.log(err); 
+
+ }
+ 
+ 
+ 
+ })
+ 
+}

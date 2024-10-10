@@ -73,14 +73,9 @@
 
 
 
-<header style="margin-top:1rem; border-radius:0.75rem; display: flex; flex-direction: column; grid-gap: 1rem;    padding: 0;">
+<header id="notification" style="margin-top:1rem; border-radius:0.75rem; display: flex; flex-direction: column; grid-gap: 1rem;    padding: 0;">
 
-<header id="network-wifi" class="large-panel-button active" style="height:3rem; width:100%; padding:0; background-color:#00e7ff10;">
-<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;">Map location is not set. Please set your map location by clicking here.</div>
-</header>
-<header id="network-wifi" class="large-panel-button active" style="height:3rem; width:100%; padding:0; background-color:#00e7ff10;">
-<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;">No GNSS receiver detected. Please ensure your GNSS receiver is connected.</div>
-</header>
+
 <header id="network-wifi" class="large-panel-button active" style="height:3rem; width:100%; padding:0; background-color:#00e7ff10;">
 <div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;">Temperature critical. Please ensure your node is ventilated and operating in a temperate environment.</div>
 </header>
