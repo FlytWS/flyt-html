@@ -344,8 +344,8 @@ try {
  console.log(obj[keyStoragePartition]);
  var primaryStore = obj[keyStoragePartition];
 	
-	var s_storage = (obj['storage_usage_free_'+primaryStore]/1000000).toFixed();
-	if (s_storage < 1000) {
+	var s_storage = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed();
+	if (s_storage < 10) {
 		s_flag_node = 1;
 		if ($("#n_storage").length == 0) {
 			notifyConsole("<div id='n_storage'></div>Storage is low. Please raise a support ticket with Flyt for further assistance.");
@@ -384,7 +384,7 @@ if (s_flag_node == 1) {
 try {
 	
 	var s_temperature = (obj.temperature_current_cpu_thermal).toFixed();
-	if (s_temperature > 20) {
+	if (s_temperature > 60) {
 		if ($("#n_temperature").length == 0) {
 			notifyConsole("<div id='n_temperature'></div>Temperature critical. Please ensure your node is ventilated and operating in a temperate environment.");
 		}
