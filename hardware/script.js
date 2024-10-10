@@ -247,9 +247,10 @@ data: { request: 'get-flyt-stats-0' },
  const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
  console.log(keyStoragePartition);
  console.log(obj[keyStoragePartition]);
+	var primaryStore = obj[keyStoragePartition];
 
- chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_/dev/sdd']/1000000).toFixed();
- chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_/dev/sdd']/1000000).toFixed();
+ chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_'+primaryStore]/1000000).toFixed();
+ chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_'+primaryStore]/1000000).toFixed();
  chartStorage.update();
  
  

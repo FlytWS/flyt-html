@@ -227,11 +227,19 @@ function getGNSSLocation() {
 				}
 
 
+				$('#state_gnss').removeClass("health-poor");
+				
 			} else {
+				
+				
+				
 				
 				if ($("#n_gnssnotdetected").length == 0) {
 					notifyConsole("<div id='n_gnssnotdetected'></div>GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
 				}
+				$('#state_gnss').addClass("health-poor");
+				
+				
 			}
 			
 			if (resParse.satellites) {
@@ -304,7 +312,7 @@ try {
 try {
 	
 	var s_ram = (obj.memory_available/1000000).toFixed();
-	if (s_ram < 1000 && $("#n_ram").length == 0) {
+	if (s_ram < 10000 && $("#n_ram").length == 0) {
 		notifyConsole("<div id='n_ram'></div>RAM usage high.");
 	}
 	
@@ -337,8 +345,13 @@ try {
 try {
 	
 	var s_temperature = (obj.temperature_current_cpu_thermal).toFixed();
-	if (s_temperature > 20 && $("#n_temperature").length == 0) {
-		notifyConsole("<div id='n_temperature'></div>Node temperature high.");
+	if (s_temperature > 20) {
+		if ($("#n_temperature").length == 0) {
+			notifyConsole("<div id='n_temperature'></div>Temperature critical. Please ensure your node is ventilated and operating in a temperate environment.");
+		}
+		$('#state_temperature').addClass("health-poor");
+	} else {
+		$('#state_temperature').removeClass("health-poor");
 	}
 	
 } catch (err) {
