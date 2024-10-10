@@ -176,6 +176,10 @@ function getLocation() {
 				
 			}
 			} catch (err) {
+				
+				if ($("#n_locationset").length == 0) {
+					notifyConsole("<div id='n_locationset'></div>Map location is not set. Please set your map location in the settings.");
+				}
 				console.log(err);
 			}				
 			
