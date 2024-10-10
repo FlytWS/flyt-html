@@ -296,11 +296,19 @@ data: { request: 'get-flyt-stats-0' },
 
 
 
+
+
+
+var s_flag_node = 0;
+
 try {
 	
 	var s_cpu = (obj.cpu_usage_percent).toFixed();
-	if (s_cpu > 3 && $("#n_cpu").length == 0) {
-		notifyConsole("<div id='n_cpu'></div>CPU usage high.");
+	if (s_cpu > 3) {
+		s_flag_node = 1;
+		if ($("#n_cpu").length == 0) {
+			notifyConsole("<div id='n_cpu'></div>CPU usage high.");
+		}
 	}
 	
 } catch (err) {
@@ -312,8 +320,11 @@ try {
 try {
 	
 	var s_ram = (obj.memory_available/1000000).toFixed();
-	if (s_ram < 10000 && $("#n_ram").length == 0) {
-		notifyConsole("<div id='n_ram'></div>RAM usage high.");
+	if (s_ram < 100) {
+		s_flag_node = 1;
+		if ($("#n_ram").length == 0) {
+			notifyConsole("<div id='n_ram'></div>RAM usage high. Please consider rebooting your node.");
+		}
 	}
 	
 } catch (err) {
@@ -327,10 +338,14 @@ try {
 
  const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
  console.log(obj[keyStoragePartition]);
+ var primaryStore = obj[keyStoragePartition];
 	
-	var s_storage = (obj['storage_usage_free_/dev/sdd']/1000000).toFixed();
-	if (s_storage < 1000 && $("#n_storage").length == 0) {
-		notifyConsole("<div id='n_storage'></div>Storage low.");
+	var s_storage = (obj['storage_usage_free_'+primaryStore]/1000000).toFixed();
+	if (s_storage < 1000) {
+		s_flag_node = 1;
+		if ($("#n_storage").length == 0) {
+			notifyConsole("<div id='n_storage'></div>Storage is low. Please raise a support ticket with Flyt for further assistance.");
+		}
 	}
 	
 
@@ -338,6 +353,26 @@ try {
 	
 	
 }
+
+
+
+
+
+
+
+if (s_flag_node == 1) {
+	$('#state_node').addClass("health-poor");
+} else {
+	$('#state_node').removeClass("health-poor");
+}
+
+
+
+
+
+
+
+
 
 
 
