@@ -209,17 +209,16 @@ function getGNSSLocation() {
 			if (resParse.latitude) {
 				
 				
-				if ($("#n_limitedgns").length == 1) {
-					$("#n_limitedgns").remove();
-					$('#state_gnss').removeClass("health-poor");
+				if ($("#n_gnssnotdetected").length == 1) {
+					$("#n_gnssnotdetected").remove();
 				}
+				$('#state_gnss').removeClass("health-poor");
 				
 				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd96", radius: 6 });
 				var from = markerFrom.getLatLng();
 
 				markerFrom.bindPopup('GNSS ' + (from).toString());
-				//cockpitMap.addLayer(markerFrom);
-				
+
 				markerGroupG.clearLayers();
 				markerFrom.addTo(markerGroupG);
 				
@@ -234,11 +233,12 @@ function getGNSSLocation() {
 			} else {
 				
 				
-				
+				markerGroupG.clearLayers();
 				
 				if ($("#n_gnssnotdetected").length == 0) {
 					notifyConsole("<div id='n_gnssnotdetected'></div>GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
 				}
+				
 				$('#state_gnss').addClass("health-poor");
 				
 				
@@ -247,6 +247,8 @@ function getGNSSLocation() {
 			if (resParse.satellites) {
 				if (resParse.satellites < 6 && $("#n_limitedgnss").length == 0) {
 					notifyConsole("<div id='n_limitedgnss'></div>Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+				} else {
+					$("#n_limitedgns").remove();
 				}
 			}
 			
