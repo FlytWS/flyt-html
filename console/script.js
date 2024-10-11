@@ -272,10 +272,12 @@ function getGNSSLocation() {
 			}
 			
 			if (resParse.satellites) {
-				if (resParse.satellites < 6 && $("#n_limitedgnss").length == 0) {
-					notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+				if (resParse.satellites < 6) {
+					if ($("#n_limitedgnss").length == 0) {
+						notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+					}
 				} else {
-					$("#n_limitedgns").remove();
+					$("#n_limitedgnss").remove();
 				}
 			}
 			
