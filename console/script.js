@@ -24,9 +24,7 @@ let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false }
 var markerGroupL = L.layerGroup().addTo(cockpitMap);
 var markerGroupG = L.layerGroup().addTo(cockpitMap);
 
-
 function getMap() {
-
 	
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		className: 'cockpit-tiles'
@@ -35,16 +33,7 @@ function getMap() {
 	let markers = L.layerGroup().addTo(cockpitMap);
 	cockpitMap.dragging.disable();
 
-	//var markerFrom = L.circleMarker([53.902561,-2.775290], { color: "#6ba7ff", radius: 20 });
-	//var from = markerFrom.getLatLng();
-
-	//cockpitMap.addLayer(markerFrom);
-
-	//markerFrom.bindPopup('Radio ' + (from).toString());
-	//cockpitMap.addLayer(markerFrom);					
-
 	cockpitMap.setView([0,0], 1);
-
 
 };
 
@@ -97,7 +86,6 @@ function getNews() {
 
 		}
 		
-		//document.getElementById('broadcast-events').innerHTML = htmlNews;
 		$('#broadcast-events').hide().html(htmlNews).fadeIn();
 		
 	});
@@ -156,12 +144,15 @@ function getLocation() {
 			if (resParse.latitude) {
 				
 				isLocationSet = 1;
+				
+				if ($("#n_locationset").length == 1) {
+					$("#n_locationset").remove();
+				}
 
 				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#6ba7ff", radius: 10 });
 				var from = markerFrom.getLatLng();
 
 				markerFrom.bindPopup('Radio ' + (from).toString());
-				//cockpitMap.addLayer(markerFrom);
 				
 				markerGroupL.clearLayers();
 				markerFrom.addTo(markerGroupL);
@@ -217,7 +208,12 @@ function getGNSSLocation() {
 			
 			if (resParse.latitude) {
 				
-
+				
+				if ($("#n_limitedgns").length == 1) {
+					$("#n_limitedgns").remove();
+					$('#state_gnss').removeClass("health-poor");
+				}
+				
 				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd96", radius: 6 });
 				var from = markerFrom.getLatLng();
 
@@ -285,117 +281,109 @@ function getGNSSLocation() {
 
 
 function fetchStats2() {
- //console.log("Fetching");
- 
-
- $.ajax({
-url: 'ajax.php',
-type: 'POST',
-cache: false,
-data: { request: 'get-flyt-stats-2' },
- success: function(result) {
 
 
- console.log(result);
- var obj = JSON.parse(result);
+	$.ajax({
+	url: 'ajax.php',
+	type: 'POST',
+	cache: false,
+	data: { request: 'get-flyt-stats-2' },
+	success: function(result) {
 
 
+		console.log(result);
+		var obj = JSON.parse(result);
 
 
+		var s_flag_node = 0;
 
+		try {
 
-
-var s_flag_node = 0;
-
-try {
-	
-	var s_cpu = (obj.cpu_usage_percent).toFixed();
-	if (s_cpu > 90) {
-		s_flag_node = 1;
-		if ($("#n_cpu").length == 0) {
-			notifyConsole("<div id='n_cpu'></div>CPU usage high. Please consider rebooting your node if usage remains high for a prolonged period.");
+		var s_cpu = (obj.cpu_usage_percent).toFixed();
+		if (s_cpu > 90) {
+			s_flag_node = 1;
+			if ($("#n_cpu").length == 0) {
+				notifyConsole("<div id='n_cpu'></div>CPU usage high. Please consider rebooting your node if usage remains high for a prolonged period.");
+			}
+		} else {
+			$("#n_cpu").remove();
 		}
-	}
-	
-} catch (err) {
-	
-	
-}
 
+		} catch (err) {
 
-try {
-	
-	var s_ram = (obj.memory_available/1000000).toFixed();
-	if (s_ram < 100) {
-		s_flag_node = 1;
-		if ($("#n_ram").length == 0) {
-			notifyConsole("<div id='n_ram'></div>RAM usage high. Please consider rebooting your node.");
+			console.log(err); 
+			
 		}
-	}
-	
-} catch (err) {
-	
-	
-}
 
 
+		try {
 
-/*
-//stat-1
-try {
-
- const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
- console.log(obj[keyStoragePartition]);
- var primaryStore = obj[keyStoragePartition];
-	
-	var s_storage = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed();
-	if (s_storage < 10) {
-		s_flag_node = 1;
-		if ($("#n_storage").length == 0) {
-			notifyConsole("<div id='n_storage'></div>Storage is low. Please raise a support ticket with Flyt for further assistance.");
+		var s_ram = (obj.memory_available/1000000).toFixed();
+		if (s_ram < 100) {
+			s_flag_node = 1;
+			if ($("#n_ram").length == 0) {
+				notifyConsole("<div id='n_ram'></div>RAM usage high. Please consider rebooting your node.");
+			}
+		} else {
+			$("#n_cpu").remove();
 		}
+
+		} catch (err) {
+
+			console.log(err); 
+			
+		}
+
+
+
+		/*
+		//stat-1
+		try {
+
+		const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
+		console.log(obj[keyStoragePartition]);
+		var primaryStore = obj[keyStoragePartition];
+
+		var s_storage = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed();
+		if (s_storage < 10) {
+			s_flag_node = 1;
+			if ($("#n_storage").length == 0) {
+				notifyConsole("<div id='n_storage'></div>Storage is low. Please raise a support ticket with Flyt for further assistance.");
+			}
+		}
+
+
+		} catch (err) {
+
+
+		}
+		*/
+
+
+
+
+		if (s_flag_node == 1) {
+		$('#state_node').addClass("health-poor");
+		} else {
+		$('#state_node').removeClass("health-poor");
+		}
+
+
+
+
+
+	},
+	error: function(err)
+	{
+
+		console.log(err); 
+
 	}
-	
-
-} catch (err) {
-	
-	
-}
-*/
 
 
 
+	})
 
-
-
-if (s_flag_node == 1) {
-	$('#state_node').addClass("health-poor");
-} else {
-	$('#state_node').removeClass("health-poor");
-}
-
-
-
-
-
-
-
-
- 
-
-
- },
- error: function(err)
- {
-
- console.log(err); 
-
- }
- 
- 
- 
- })
- 
 }
 
 
@@ -422,58 +410,47 @@ if (s_flag_node == 1) {
 
 
 function fetchStats1() {
- //console.log("Fetching");
- 
 
- $.ajax({
-url: 'ajax.php',
-type: 'POST',
-cache: false,
-data: { request: 'get-flyt-stats-2' },
- success: function(result) {
+	$.ajax({
+	url: 'ajax.php',
+	type: 'POST',
+	cache: false,
+	data: { request: 'get-flyt-stats-2' },
+	success: function(result) {
 
 
- console.log(result);
- var obj = JSON.parse(result);
+		console.log(result);
+		var obj = JSON.parse(result);
 
 
+		try {
 
-
-
-
-
-try {
-	
-	var s_temperature = (obj.temperature_current_cpu_thermal).toFixed();
-	if (s_temperature > 60) {
-		if ($("#n_temperature").length == 0) {
+			var s_temperature = (obj.temperature_current_cpu_thermal).toFixed();
+			if (s_temperature > 60) {
+			if ($("#n_temperature").length == 0) {
 			notifyConsole("<div id='n_temperature'></div>Temperature critical. Please ensure your node is ventilated and operating in a temperate environment.");
+			}
+			$('#state_temperature').addClass("health-poor");
+			} else {
+			$('#state_temperature').removeClass("health-poor");
+			$("#n_temperature").remove();
+			}
+
+		} catch (err) {
+
+			console.log(err); 
+
 		}
-		$('#state_temperature').addClass("health-poor");
-	} else {
-		$('#state_temperature').removeClass("health-poor");
+
+
+	},
+	error: function(err) {
+
+		console.log(err); 
+
 	}
-	
-} catch (err) {
-	
-	
-}
 
 
+	})
 
- 
-
-
- },
- error: function(err)
- {
-
- console.log(err); 
-
- }
- 
- 
- 
- })
- 
 }
