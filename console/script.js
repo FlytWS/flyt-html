@@ -1,16 +1,14 @@
 $(document).ready(function () {
 	
 	getWingbitsName();
-	fetchStats2();
-	fetchStats1();
+	fetchStats();
 	getMap();
     getLocation();
 	getGNSSLocation();
 	getNews();
 	
-	setInterval(fetchStats2, 10000);
-	setInterval(fetchStats1, 30000);
-	setInterval(getLocation, 10000);
+	setInterval(fetchStats, 10000);
+	setInterval(getLocation, 600000);
 	setInterval(getGNSSLocation, 10000);
 	setInterval(getNews, 600000);
 	
@@ -42,7 +40,6 @@ function getMap() {
 
 
 
-
 function notifyConsole(div,message) {
 	
 var divMessage = `
@@ -53,8 +50,40 @@ var divMessage = `
 
 	$('#notification').append(divMessage);
 	
-	
+
 }
+
+
+
+
+
+
+
+
+var s_flag_node = 0;
+
+function fetchStats() {
+	
+	s_flag_node = 0;
+	
+	fetchStats1();
+	fetchStats2();
+	
+	if (s_flag_node == 1) {
+		$('#state_node').addClass("health-poor");
+	} else {
+		$('#state_node').removeClass("health-poor");
+	}
+
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -295,7 +324,7 @@ function fetchStats2() {
 		var obj = JSON.parse(result);
 
 
-		var s_flag_node = 0;
+		
 
 		try {
 
@@ -335,38 +364,6 @@ function fetchStats2() {
 		}
 
 
-
-		/*
-		//stat-1
-		try {
-
-		const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
-		console.log(obj[keyStoragePartition]);
-		var primaryStore = obj[keyStoragePartition];
-
-		var s_storage = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed();
-		if (s_storage < 10) {
-			s_flag_node = 1;
-			if ($("#n_storage").length == 0) {
-				notifyConsole("n_storage","Storage is low. Please raise a support ticket with Flyt for further assistance.");
-			}
-		}
-
-
-		} catch (err) {
-
-
-		}
-		*/
-
-
-
-
-		if (s_flag_node == 1) {
-		$('#state_node').addClass("health-poor");
-		} else {
-		$('#state_node').removeClass("health-poor");
-		}
 
 
 
@@ -415,7 +412,7 @@ function fetchStats1() {
 	url: 'ajax.php',
 	type: 'POST',
 	cache: false,
-	data: { request: 'get-flyt-stats-2' },
+	data: { request: 'get-flyt-stats-1' },
 	success: function(result) {
 
 
@@ -441,6 +438,44 @@ function fetchStats1() {
 			console.log(err); 
 
 		}
+		
+		
+
+
+		try {
+
+		const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
+		console.log(obj[keyStoragePartition]);
+		var primaryStore = obj[keyStoragePartition];
+
+		var s_storage = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed();
+		if (s_storage < 10) {
+			s_flag_node = 1;
+			if ($("#n_storage").length == 0) {
+				notifyConsole("n_storage","Storage is low. Please raise a support ticket with Flyt for further assistance.");
+			}
+		}
+
+
+		} catch (err) {
+
+
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 
 	},
