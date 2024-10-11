@@ -454,11 +454,16 @@ function fetchStats1() {
 			if ($("#n_storage").length == 0) {
 				notifyConsole("n_storage","Storage is low. Please raise a support ticket with Flyt for further assistance.");
 			}
+		} else {
+			
+			$("#n_storage").remove();
+			
 		}
 
 
 		} catch (err) {
-
+		
+			console.log(err);
 
 		}
 		
