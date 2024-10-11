@@ -10,6 +10,7 @@
 					<div class="menu-top">
 					<div onclick="navigate('/flyt/console')" class="pointer" style="display: flex; flex-direction: column;"><h1>Console</h1><sub>Your Node at a glance</sub></div>
 					<div onclick="navigate('/flyt/radio')" class="pointer" style="display: flex; flex-direction: column;"><h1>Radio</h1><sub>Software-defined radio stats</sub></div>
+					<div onclick="navigate('/flyt/gnss')" class="pointer" style="display: flex; flex-direction: column;"><h1>GNSS</h1><sub>GNSS satellite fix</sub></div>
 					<div onclick="navigate('/flyt/hardware')" class="pointer" style="display: flex; flex-direction: column;"><h1>Hardware</h1><sub>Node hardware metrics</sub></div>
 					<div onclick="navigate('/flyt/network')" class="pointer" style="display: flex; flex-direction: column;"><h1>Network</h1><sub>Network metrics and data</sub></div>
 					<div onclick="navigate('/flyt/map')" class="pointer" style="display: flex; flex-direction: column;"><h1>Map</h1><sub>Mapping your ADS-B signals</sub></div>

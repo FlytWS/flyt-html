@@ -1,0 +1,8 @@
+.large-panel-button {
+
+    background-color: #ffffff10;
+    border-radius: 0.75rem;
+    flex-direction: column;
+    padding: 0;
+	flex-grow:1;
+}
