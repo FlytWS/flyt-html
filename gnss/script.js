@@ -47,10 +47,10 @@ function fetchGNSS() {
 		
 		
 		if (document.getElementById('driver').innerHTML == "") {
-			document.getElementById('driver').innerHTML = obj.device.driver;
+			document.getElementById('driver').innerHTML = obj.device['driver'];
 		}
 		if (document.getElementById('path').innerHTML == "") {
-			document.getElementById('path').innerHTML = obj.device.path;
+			document.getElementById('path').innerHTML = obj.device['path'];
 		}
 		
 		
