@@ -255,7 +255,7 @@ function fetchStats2() {
 		chartCPU.update();
 
 
-		chartRAM.data.datasets[0].data[0] = ((obj.memory_total/1000000) - (obj.memory_available/1000000)).toFixed();
+		chartRAM.data.datasets[0].data[0] = (obj.memory_used/1000000).toFixed();
 		chartRAM.data.datasets[0].data[1] = (obj.memory_available/1000000).toFixed();
 		chartRAM.update();
 
