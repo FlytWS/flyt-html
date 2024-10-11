@@ -44,6 +44,7 @@ function fetchGNSS() {
 
 		console.log(result);
 		var obj = JSON.parse(result);
+		console.log(obj); 
 		
 		
 		if (document.getElementById('driver').innerHTML == "") {
