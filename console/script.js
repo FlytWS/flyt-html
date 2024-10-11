@@ -427,7 +427,7 @@ function fetchStats1() {
 
 		try {
 
-			var s_temperature = (obj.temperature_current_cpu_thermal).toFixed();
+			var s_temperature = (obj.temperature_current_cpu_thermal/1).toFixed();
 			if (s_temperature > 60) {
 			if ($("#n_temperature").length == 0) {
 			notifyConsole("<div id='n_temperature'></div>Temperature critical. Please ensure your node is ventilated and operating in a temperate environment.");
