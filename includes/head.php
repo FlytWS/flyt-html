@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/flyt/favicon-16x16.png">
 	<link rel="manifest" href="/flyt/site.webmanifest">	
 	
-	<link rel="stylesheet" href='/flyt/global/style/quicksand.css'>
+	<link rel="preload" href='/flyt/global/style/quicksand.css' as="style">
 	<link rel="stylesheet" href="/flyt/global/style/normalize.min.css"/>
 	<link rel="stylesheet" href="/flyt/global/style/style.css"/>
 	
