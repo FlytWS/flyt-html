@@ -21,14 +21,15 @@
 
 <div id="p1" class="page" style="margin-left: 0vw;">
 	<section id="page-body">
-	<header>
-	<div class="page-title-center"><img src="\flyt\global\image\rocket.png" style="height:40vh; margin-top:5rem;" /></div>
+	<header style="flex-direction: column; margin-top:2rem;">
+	<div class="page-title-center" style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">Welcome to your Flyt Console, connecting you to the Wingbits aviation tracking network. We'll now guide you through the quick setup.<br><br>Buckle up and let's take Flyt.</div>
+	<div class="page-title-center"><img src="\flyt\global\image\plane.png" style="height:30vh; margin-top:5rem;" /></div>
 	</header>
 	</section>
 
 	<section id="page-footer">
 	<header style="flex-direction: column;">
-	<div class="page-title-center" style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">Welcome to your Flyt Console, connecting you to the Wingbits aviation tracking network. We'll now guide you through the quick setup. Buckle up and let's take Flyt.</div>
+	
 	<div class="page-title-center pointer" style="font-size:0.8rem;" onclick="nextPage(1,2);">Get Started</div>
 	</header>
 	</section>
@@ -40,22 +41,22 @@
 	<header style="flex-direction: column;">
 	<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">Network Setup</div>
 	<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
-	Your Flyt Node is pre-configured to use Ethernet, and is the recommended setup for providing the best experience. However, if you would like to use WiFi instead, please select below and enter your WiFi SSID and Passphrase.
-
+	Your Flyt Node is pre-configured to use Ethernet, and is the recommended setup for providing the best experience.<br>If you would like to use WiFi instead, please select below and enter your WiFi SSID and Passphrase.
 	</div>
 
 	<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
 	<div id="dash-stat" style="margin-top:0rem;		  width: 100%;    position: relative;    display: grid;    grid-gap: 1rem;    grid-template-columns: repeat(2, 1fr);    justify-items: center;    height: auto;    align-content: center;">
 			  
+	
+	
+	<header id="panel-ethernet" class="large-panel-button">
+	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ethernet-port"><path d="m15 20 3-3h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2l3 3z"></path><path d="M6 8v1"></path><path d="M10 8v1"></path><path d="M14 8v1"></path><path d="M18 8v1"></path></svg></div>
+	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem; display: flex;    flex-direction: column;">Ethernet</div></div>
+	</header>
 
-	<header id="network-ethernet" class="large-panel-button active">
-	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem; padding-bottom:0; color:#fbfbfb80;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></div>
-	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:0.5rem; padding-top:0.25rem; padding-bottom:2rem;">Ethernet</div></div>
-	</header>			
-
-	<header id="network-wifi" class="large-panel-button">
-	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wifi"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg></div>
-	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">WiFi</div></div>
+	<header id="panel-wifi" class="large-panel-button">
+	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wifi"><path d="M12 20h.01"></path><path d="M2 8.82a15 15 0 0 1 20 0"></path><path d="M5 12.859a10 10 0 0 1 14 0"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path></svg></div>
+	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem; display: flex;    flex-direction: column;">WiFi</div></div>
 	</header>
 
 
@@ -64,10 +65,8 @@
 
 
 
-	<div id="network-title"  style="margin-bottom:1rem; margin-top:1rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">Ethernet</div>
-	<div id="network-stats"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem; width: 17rem;">
-	IP Address : 192.168.1.x<br>Network Connection Is Excellent
-	</div>
+	<div id="network-title"  style="margin-bottom:1rem; margin-top:1rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;"></div>
+	<div id="network-stats"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem; width: 17rem;"></div>
 
 	</header>
 	</section>
@@ -170,6 +169,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<script src="/flyt/global/script/jquery.min.3.7.1.js"></script>
+<script src="/flyt/global/script/jquery-ui.min.1.11.3.js"></script>
+<script src="/flyt/global/script/script.js"></script>
 <script src="script.js"></script>

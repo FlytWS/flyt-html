@@ -1,6 +1,29 @@
 <?php
 clearstatcache();
 
+
+	if ($_POST['request'] == "get-flyt-stats-1") {
+		
+		$file = '/etc/flyt/data/flyt-stats-1.json';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	if ($_POST['request'] == "skip-setup") {
 
 		exec("echo -n '0' | tee '/var/www/html/flyt-data/setupskipped'", $output, $retval);

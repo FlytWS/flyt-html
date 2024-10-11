@@ -109,6 +109,76 @@ function WiFiBack() {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getflytstats() {
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-stats-1' },
+		success: function(response) {
+			
+			var obj = JSON.parse(response);
+
+
+			if (obj.network_address_eth0) {
+				$('#panel-ethernet').addClass('active');
+				$('#network-title').hide().html('Ethernet').fadeIn();
+				$('#network-stats').hide().html(obj.network_address_eth0).fadeIn();
+			}
+			
+			if (obj.network_address_wlan0) {
+				$('#panel-wifi').addClass('active');
+				$('#network-title').hide().html('WiFi').fadeIn();
+				$('#network-stats').hide().html(obj.network_address_wlan0).fadeIn();
+			}
+			
+
+
+			
+		},
+		error: function(err) {
+			
+			console.log(err);
+			
+		}
+	});
+	
+};
+
+
+
+
 function nextPage(current, next) {
  
  $('#p'+current).animate({
@@ -119,19 +189,66 @@ function nextPage(current, next) {
  }, 1000);
  
  
- for (let i = 1; i < next+1; i++) {
- console.log('Add l'+i);
- //$("#l"+i).css("border", "2px solid #6BA7FF");
- $("#l"+i).addClass('slider-changed');
+
+ 
+ 
+ if (next == 2) {
+	 
+	 
+	var wifi_ip_string = null;
+	var ethernet_ip_string = null;
+
+	getflytstats();
+
+
+		 
+	 
  }
  
  
- if (next == 1) {
- $('#skip-setup').show();
- } else {
- $('#skip-setup').hide();
- }
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
  if (next == 4) {
  console.log("Pre-Checks NP");
  document.getElementById('precheck_status_network').innerHTML = '<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
