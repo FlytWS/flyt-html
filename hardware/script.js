@@ -312,8 +312,8 @@ function fetchStats1() {
 		console.log(obj[keyStoragePartition]);
 		var primaryStore = obj[keyStoragePartition];
 
-		chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_'+primaryStore]/100000000).toFixed(2);
-		chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_'+primaryStore]/100000000).toFixed(2);
+		chartStorage.data.datasets[0].data[0] = (obj['storage_usage_used_'+primaryStore]/1000000000).toFixed(2);
+		chartStorage.data.datasets[0].data[1] = (obj['storage_usage_free_'+primaryStore]/1000000000).toFixed(2);
 		chartStorage.update();
 
 
