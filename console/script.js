@@ -12,7 +12,7 @@ $(document).ready(function () {
 	setInterval(fetchStats1, 30000);
 	setInterval(getLocation, 10000);
 	setInterval(getGNSSLocation, 10000);
-	setInterval(getNews, 60000);
+	setInterval(getNews, 600000);
 	
 	
 });
