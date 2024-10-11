@@ -43,10 +43,10 @@ function getMap() {
 
 
 
-function notifyConsole(message) {
+function notifyConsole(div,message) {
 	
 var divMessage = `
-<header id="network-wifi" class="large-panel-button active" style="height:3rem; width:100%; padding:0; background-color:#00e7ff10;">
+<header id="`+div+`" class="large-panel-button active" style="height:3rem; width:100%; padding:0; background-color:#00e7ff10;">
 <div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;">`+message+`</div>
 </header>
 `;
@@ -164,14 +164,14 @@ function getLocation() {
 			} else {
 				
 				if ($("#n_locationset").length == 0) {
-					notifyConsole("<div id='n_locationset'></div>Map location is not set. Please set your map location in the settings.");
+					notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
 				}
 				
 			}
 			} catch (err) {
 				
 				if ($("#n_locationset").length == 0) {
-					notifyConsole("<div id='n_locationset'></div>Map location is not set. Please set your map location in the settings.");
+					notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
 				}
 				console.log(err);
 			}				
@@ -228,15 +228,13 @@ function getGNSSLocation() {
 				}
 
 
-				$('#state_gnss').removeClass("health-poor");
-				
 			} else {
 				
 				
 				markerGroupG.clearLayers();
 				
 				if ($("#n_gnssnotdetected").length == 0) {
-					notifyConsole("<div id='n_gnssnotdetected'></div>GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
+					notifyConsole("n_gnssnotdetected","GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
 				}
 				
 				$('#state_gnss').addClass("health-poor");
@@ -246,7 +244,7 @@ function getGNSSLocation() {
 			
 			if (resParse.satellites) {
 				if (resParse.satellites < 6 && $("#n_limitedgnss").length == 0) {
-					notifyConsole("<div id='n_limitedgnss'></div>Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+					notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
 				} else {
 					$("#n_limitedgns").remove();
 				}
@@ -305,7 +303,7 @@ function fetchStats2() {
 		if (s_cpu > 90) {
 			s_flag_node = 1;
 			if ($("#n_cpu").length == 0) {
-				notifyConsole("<div id='n_cpu'></div>CPU usage high. Please consider rebooting your node if usage remains high for a prolonged period.");
+				notifyConsole("n_cpu","CPU usage high. Please consider rebooting your node if usage remains high for a prolonged period.");
 			}
 		} else {
 			$("#n_cpu").remove();
@@ -324,7 +322,7 @@ function fetchStats2() {
 		if (s_ram < 100) {
 			s_flag_node = 1;
 			if ($("#n_ram").length == 0) {
-				notifyConsole("<div id='n_ram'></div>RAM usage high. Please consider rebooting your node.");
+				notifyConsole("n_ram","RAM usage high. Please consider rebooting your node.");
 			}
 		} else {
 			$("#n_cpu").remove();
@@ -350,7 +348,7 @@ function fetchStats2() {
 		if (s_storage < 10) {
 			s_flag_node = 1;
 			if ($("#n_storage").length == 0) {
-				notifyConsole("<div id='n_storage'></div>Storage is low. Please raise a support ticket with Flyt for further assistance.");
+				notifyConsole("n_storage","Storage is low. Please raise a support ticket with Flyt for further assistance.");
 			}
 		}
 
@@ -430,7 +428,7 @@ function fetchStats1() {
 			var s_temperature = (obj.temperature_current_cpu_thermal/1).toFixed();
 			if (s_temperature > 60) {
 			if ($("#n_temperature").length == 0) {
-			notifyConsole("<div id='n_temperature'></div>Temperature critical. Please ensure your node is ventilated and operating in a temperate environment.");
+			notifyConsole("n_temperature","Temperature critical. Please ensure your node is ventilated and operating in a temperate environment.");
 			}
 			$('#state_temperature').addClass("health-poor");
 			} else {
