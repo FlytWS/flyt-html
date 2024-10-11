@@ -1,5 +1,5 @@
 <?php
-
+clearstatcache();
 	
 	if ($_POST['request'] == "get-flyt-stats-2") {
 		
