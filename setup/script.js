@@ -3,6 +3,14 @@
 	
 
 $(document).ready(function () {
+	
+	
+	getWingbitsName();
+	getMap();
+    getLocation();
+	getGNSSLocation();
+	
+	setInterval(getGNSSLocation, 10000);
 
 
 
@@ -109,19 +117,25 @@ function getflytstats(request) {
 				console.log("check state");
 				
 
-				if (obj.network_address_eth0) {
+				if (obj.network_address_eth0 !== null) {
+					
+					console.log("check state eth0");
 					
 					$('#panel-ethernet').addClass('active');
 					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0).fadeIn();
 
 				}
-				if (obj.network_address_wlan0) {
+				if (obj.network_address_wlan0 !== null) {
+					
+					console.log("check state wlan0");
 					
 					$('#panel-wifi').addClass('active');
 					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
 					
 				}
-				if (obj.network_address_eth0 && obj.network_address_wlan0) {
+				if (obj.network_address_eth0 !== null && obj.network_address_wlan0 !== null) {
+					
+					console.log("check state eth0 && wlan0");
 					
 					$('#panel-ethernet').addClass('active');
 					$('#panel-wifi').addClass('active');
@@ -206,6 +220,57 @@ function nextPage(current, next) {
  
  
  
+
+
+
+let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false });
+
+var markerGroupL = L.layerGroup().addTo(cockpitMap);
+var markerGroupG = L.layerGroup().addTo(cockpitMap);
+
+function getMap() {
+	
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		className: 'cockpit-tiles'
+	}).addTo(cockpitMap);
+
+	let markers = L.layerGroup().addTo(cockpitMap);
+	cockpitMap.dragging.disable();
+
+	cockpitMap.setView([0,0], 1);
+
+};
+
+
+ 
+ 
+function getWingbitsName() {
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-wingbits-name' },
+		success: function(response) {
+			
+			if (response.length > 0) {
+				$('#wingbits-name').html('Registered Name : '+response).fadeIn();
+			} else {
+				$('#wingbits-name').html('Registered Name : Not Yet Registered').fadeIn();
+			}
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+
+			$('#wingbits-name').html('Registered Name : Name Not Found').fadeIn();
+			
+		}
+	});
+	
+};
+
  
  
  
@@ -215,11 +280,153 @@ function nextPage(current, next) {
  
  
  
- 
- 
- 
- 
- 
+var isLocationSet = 0;
+
+
+function getLocation() {
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-location' },
+		success: function(response) {
+			
+			try {
+			var resParse = JSON.parse(response);
+			
+			if (resParse.latitude) {
+				
+				isLocationSet = 1;
+				
+				if ($("#n_locationset").length == 1) {
+					$("#n_locationset").remove();
+				}
+
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#6ba7ff", radius: 10 });
+				var from = markerFrom.getLatLng();
+
+				markerFrom.bindPopup('Radio ' + (from).toString());
+				
+				markerGroupL.clearLayers();
+				markerFrom.addTo(markerGroupL);
+				
+
+				cockpitMap.setView([resParse.latitude,resParse.longitude], 16);				
+				
+			
+			} else {
+				
+				if ($("#n_locationset").length == 0) {
+					notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
+				}
+				
+			}
+			} catch (err) {
+				
+				if ($("#n_locationset").length == 0) {
+					notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
+				}
+				console.log(err);
+			}				
+			
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+			
+		}
+	});
+	
+};
+
+
+
+
+
+
+function getGNSSLocation() {
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-gnss' },
+		success: function(response) {
+			
+			console.log(response);
+			
+			try {
+			var resParse = JSON.parse(response);
+			
+			if (resParse.latitude) {
+				
+				
+				if ($("#n_gnssnotdetected").length == 1) {
+					$("#n_gnssnotdetected").remove();
+				}
+				$('#state_gnss').removeClass("health-poor");
+				
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd96", radius: 6 });
+				var from = markerFrom.getLatLng();
+
+				markerFrom.bindPopup('GNSS ' + (from).toString());
+
+				markerGroupG.clearLayers();
+				markerFrom.addTo(markerGroupG);
+				
+				
+				if (isLocationSet == 0) {
+					cockpitMap.setView([resParse.latitude,resParse.longitude], 16);
+				}
+
+
+			} else {
+				
+				
+				markerGroupG.clearLayers();
+				
+				if ($("#n_gnssnotdetected").length == 0) {
+					notifyConsole("n_gnssnotdetected","GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
+				}
+				
+				$('#state_gnss').addClass("health-poor");
+				
+				
+			}
+			
+			if (resParse.satellites) {
+				if (resParse.satellites < 6) {
+					if ($("#n_limitedgnss").length == 0) {
+						notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+					}
+				} else {
+					$("#n_limitedgnss").remove();
+				}
+			}
+			
+			} catch (err) {				
+				console.log(err);
+			}				
+			
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+				
+			
+		}
+	});
+	
+};
+
+
+
+
+
+
  
  
  
