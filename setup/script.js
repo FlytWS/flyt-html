@@ -15,7 +15,7 @@ $(document).ready(function () {
 			console.log(this.id);
 			
 			if (this.id == "panel-ethernet") {
-				$("#network-title").html("Ethernet");
+				$("#network-title").html("");
 				$("#network-stats").html("");
 				getflytstats("ethernet");
 			}
@@ -108,9 +108,12 @@ function getflytstats(request) {
 			
 			var obj = JSON.parse(response);
 			console.log(obj);
+			
 
 			if (request == "check-state") {
 				console.log("check state");
+				$('#panel-ethernet').addClass('removeClass');
+				$('#panel-wifi').addClass('removeClass');
 				
 
 				if (obj.network_address_eth0) {
