@@ -295,6 +295,39 @@ function getMap() {
 };
 
 
+var theMarker = {};
+
+cockpitMap.on('click',function(e){
+	
+	document.getElementById('registrationNotification').innerHTML = spinner;
+	
+    lat = e.latlng.lat;
+    lon = e.latlng.lng;
+
+	if (theMarker != undefined) {
+		  cockpitMap.removeLayer(theMarker);
+	};
+
+    theMarker = L.marker([lat,lon]).addTo(cockpitMap);  
+	
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  
 function getWingbitsName() {
