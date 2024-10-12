@@ -4,9 +4,9 @@ $(document).ready(function () {
 	getWingbitsName();
 	getMap();
     getLocation();
-	getGNSSLocation();
+	getGNSSLocation("initial");
 	
-	setInterval(getGNSSLocation, 10000);
+	setInterval(getGNSSLocation("update"), 10000);
 
 
 
@@ -435,7 +435,7 @@ function getLocation() {
 
 
 
-function getGNSSLocation() {
+function getGNSSLocation(tag) {
 	
 	$.ajax({
 		url: 'ajax.php',
@@ -467,7 +467,9 @@ function getGNSSLocation() {
 				
 				
 				if (isLocationSet == 0) {
-					cockpitMap.setView([resParse.latitude,resParse.longitude], 16);
+					if (tag == "initial") {
+						cockpitMap.setView([resParse.latitude,resParse.longitude], 16);
+					}
 				}
 
 
