@@ -371,14 +371,14 @@ function getLocation() {
 			} else {
 				
 				if ($("#n_locationset").length == 0) {
-					notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
+					//notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
 				}
 				
 			}
 			} catch (err) {
 				
 				if ($("#n_locationset").length == 0) {
-					notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
+					//notifyConsole("n_locationset","Map location is not set. Please set your map location in the settings.");
 				}
 				console.log(err);
 			}				
@@ -441,7 +441,7 @@ function getGNSSLocation() {
 				markerGroupG.clearLayers();
 				
 				if ($("#n_gnssnotdetected").length == 0) {
-					notifyConsole("n_gnssnotdetected","GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
+					//notifyConsole("n_gnssnotdetected","GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
 				}
 				
 				$('#state_gnss').addClass("health-poor");
@@ -452,7 +452,7 @@ function getGNSSLocation() {
 			if (resParse.satellites) {
 				if (resParse.satellites < 6) {
 					if ($("#n_limitedgnss").length == 0) {
-						notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+						//notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
 					}
 				} else {
 					$("#n_limitedgnss").remove();
