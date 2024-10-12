@@ -10,13 +10,12 @@ $(document).ready(function () {
 			$(this).addClass("active").siblings().removeClass("active");
 			console.log(this.id);
 			
-			if (this.id == "network-ethernet") {
+			if (this.id == "panel-ethernet") {
 				$("#network-title").html("Ethernet");
-				$("#network-stats").html("You are connected to Ethernet on IP address <div id='ethernet_description_ip'></div>.");
+				$("#network-stats").html("");
 			}
-			if (this.id == "network-wifi") {
+			if (this.id == "panel-wifi") {
 				$("#network-title").html('<div style="display:flex; width: 17rem;   justify-content: space-around;"><div id="wifiback" onclick="WiFiBack()" style="cursor:pointer; height:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></div><div>WiFi</div><div id="wifirescan" onclick="WiFiBack()" style="cursor:pointer; height:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></div></div>');
-				//$("#network-stats").html("IP Address : 192.168.1.x<br>Network Connection Is Good");
 				$("#network-stats").html('<div id="lets-go-div" style="text-align:center;"><div class="lets-go-div-ssid" onclick="setWiFi(&quot;278BB0&quot;);">278BB0</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;EE WiFi&quot;);">EE WiFi</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;ESP_48BD6B&quot;);">ESP_48BD6B</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;GLM&quot;);">GLM</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;GLMG&quot;);">GLMG</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;SKY7JUZM&quot;);">SKY7JUZM</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;VM1459509&quot;);">Hidden Network</div></div>');
 			}
 	});
@@ -91,7 +90,8 @@ function WiFiBack() {
 
 
 
-function getflytstats() {
+function getflytstats(request) {
+	
 	
 	$.ajax({
 		url: 'ajax.php',
@@ -102,22 +102,66 @@ function getflytstats() {
 			
 			var obj = JSON.parse(response);
 
+			if (request == null) {
+				
 
-			if (obj.network_address_eth0) {
-				$('#panel-ethernet').addClass('active');
-				$('#network-title').hide().html('Ethernet').fadeIn();
-				$('#network-stats').hide().html(obj.network_address_eth0).fadeIn();
+				if (obj.network_address_eth0 && obj.network_address_wlan0) {
+					
+					$('#panel-ethernet').addClass('active');
+					$('#panel-wifi').addClass('active');
+					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0+' and WiFi on IP address '+obj.network_address_wlan0).fadeIn();
+					
+					
+				} else if (obj.network_address_eth0) {
+					
+					$('#panel-ethernet').addClass('active');
+					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0).fadeIn();
+					
+					
+				} else if (obj.network_address_wlan0) {
+					
+					$('#panel-wifi').addClass('active');
+					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
+					
+					
+				}
+				
+				
 			}
 			
-			if (obj.network_address_wlan0) {
-				$('#panel-wifi').addClass('active');
-				$('#network-title').hide().html('WiFi').fadeIn();
-				$('#network-stats').hide().html(obj.network_address_wlan0).fadeIn();
+
+			if (request == "ethernet") {
+				
+				if (obj.network_address_eth0) {
+					
+					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0).fadeIn();
+					
+				} else {
+					
+					$('#network-state').hide().html('Unable to connect to Ethernet. Please check your network cable.').fadeIn();
+					
+				}				
+				
 			}
 			
-
-
 			
+			if (request == "wifi") {
+				
+				if (obj.network_address_wlan0) {
+					
+					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
+					
+				} else {
+					
+					$('#network-state').hide().html('Connect to your WiFi').fadeIn();
+					
+				}				
+				
+			}
+			
+			
+
+
 		},
 		error: function(err) {
 			
@@ -152,9 +196,6 @@ function nextPage(current, next) {
 
 	getflytstats();
 
-
-		 
-	 
  }
  
  
