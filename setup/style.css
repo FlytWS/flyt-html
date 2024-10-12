@@ -1,45 +1,3 @@
-#page-title header {
-	display:flex;
-	justify-content: space-between;
-	align-items: center;
-padding: 1.4rem;
-    height: 18px;
-    padding-bottom: 0.7rem;
-}
-#page-title h1 {
-    font-size: 0.8rem;
-    line-height: 0;
-    letter-spacing: 0.8rem;
-    text-transform: uppercase;
-    font-weight: 400;
-	display: flex;
-}
-#page-title h1:before {content:"\00a0"; font-size: 0;}
-#page-title svg {
-	cursor:pointer;
-}
-
-
-#page-body header {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	padding:1rem;
-}
-#page-footer header {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	padding:2rem;
-	padding-bottom:3rem;
-	font-size:0.8rem;
-	font-weight: 400;
-	position:fixed;
-	width:calc(100% - 16px - 4.2rem);
-	bottom:0rem;
-	background-color:#222431;
-}
-
 .large-panel-button {
 	width:6rem; height:6rem;  background-color:#ffffff10; border-radius:0.75rem; flex-direction: column; padding:0;
 }
@@ -51,17 +9,22 @@ padding: 1.4rem;
 	background-color:#ffffff20;
 }
 
-sub {
-	margin-bottom: 2rem;
-    color: #fbfbfb80;
-    text-align: center;
-    font-size: 0.6rem;
-}
-
 
 .page {
-    position: absolute;
-    width: 100%;
+    width: 100vw;
+	position:fixed;
+}
+#page-footer header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: fixed;
+    width: calc(100vw - 4rem);
+    bottom: 0rem;
 }
 
 .lets-go-div-ssid {

@@ -12,64 +12,16 @@ $(document).ready(function () {
 			
 			if (this.id == "network-ethernet") {
 				$("#network-title").html("Ethernet");
-				$("#network-stats").html("IP Address : 192.168.1.x<br>Network Connection Is Excellent");
+				$("#network-stats").html("You are connected to Ethernet on IP address <div id='ethernet_description_ip'></div>.");
 			}
 			if (this.id == "network-wifi") {
 				$("#network-title").html('<div style="display:flex; width: 17rem;   justify-content: space-around;"><div id="wifiback" onclick="WiFiBack()" style="cursor:pointer; height:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></div><div>WiFi</div><div id="wifirescan" onclick="WiFiBack()" style="cursor:pointer; height:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></div></div>');
-				$("#network-stats").html("IP Address : 192.168.1.x<br>Network Connection Is Good");
+				//$("#network-stats").html("IP Address : 192.168.1.x<br>Network Connection Is Good");
 				$("#network-stats").html('<div id="lets-go-div" style="text-align:center;"><div class="lets-go-div-ssid" onclick="setWiFi(&quot;278BB0&quot;);">278BB0</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;EE WiFi&quot;);">EE WiFi</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;ESP_48BD6B&quot;);">ESP_48BD6B</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;GLM&quot;);">GLM</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;GLMG&quot;);">GLMG</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;SKY7JUZM&quot;);">SKY7JUZM</div><div class="lets-go-div-ssid" onclick="setWiFi(&quot;VM1459509&quot;);">Hidden Network</div></div>');
 			}
 	});
 
-	
-	
-
-	
-	
-
-    $('.slideout-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('.slideout-menu');
-    	var slideoutMenuWidth = $('.slideout-menu').width();
-    	
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	left: "0px"
-	    	});	
-    	} else {
-	    	slideoutMenu.animate({
-		    	left: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
-	
-	$('.slideleft-menu-toggle').on('click', function(event){
-    	event.preventDefault();
-    	// create menu variables
-    	var slideleftMenu = $('.slideleft-menu');
-    	var slideleftMenuWidth = $('.slideleft-menu').width();
-    	
-    	// toggle open class
-    	slideleftMenu.toggleClass("open");
-    	
-    	// slide menu
-    	if (slideleftMenu.hasClass("open")) {
-	    	slideleftMenu.animate({
-		    	right: "0px"
-	    	});	
-    	} else {
-	    	slideleftMenu.animate({
-		    	right: "-100vw"
-	    	}, 250);	
-    	}
-    });
-	
+		
 	
 	
 });
