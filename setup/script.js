@@ -276,7 +276,7 @@ function previousPage(current, previous) {
 
 
 
-let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false });
+let cockpitMap = L.map('cMap', { zoomControl: true,    scrollWheelZoom: false });
 
 var markerGroupL = L.layerGroup().addTo(cockpitMap);
 var markerGroupG = L.layerGroup().addTo(cockpitMap);
@@ -288,7 +288,7 @@ function getMap() {
 	}).addTo(cockpitMap);
 
 	let markers = L.layerGroup().addTo(cockpitMap);
-	cockpitMap.dragging.disable();
+	//cockpitMap.dragging.disable();
 
 	cockpitMap.setView([0,0], 1);
 
