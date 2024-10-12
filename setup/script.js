@@ -103,6 +103,7 @@ function getflytstats(request) {
 		success: function(response) {
 			
 			var obj = JSON.parse(response);
+			console.log(obj);
 
 			if (request == "check-state") {
 				
