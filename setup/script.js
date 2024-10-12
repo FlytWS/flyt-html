@@ -106,27 +106,27 @@ function getflytstats(request) {
 			console.log(obj);
 
 			if (request == "check-state") {
+				console.log("check state");
 				
 
+				if (obj.network_address_eth0) {
+					
+					$('#panel-ethernet').addClass('active');
+					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0).fadeIn();
+
+				}
+				if (obj.network_address_wlan0) {
+					
+					$('#panel-wifi').addClass('active');
+					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
+					
+				}
 				if (obj.network_address_eth0 && obj.network_address_wlan0) {
 					
 					$('#panel-ethernet').addClass('active');
 					$('#panel-wifi').addClass('active');
 					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0+' and WiFi on IP address '+obj.network_address_wlan0).fadeIn();
-					
-					
-				} else if (obj.network_address_eth0) {
-					
-					$('#panel-ethernet').addClass('active');
-					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0).fadeIn();
-					
-					
-				} else if (obj.network_address_wlan0) {
-					
-					$('#panel-wifi').addClass('active');
-					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
-					
-					
+
 				}
 				
 				
