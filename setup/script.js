@@ -1,11 +1,7 @@
-
-	
-	
-
 $(document).ready(function () {
 	
 	
-	getWingbitsName();
+	//getWingbitsName();
 	getMap();
     getLocation();
 	getGNSSLocation();
@@ -117,7 +113,7 @@ function getflytstats(request) {
 				console.log("check state");
 				
 
-				if (obj.network_address_eth0 !== null) {
+				if (obj.network_address_eth0) {
 					
 					console.log("check state eth0");
 					
@@ -125,7 +121,7 @@ function getflytstats(request) {
 					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0).fadeIn();
 
 				}
-				if (obj.network_address_wlan0 !== null) {
+				if (obj.network_address_wlan0) {
 					
 					console.log("check state wlan0");
 					
@@ -133,7 +129,7 @@ function getflytstats(request) {
 					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
 					
 				}
-				if (obj.network_address_eth0 !== null && obj.network_address_wlan0 !== null) {
+				if (obj.network_address_eth0 && obj.network_address_wlan0) {
 					
 					console.log("check state eth0 && wlan0");
 					

@@ -4,6 +4,7 @@
 <head>
 	<title>Flyt Setup</title>
 	<?php include_once('../includes/head.php'); ?>
+	<link rel="stylesheet" href="/flyt/global/style/leaflet.1.9.4.css"/>
 	<link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -169,5 +170,7 @@
 
 <script src="/flyt/global/script/jquery.min.3.7.1.js"></script>
 <script src="/flyt/global/script/jquery-ui.min.1.11.3.js"></script>
+<script src="/flyt/global/script/leaflet.min.1.9.4.js"></script>
+<script src="/flyt/global/script/moment.min.2.30.0.js"></script>
 <script src="/flyt/global/script/script.js"></script>
 <script src="script.js"></script>
