@@ -309,7 +309,8 @@ cockpitMap.on('click',function(e){
 		  cockpitMap.removeLayer(theMarker);
 	};
 
-    theMarker = L.marker([lat,lon]).addTo(cockpitMap);  
+    theMarker = L.marker([lat,lon]).addTo(cockpitMap); 
+	console.log(lat+" - "+lon);
 	
 	
 });
