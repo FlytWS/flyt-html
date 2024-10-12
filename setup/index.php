@@ -64,9 +64,9 @@
 	</div>
 	</div>
 
-	<div id="network_state" style="margin-bottom:1rem; margin-top:1rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;"></div>
-	<div id="network-title"  style="margin-bottom:1rem; margin-top:1rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;"></div>
-	<div id="network-stats"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem; width: 17rem;"></div>
+	<div id="network-state" style="margin-bottom:1rem; margin-top:1rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">x</div>
+	<div id="network-title" style="margin-bottom:1rem; margin-top:1rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">y</div>
+	<div id="network-stats" style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem; width: 17rem;">z</div>
 
 	</header>
 	</section>
