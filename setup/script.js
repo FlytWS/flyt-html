@@ -279,7 +279,7 @@ function previousPage(current, previous) {
 
 
 
-let cockpitMap = L.map('cMap', { zoomControl: true,    scrollWheelZoom: false });
+let cockpitMap = L.map('cMap', { zoomControl: true,    scrollWheelZoom: true });
 
 var markerGroupL = L.layerGroup().addTo(cockpitMap);
 var markerGroupG = L.layerGroup().addTo(cockpitMap);
@@ -301,9 +301,7 @@ function getMap() {
 var theMarker = {};
 
 cockpitMap.on('click',function(e){
-	
-	document.getElementById('registrationNotification').innerHTML = spinner;
-	
+		
     lat = e.latlng.lat;
     lon = e.latlng.lng;
 
