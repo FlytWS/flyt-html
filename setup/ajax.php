@@ -42,11 +42,12 @@ clearstatcache();
 
 	if ($_POST['request'] == "scan-wifi") {
 		
-		$output=null;
-		$retval=null;
+		#$output=null;
+		#$retval=null;
 		//exec('nmcli --mode tabular --terse --fields SSID,CHAN,RATE,SIGNAL,SECURITY,IN-USE device wifi', $output, $retval);
-		exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --', $output, $retval);
-		echo json_encode($output);		
+		#exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --', $output, $retval);
+		$output = shell_exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --  2>&1');
+		echo json_encode($output);
 
 	}
 	
