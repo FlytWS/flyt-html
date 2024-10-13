@@ -45,7 +45,7 @@ clearstatcache();
 		exec('python3 /etc/flyt/scripts/flyt-wifi-scan.py');
 		$file = '/etc/flyt/data/flyt-wifi-scan.json';
 		if (file_exists($file)) {
-			echo json_encode(file_get_contents($file));
+			echo file_get_contents($file);
 		};
 		
 
