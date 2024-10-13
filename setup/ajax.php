@@ -48,11 +48,13 @@ clearstatcache();
 		#exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --', $output, $retval);
 		#$output = shell_exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --  2>&1');
 		
-		$command = escapeshellcmd('python3 /etc/flyt/scripts/flyt-wifi-scan.py');
-		$output = shell_exec($command);
-		echo $output;
 		
-		#echo json_encode($output);
+		$output = [];
+		$return_var = 0;
+		exec('python3 /etc/flyt/scripts/flyt-wifi-scan.py', $output, $return_var);
+		echo json_encode($output);
+		#print_r($output);
+
 
 	}
 	
