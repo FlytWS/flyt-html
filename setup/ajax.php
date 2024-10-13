@@ -48,7 +48,7 @@ clearstatcache();
 		#exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --', $output, $retval);
 		#$output = shell_exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --  2>&1');
 		
-		$command = escapeshellcmd('/etc/flyt/scripts/flyt-wifi-scan.py');
+		$command = escapeshellcmd('python3 /etc/flyt/scripts/flyt-wifi-scan.py');
 		$output = shell_exec($command);
 		echo $output;
 		
