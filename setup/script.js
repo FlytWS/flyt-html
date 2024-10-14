@@ -63,6 +63,15 @@ function WiFiRescan() {
 		}
 	  }
 	);
+	$('#wifirescan').stop().animate(
+	  {rotation: 0},
+	  {
+		duration: 0,
+		step: function(now, fx) {
+		  $(this).css({"transform": "rotate("+now+"deg)"});
+		}
+	  }
+	);
 
 }
 
