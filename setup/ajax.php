@@ -47,7 +47,7 @@ clearstatcache();
 		$file = '/etc/flyt/data/flyt-wifi-scan.json';
 		if (file_exists($file)) {
 			
-			 $fileopen = file( 'file.txt' , FILE_SKIP_EMPTY_LINES);
+			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
 			 foreach ( $fileopen as $line ) {
 				$lines[]=$line;
 			 }
