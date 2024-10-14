@@ -10,7 +10,3 @@
 	<link rel="preload" href='/flyt/global/style/quicksand.css' as="style">
 	<link rel="stylesheet" href="/flyt/global/style/normalize.min.css"/>
 	<link rel="stylesheet" href="/flyt/global/style/style.css"/>
-	
-	<?php
-		ini_set('max_execution_time', 300);
-	?>

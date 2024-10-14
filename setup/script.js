@@ -71,10 +71,15 @@ function WiFiConnectBtn() {
 			//var obj = JSON.parse(response);
 
 			if (response.includes('successfully activated') == true) {
-				response = "Successfully connected to "+inputPassphrase;
+				response = "Successfully connected to "+inputSSID;
 				$('#network-state').hide().html(response).fadeIn();			
 				$('#network-wifi-connect-wait').hide();
 			} else {
+				
+				if (response.includes('Secrets were required, but not provided') == true) {
+					response = "Unable to connect to WiFi, likely incorrect passphrase";
+				}
+				
 				$('#network-state').hide().html(response).fadeIn();			
 				$('#network-wifi-connect-wait').hide();
 				$('#network-wifi-connect').fadeIn();
@@ -498,7 +503,7 @@ function getGNSSLocation(tag) {
 				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd96", radius: 6 });
 				var from = markerFrom.getLatLng();
 
-				markerFrom.bindPopup('GNSS ' + (from).toString());
+				//markerFrom.bindPopup('GNSS ' + (from).toString());
 
 				markerGroupG.clearLayers();
 				markerFrom.addTo(markerGroupG);
