@@ -51,21 +51,16 @@ function WiFiConnectBtn() {
 	}
 }
 
+var wifirescanrotate = 0;
 function WiFiRescan() {
 	wifiScan();
 	
+	wifirescanrotate += 360;
+	
 	$('#wifirescan').stop().animate(
-	  {rotation: 360},
+	  {rotation: wifirescanrotate},
 	  {
 		duration: 500,
-		step: function(now, fx) {
-		  $(this).css({"transform": "rotate("+now+"deg)"});
-		}
-	  }
-	).stop().animate(
-	  {rotation: 0},
-	  {
-		duration: 0,
 		step: function(now, fx) {
 		  $(this).css({"transform": "rotate("+now+"deg)"});
 		}
