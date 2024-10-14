@@ -52,7 +52,7 @@ clearstatcache();
 				
 				$line=str_replace("\r\n","",$line);
 				$line=rtrim($line," ");
-				if ($line !== 'SSID' || $line !== '--') {
+				if ($line !== 'SSID ' || $line !== '--') {
 					$lines[]=$line;
 				}
 			 }
