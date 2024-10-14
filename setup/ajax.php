@@ -52,6 +52,7 @@ clearstatcache();
 			 foreach ( $fileopen as $line ) {
 				
 				$line=str_replace("\n","",$line);
+				$line=str_replace("\r","",$line);
 				$line=rtrim($line," ");
 				
 				if (strlen($line) > 0) {
@@ -76,6 +77,9 @@ clearstatcache();
 		$ssid = $_POST['ssid'];
 		$passphrase = $_POST['passphrase'];
 		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli dev wifi connect "'.$ssid.'" password "'.$passphrase.'"  2>&1');
+		$output = str_replace("\u001b[2K","",$output);
+		$output = str_replace("\n","",$output);
+		$output = str_replace("\r","",$output);
 		echo json_encode($output);
 		
 	}

@@ -55,6 +55,7 @@ function WiFiConnectBtn() {
 	var inputSSID = $('#wifiSSIDInput').val();
 	var inputPassphrase = $('#wifiPassphraseInput').val();
 	
+	$('#network-state').html('');
 	$('#network-wifi-connect').hide();
 	$('#network-wifi-connect-wait').fadeIn();
 	
@@ -67,12 +68,20 @@ function WiFiConnectBtn() {
 		success: function(response) {
 			
 			console.log(response);
-			var obj = JSON.parse(response);
-			console.log(obj);
+			//var obj = JSON.parse(response);
+
+			if (response.includes('successfully activated') == true) {
+				response = "Successfully connected to "+inputPassphrase;
+				$('#network-state').hide().html(response).fadeIn();			
+				$('#network-wifi-connect-wait').hide();
+			} else {
+				$('#network-state').hide().html(response).fadeIn();			
+				$('#network-wifi-connect-wait').hide();
+				$('#network-wifi-connect').fadeIn();
+			}
 			
-			$('#network-state').hide().html(obj).fadeIn();			
-			$('#network-wifi-connect-wait').hide();
-			$('#network-wifi-connect').fadeIn();
+			
+			
 			
 		},
 		error: function(err) {
