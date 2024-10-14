@@ -52,12 +52,14 @@ function WiFiConnectBtn() {
 		return;
 	}
 	
+	var inputSSSID = $('#wifiSSIDInput').text;
+	var inputPassphrase = $('#wifiPassphraseInput').text;
 	
 	$.ajax({
 		url: 'ajax.php',
 		type: 'POST',
 		cache: false,
-		data: { request: 'connect-wifi' },
+		data: { request: 'connect-wifi', ssid: inputSSSID, passphrase: inputPassphrase },
 		success: function(response) {
 			
 			console.log(response);
