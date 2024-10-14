@@ -49,11 +49,14 @@ clearstatcache();
 			
 			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
 			 foreach ( $fileopen as $line ) {
+				
+				$line=str_replace("\r\n","",$line);
 				$lines[]=$line;
 			 }
-			
+			 
+			$uniqueLines = array_unique($lines);
 			//echo file_get_contents($file);
-			echo json_encode($lines);
+			echo json_encode($uniqueLines);
 		};
 		
 
