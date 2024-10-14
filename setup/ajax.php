@@ -51,7 +51,10 @@ clearstatcache();
 			 foreach ( $fileopen as $line ) {
 				
 				$line=str_replace("\r\n","",$line);
-				$lines[]=$line;
+				$line=rtrim($line," ");
+				if ($line !== 'SSID' || $line !== '--') {
+					$lines[]=$line;
+				}
 			 }
 			 
 			$uniqueLines = array_unique($lines);
