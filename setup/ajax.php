@@ -75,25 +75,12 @@ clearstatcache();
 
 		$ssid = $_POST['ssid'];
 		$passphrase = $_POST['passphrase'];
-		$output = shell_exec('nmcli dev wifi connect "'.$ssid.'" password "'.$passphrase.'"  2>&1');
+		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli dev wifi connect "'.$ssid.'" password "'.$passphrase.'"  2>&1');
 		echo json_encode($output);
 		
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
+	
 
 
 	if ($_POST['request'] == "skip-setup") {
@@ -106,26 +93,27 @@ clearstatcache();
 		exec("echo -n '0' | tee '/var/www/html/flyt-data/setupcomplete'", $output, $retval);
 		
 	}
-	/*
-	if ($_POST['request'] == "scan-wifi") {
-		
-		$output=null;
-		$retval=null;
-		//exec('nmcli --mode tabular --terse --fields SSID,CHAN,RATE,SIGNAL,SECURITY,IN-USE device wifi', $output, $retval);
-		exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --', $output, $retval);
-		echo json_encode($output);
 
-	}
-	
-	if ($_POST['request'] == "connect-wifi") {
 
-		$ssid = $_POST['ssid'];
-		$passphrase = $_POST['passphrase'];
-		$output = shell_exec('nmcli dev wifi connect "'.$ssid.'" password "'.$passphrase.'"  2>&1');
-		echo json_encode($output);
-		
-	}
-	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	if ($_POST['request'] == "insert-vector") {
 		
 		$hardwaresn = trim(file_get_contents('/etc/flyt/data/serial'));

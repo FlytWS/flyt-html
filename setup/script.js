@@ -45,10 +45,35 @@ function setWiFi(ssid) {
 function WiFiConnectBtn() {
 	if ($('#wifiSSIDInput').val().length < 1) {
 		$( "#wifiSSID" ).effect( "shake" );
+		return;
 	}
 	if ($('#wifiPassphraseInput').val().length < 8) {
 		$( "#wifiPassphrase" ).effect( "shake" );
+		return;
 	}
+	
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'connect-wifi' },
+		success: function(response) {
+			
+			console.log(response);
+			var obj = JSON.parse(response);
+			console.log(obj);
+			
+		},
+		error: function(err) {
+			
+			console.log(err);
+			
+		}
+		
+	});
+	
+			
 }
 
 var wifirescanrotate = 0;
@@ -199,43 +224,23 @@ function getflytstats(request) {
 
 function nextPage(current, next) {
  
- $('#p'+current).animate({
- marginLeft: "-200vw"
- }, 1000);
- $('#p'+next).animate({
- marginLeft: "0"
- }, 1000);
- 
- 
+	$('#p'+current).animate({
+	marginLeft: "-200vw"
+	}, 1000);
+	$('#p'+next).animate({
+	marginLeft: "0"
+	}, 1000);
 
  
- 
- if (next == 2) {
+
+	if (next == 2) {	 
 	 
-	 
-	var wifi_ip_string = null;
-	var ethernet_ip_string = null;
+		var wifi_ip_string = null;
+		var ethernet_ip_string = null;
 
-	getflytstats("check-state");
+		getflytstats("check-state");
 
- }
- 
- 
- 
- 
- 
- if (next == 4) {
- console.log("Pre-Checks NP");
- document.getElementById('precheck_status_network').innerHTML = '<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
- document.getElementById('precheck_status_wingbits').innerHTML = '';
- document.getElementById('precheck_status_internet').innerHTML = '';
- document.getElementById('precheck_status_cloud').innerHTML = '';
- document.getElementById('precheck_status_network_description').innerHTML = 'Setting up the network parameters and getting your Flyt Node connected';
- document.getElementById('precheck_status_wingbits_description').innerHTML = 'Registering your Wingbits Antenna ID with your Flyt Node';
- document.getElementById('precheck_status_internet_description').innerHTML = 'Let\'s check you have access to the Flyt and Wingbit\'s cloud services';
- document.getElementById('precheck_status_cloud_description').innerHTML = 'Registering your Node to the Flyt Cloud';
- setTimeout(preChecks,2000);
- } 
+	}
  
  
 }
@@ -243,35 +248,14 @@ function nextPage(current, next) {
  
 
 function previousPage(current, previous) {
- 
- $('#p'+current).animate({
- marginLeft: "100vw"
- }, 1000);
- $('#p'+previous).animate({
- marginLeft: "0vw"
- }, 1000);
- 
 
- $("#l"+current).removeClass('slider-changed'); 
+	$('#p'+current).animate({
+	marginLeft: "100vw"
+	}, 1000);
+	$('#p'+previous).animate({
+	marginLeft: "0vw"
+	}, 1000);
  
- if (previous == 1) {
- $('#skip-setup').show();
- } else {
- $('#skip-setup').hide();
- }
- 
- if (previous == 4) {
- console.log("Pre-Checks PP");
- document.getElementById('precheck_status_network').innerHTML = '<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
- document.getElementById('precheck_status_wingbits').innerHTML = '';
- document.getElementById('precheck_status_internet').innerHTML = '';
- document.getElementById('precheck_status_cloud').innerHTML = '';
- document.getElementById('precheck_status_network_description').innerHTML = 'Setting up the network parameters and getting your Flyt Node connected';
- document.getElementById('precheck_status_wingbits_description').innerHTML = 'Registering your Wingbits Antenna ID with your Flyt Node';
- document.getElementById('precheck_status_internet_description').innerHTML = 'Let\'s check you have access to the Flyt and Wingbit\'s cloud services';
- document.getElementById('precheck_status_cloud_description').innerHTML = 'Registering your Node to the Flyt Cloud';
- setTimeout(preChecks,2000);
- } 
  
 }
 
