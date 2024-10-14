@@ -79,14 +79,16 @@ function WiFiConnectBtn() {
 				$('#network-wifi-connect-wait').hide();
 				$('#network-wifi-connect').fadeIn();
 			}
-			
-			
+				
 			
 			
 		},
 		error: function(err) {
 			
-			console.log(err);
+			$('#network-state').hide().html("There has been an error. Please try again.").fadeIn();			
+			$('#network-wifi-connect-wait').hide();
+			$('#network-wifi-connect').fadeIn();
+			
 			
 		}
 		
