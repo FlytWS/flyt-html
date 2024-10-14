@@ -51,7 +51,7 @@ clearstatcache();
 			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
 			 foreach ( $fileopen as $line ) {
 				
-				$line=str_replace("\r\n","",$line);
+				$line=str_replace("\n","",$line);
 				$line=rtrim($line," ");
 				
 				if (strlen($line) > 0) {
