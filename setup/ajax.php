@@ -53,13 +53,18 @@ clearstatcache();
 				
 				$line=str_replace("\r\n","",$line);
 				$line=rtrim($line," ");
-				if(!in_array($line,$reject)){  
-					$lines[]=$line;
+				
+				if (strlen($line) > 0) {
+					if(!in_array($line,$reject)){  
+						$lines[]=$line;
+					}
 				}
+				
 			 }
 			 
+
 			$uniqueLines = array_unique($lines);
-			//echo file_get_contents($file);
+			$lines[]="Hidden Network";
 			echo json_encode($uniqueLines);
 		};
 		
