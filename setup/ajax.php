@@ -47,12 +47,13 @@ clearstatcache();
 		$file = '/etc/flyt/data/flyt-wifi-scan.json';
 		if (file_exists($file)) {
 			
+			$reject = array("SSID","--");
 			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
 			 foreach ( $fileopen as $line ) {
 				
 				$line=str_replace("\r\n","",$line);
 				$line=rtrim($line," ");
-				if ($line !== 'SSID ' || $line !== '--') {
+				if(!in_array($line,$reject)){  
 					$lines[]=$line;
 				}
 			 }
