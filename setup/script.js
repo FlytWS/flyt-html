@@ -177,11 +177,7 @@ function getflytstats(request) {
 					
 					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
 					
-				} else {
-					
-					$('#network-state').hide().html('Connect to your WiFi').fadeIn();
-					
-				}				
+				}			
 				
 			}
 			
