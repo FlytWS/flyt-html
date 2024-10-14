@@ -43,7 +43,7 @@ clearstatcache();
 	if ($_POST['request'] == "scan-wifi") {
 		
 		$lines=array();
-		exec('python3 /etc/flyt/scripts/flyt-wifi-scan.py');
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-scan.py"');
 		$file = '/etc/flyt/data/flyt-wifi-scan.json';
 		if (file_exists($file)) {
 			
@@ -64,7 +64,7 @@ clearstatcache();
 			 
 
 			$uniqueLines = array_unique($lines);
-			$lines[]="Hidden Network";
+			array_push($lines,"Hidden Network");
 			echo json_encode($uniqueLines);
 		};
 		
