@@ -62,8 +62,7 @@ function WiFiRescan() {
 		  $(this).css({"transform": "rotate("+now+"deg)"});
 		}
 	  }
-	);
-	$('#wifirescan').stop().animate(
+	).stop().animate(
 	  {rotation: 0},
 	  {
 		duration: 0,
