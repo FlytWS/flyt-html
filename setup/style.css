@@ -29,6 +29,7 @@
 
 .lets-go-div-ssid {
 	cursor:pointer;
+	padding: 0.5rem;
 }
 #wifiSSIDInput {
 background-color: #ffffff10;

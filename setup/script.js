@@ -36,6 +36,10 @@ $(document).ready(function () {
 
 
 function setWiFi(ssid) {
+	console.log(ssid);
+	if (ssid.includes('Hidden Network') == true) {
+		ssid = "";
+	}
 	$("#wifiback").css('visibility', 'visible');
 	$("#wifirescan").css('visibility', 'hidden');
 	$("#network-stats").html('<div><div id="wifiSSID" class="lets-go" style=""><input id="wifiSSIDInput" type="text" placeholder="WiFi SSID" style="text-align:center;" value='+ssid+'></div><div id="wifiPassphrase" class="lets-go" style=""><input id="wifiPassphraseInput" placeholder="WiFi Passphrase" style="text-align:center;"></div></div>');
