@@ -42,10 +42,18 @@ clearstatcache();
 
 	if ($_POST['request'] == "scan-wifi") {
 		
+		$lines=array();
 		exec('python3 /etc/flyt/scripts/flyt-wifi-scan.py');
 		$file = '/etc/flyt/data/flyt-wifi-scan.json';
 		if (file_exists($file)) {
-			echo file_get_contents($file);
+			
+			 $fileopen = file( 'file.txt' , FILE_SKIP_EMPTY_LINES);
+			 foreach ( $fileopen as $line ) {
+				$lines[]=$line;
+			 }
+			
+			//echo file_get_contents($file);
+			echo json_encode($lines);
 		};
 		
 
@@ -92,7 +100,7 @@ clearstatcache();
 		$retval=null;
 		//exec('nmcli --mode tabular --terse --fields SSID,CHAN,RATE,SIGNAL,SECURITY,IN-USE device wifi', $output, $retval);
 		exec('nmcli -f SSID dev wifi | sort | uniq | grep -v SSID | grep -v -- --', $output, $retval);
-		echo json_encode($output);		
+		echo json_encode($output);
 
 	}
 	if ($_POST['request'] == "connect-wifi") {
