@@ -94,6 +94,7 @@ clearstatcache();
 		exec("echo -n '0' | tee '/var/www/html/flyt-data/setupcomplete'", $output, $retval);
 		
 	}
+	/*
 	if ($_POST['request'] == "scan-wifi") {
 		
 		$output=null;
@@ -103,6 +104,7 @@ clearstatcache();
 		echo json_encode($output);
 
 	}
+	
 	if ($_POST['request'] == "connect-wifi") {
 
 		$ssid = $_POST['ssid'];
@@ -111,6 +113,7 @@ clearstatcache();
 		echo json_encode($output);
 		
 	}
+	*/
 	if ($_POST['request'] == "insert-vector") {
 		
 		$hardwaresn = trim(file_get_contents('/etc/flyt/data/serial'));
