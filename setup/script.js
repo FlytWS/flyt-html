@@ -41,9 +41,11 @@ function setWiFi(ssid) {
 		ssid = "";
 	}
 	$("#wifiback").css('visibility', 'visible');
+	$("#wifiManage").css('visibility', 'hidden');
 	$("#wifirescan").css('visibility', 'hidden');
+		
 	$("#network-stats").html('<div><div id="wifiSSID" class="lets-go" style=""><input id="wifiSSIDInput" type="text" placeholder="WiFi SSID" style="text-align:center;" value="'+ssid+'"></div><div id="wifiPassphrase" class="lets-go" style=""><input id="wifiPassphraseInput" placeholder="WiFi Passphrase" style="text-align:center;"></div></div>');
-	$("#network-stats").append('<header id="network-wifi-connect" onclick="WiFiConnectBtn()"><div style=" text-align:center; width:100%; color:#fbfbfbCC;"><div style="line-height: 1rem;">Connect</div></div></header><header id="network-wifi-connect-wait" style="display:none;">Please wait...</div>');
+	$("#network-stats").append('<header id="network-wifi-connect" onclick="WiFiConnectBtn()"><div style=" text-align:center; width:100%; color:#fbfbfbCC;"><div style="line-height: 1rem;">Connect</div></div></header><header id="network-wifi-connect-wait" style="display:none;"><svg class="load" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div>');
 }
 
 function WiFiConnectBtn() {
@@ -108,8 +110,6 @@ function WiFiConnectBtn() {
 
 var wifirescanrotate = 0;
 function WiFiRescan() {
-	
-	document.getElementById('lets-go-div').innerHTML = '<svg class="load" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>';
 	
 	wifirescanrotate += 360;
 	
@@ -582,6 +582,8 @@ function getGNSSLocation(tag) {
 
 
 function wifiScan() {
+	
+	document.getElementById('lets-go-div').innerHTML = '<svg class="load" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>';
 	
 	$.ajax({
 	url: 'ajax.php',
