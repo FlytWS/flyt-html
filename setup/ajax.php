@@ -86,7 +86,7 @@ clearstatcache();
 		
 		
 		
-		'nmcli', '-t', '-f', 'NAME', 'connection', 'show'
+	#'nmcli', '-t', '-f', 'NAME', 'connection', 'show'
 	
 	if ($_POST['request'] == "manage-wifi") {
 		
