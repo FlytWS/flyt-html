@@ -191,12 +191,12 @@ clearstatcache();
 
 	if ($_POST['request'] == "skip-setup") {
 
-		exec("echo -n '0' | tee '/var/www/html/flyt-data/setupskipped'", $output, $retval);
+		exec("echo -n '0' | tee '/var/www/html/data/setupskipped'", $output, $retval);
 		
 	}
 	if ($_POST['request'] == "complete-setup") {
 
-		exec("echo -n '0' | tee '/var/www/html/flyt-data/setupcomplete'", $output, $retval);
+		exec("echo -n '0' | tee '/var/www/html/data/setupcomplete'", $output, $retval);
 		
 	}
 

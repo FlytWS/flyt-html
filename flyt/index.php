@@ -1,7 +1,7 @@
 <?php
 
-$filenameComplete = '../flyt-data/setupcomplete';
-$filenameSkipped = '../flyt-data/setupskipped';
+$filenameComplete = '/data/setupcomplete';
+$filenameSkipped = '../data/setupskipped';
 
 if (isset($_GET['clearcache'])) {
 	header('Clear-Site-Data: "*"');
