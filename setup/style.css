@@ -71,7 +71,7 @@ background-color: #ffffff10;
 	font-size: 0.75rem;
 }
 #wifiback {
-	visibility: hidden;
+	display:none;
 }
 
 #cMap {

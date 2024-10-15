@@ -84,6 +84,80 @@ clearstatcache();
 		
 	}
 		
+		
+		
+		
+	
+	if ($_POST['request'] == "manage-wifi") {
+		
+		$lines=array();
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-manage.py"');
+		$file = '/etc/flyt/data/flyt-wifi-manage.json';
+		if (file_exists($file)) {
+			
+			$reject = array("Wired connection","supervisor0","lo");
+			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
+			 foreach ( $fileopen as $line ) {
+				
+				$line=str_replace("\n","",$line);
+				$line=str_replace("\r","",$line);
+				$line=rtrim($line," ");
+				
+				if (strlen($line) > 0) {
+					if(!in_array($line,$reject)){  
+						$lines[]=$line;
+					}
+				}
+				
+			 }
+			 
+
+			$uniqueLines = array_unique($lines);
+			array_push($uniqueLines,"Hidden Network");
+			echo json_encode($uniqueLines);
+		};
+		
+
+	}
+		
+		
+		
+	if ($_POST['request'] == "active-wifi") {
+		
+		$lines=array();
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py"');
+		$file = '/etc/flyt/data/flyt-wifi-active.json';
+		if (file_exists($file)) {
+			
+			$reject = array("Wired connection","supervisor0","lo");
+			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
+			 foreach ( $fileopen as $line ) {
+				
+				$line=str_replace("\n","",$line);
+				$line=str_replace("\r","",$line);
+				$line=rtrim($line," ");
+				
+				if (strlen($line) > 0) {
+					if(!in_array($line,$reject)){  
+						$lines[]=$line;
+					}
+				}
+				
+			 }
+			 
+
+			$uniqueLines = array_unique($lines);
+			array_push($uniqueLines,"Hidden Network");
+			echo json_encode($uniqueLines);
+		};
+		
+
+	}
+		
+		
+		
+		
+		
 	
 
 

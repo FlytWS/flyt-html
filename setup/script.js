@@ -20,7 +20,7 @@ $(document).ready(function () {
 				getflytstats("ethernet");
 			}
 			if (this.id == "panel-wifi") {
-				$("#network-title").html('<div style="display:flex; width: 17rem;   justify-content: space-around;"><div id="wifiback" onclick="WiFiBack()" style="cursor:pointer; height:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></div><div>WiFi</div><div id="wifirescan" onclick="WiFiRescan()" style="cursor:pointer; height:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></div></div>');
+				$("#network-title").html('<div style="display:flex; width: 17rem;   justify-content: space-around;"><div style="cursor:pointer; height:18px;"><svg id="wifiManage" onclick="WifiManage()" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bolt"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><circle cx="12" cy="12" r="4"/></svg><svg id="wifiback" onclick="WiFiBack()" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></div><div>WiFi</div><div id="wifirescan" onclick="WiFiRescan()" style="cursor:pointer; height:18px;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></div></div>');
 				$("#network-stats").html('<div id="lets-go-div" style="text-align:center;"></div>');
 				getflytstats("wifi");
 				wifiScan();
@@ -192,13 +192,7 @@ function getflytstats(request) {
 					console.log("check state wlan0");
 					
 					$('#panel-wifi').addClass('active');
-					var networkStateText = $('#network-state').text();
-					console.log(networkStateText);
-					if (networkStateText.includes(obj.network_address_wlan0) == true) {
-						// Do Not Re-Write
-					} else {
-						$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
-					}
+					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
 					
 				}
 				if (obj.network_address_eth0 && obj.network_address_wlan0) {
@@ -237,6 +231,9 @@ function getflytstats(request) {
 					
 					var networkStateText = $('#network-state').text();
 					if (networkStateText.includes(obj.network_address_wlan0) == true) {
+						if (networkStateText.includes(obj.network_address_eth0) == true) {
+							$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
+						}
 						// Do Not Re-Write
 					} else {
 						$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
@@ -597,6 +594,37 @@ function wifiScan() {
 		jQuery.each(resParse, function (index, value) {
 
 			ssidContent += "<div class='lets-go-div-ssid' onclick='setWiFi(\""+value+"\");'>"+value+"</div>";
+
+		});
+		document.getElementById('lets-go-div').innerHTML = ssidContent;
+
+
+	}
+	});
+ 
+}
+
+
+
+
+function wifiManage() {
+
+	$.ajax({
+	url: 'ajax.php',
+	type: 'POST',
+	cache: false,
+	data: { request: 'manage-wifi' },
+	success: function(response) {
+
+		console.log(response);
+		var resParse = JSON.parse(response);
+		console.log(resParse);
+
+
+		var ssidContent = "";
+		jQuery.each(resParse, function (index, value) {
+
+			ssidContent += "<div class='lets-go-div-ssid'>"+value+"<span onclick='deleteWiFi(\""+value+"\");'>[delete]</span></div>";
 
 		});
 		document.getElementById('lets-go-div').innerHTML = ssidContent;
