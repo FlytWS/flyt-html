@@ -587,8 +587,9 @@ var xhr_wifiScan = null
 function wifiScan() {
 	
 	document.getElementById('lets-go-div').innerHTML = '<svg class="load" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>';
+	var activeSSIDAr = null;
 	
-xhr_wifiScan = $.ajax({
+	$.ajax({
 	url: 'ajax.php',
 	type: 'POST',
 	cache: false,
@@ -597,6 +598,7 @@ xhr_wifiScan = $.ajax({
 
 		console.log(response);
 		var resParse = JSON.parse(response);
+		activeSSIDAr = resParse;
 		console.log(resParse);
 
 	}
@@ -604,7 +606,7 @@ xhr_wifiScan = $.ajax({
 	
 	
 	
-	$.ajax({
+	xhr_wifiScan = $.ajax({
 	url: 'ajax.php',
 	type: 'POST',
 	cache: false,
@@ -618,9 +620,12 @@ xhr_wifiScan = $.ajax({
 
 		var ssidContent = "";
 		jQuery.each(resParse, function (index, value) {
-
-			ssidContent += "<div class='lets-go-div-ssid' onclick='setWiFi(\""+value+"\");'>"+value+"</div>";
-
+	
+			if (activeSSIDAr.includes(value) == true) {
+				ssidContent += "<div class='lets-go-div-ssid' onclick='setWiFi(\""+value+"\");'>"+value+" (Active)</div>";
+			} else {
+				ssidContent += "<div class='lets-go-div-ssid' onclick='setWiFi(\""+value+"\");'>"+value+"</div>";
+			}
 		});
 		document.getElementById('lets-go-div').innerHTML = ssidContent;
 
