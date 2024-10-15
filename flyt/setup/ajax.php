@@ -39,10 +39,28 @@ clearstatcache();
 		
 	}
 	
+	if ($_POST['request'] == "save-location") {
+		
+		$latitude = $_POST['latitude'];
+		$longitude = $_POST['longitude'];
+
+		exec("echo '{".$latitude.",".$longitude."}' | sudo tee /etc/flyt/data/location", $output, $retval);
+		
+		#exec("sudo bash /etc/flyt/scripts/set-readsb-location.sh ".$obj->{'lat'}." ".$obj->{'lon'}."", $output, $retval);
+
+		$file = '/etc/flyt/data/location';
+		if (file_exists($file)) {
+			echo file_get_contents('/etc/flyt/data/location');
+		}
+		
+	}
+	
+	
+	
 
 	if ($_POST['request'] == "scan-wifi") {
 		
-		/*
+		
 		$host = "localhost";
 		$port = 65432;
 
@@ -56,7 +74,7 @@ clearstatcache();
 		socket_sendto($f, $msg, $len, 0, $host, $port);
 
 		socket_close($f);
-		*/
+		
 		
 		$lines=array();
 		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-scan.py');
@@ -104,6 +122,21 @@ clearstatcache();
 
 	
 	if ($_POST['request'] == "manage-wifi") {
+		
+		$host = "localhost";
+		$port = 65432;
+
+		$f = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+		socket_set_option($f, SOL_SOCKET, SO_SNDTIMEO, array('sec' => 1, 'usec' => 500000));
+		$s = socket_connect($f, $host, $port);
+
+		$msg = "flyt-wifi-manage";
+		$len = strlen($msg);
+
+		socket_sendto($f, $msg, $len, 0, $host, $port);
+
+		socket_close($f);
+		
 		
 		$lines=array();
 		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-manage.py');

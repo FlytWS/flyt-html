@@ -350,6 +350,16 @@ cockpitMap.on('click',function(e){
     theMarker = L.marker([lat,lon]).addTo(cockpitMap); 
 	console.log(lat+" - "+lon);
 	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'save-location', latitude: lat, longitude: lon },
+		success: function(response) {
+			console.log(response);
+		}
+	});
+	
 	
 });
 
