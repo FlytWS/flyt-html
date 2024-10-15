@@ -44,9 +44,9 @@ clearstatcache();
 		$latitude = $_POST['latitude'];
 		$longitude = $_POST['longitude'];
 
-		exec("echo '{".$latitude.",".$longitude."}' | sudo tee /etc/flyt/data/location", $output, $retval);
+		exec("echo '{".$latitude.",".$longitude."}' | tee /etc/flyt/data/location.json", $output, $retval);
 		
-		#exec("sudo bash /etc/flyt/scripts/set-readsb-location.sh ".$obj->{'lat'}." ".$obj->{'lon'}."", $output, $retval);
+		#exec("bash /etc/flyt/scripts/set-readsb-location.sh ".$obj->{'lat'}." ".$obj->{'lon'}."", $output, $retval);
 
 		$file = '/etc/flyt/data/location';
 		if (file_exists($file)) {
