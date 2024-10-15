@@ -161,7 +161,6 @@ clearstatcache();
 
 		$ssid = $_POST['ssid'];
 		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli connection delete "'.$ssid.'"  2>&1');
-		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-manage.py');
 		$output = str_replace("\u001b[2K","",$output);
 		$output = str_replace("\n","",$output);
 		$output = str_replace("\r","",$output);
