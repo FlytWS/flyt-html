@@ -42,7 +42,7 @@ clearstatcache();
 
 	if ($_POST['request'] == "scan-wifi") {
 		
-		
+		/*
 		$host = "localhost";
 		$port = 65432;
 
@@ -56,10 +56,10 @@ clearstatcache();
 		socket_sendto($f, $msg, $len, 0, $host, $port);
 
 		socket_close($f);
-
+		*/
 		
 		$lines=array();
-		//exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-scan.py');
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-scan.py');
 		$file = '/etc/flyt/data/flyt-wifi-scan.json';
 		if (file_exists($file)) {
 			
@@ -101,8 +101,7 @@ clearstatcache();
 	}
 		
 		
-		
-	#'nmcli', '-t', '-f', 'NAME', 'connection', 'show'
+
 	
 	if ($_POST['request'] == "manage-wifi") {
 		
@@ -140,7 +139,7 @@ clearstatcache();
 	if ($_POST['request'] == "active-wifi") {
 		
 		$lines=array();
-		//exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py');
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py');
 		$file = '/etc/flyt/data/flyt-wifi-active.json';
 		if (file_exists($file)) {
 			
