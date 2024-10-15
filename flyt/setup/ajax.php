@@ -138,6 +138,23 @@ clearstatcache();
 		
 	if ($_POST['request'] == "active-wifi") {
 		
+
+		$host = "localhost";
+		$port = 65432;
+
+		$f = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+		socket_set_option($f, SOL_SOCKET, SO_SNDTIMEO, array('sec' => 1, 'usec' => 500000));
+		$s = socket_connect($f, $host, $port);
+
+		$msg = "flyt-wifi-active";
+		$len = strlen($msg);
+
+		socket_sendto($f, $msg, $len, 0, $host, $port);
+
+		socket_close($f);
+
+		
+		
 		$lines=array();
 		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py');
 		$file = '/etc/flyt/data/flyt-wifi-active.json';
