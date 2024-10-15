@@ -639,10 +639,35 @@ function wifiManage() {
 		var ssidContent = "";
 		jQuery.each(resParse, function (index, value) {
 
-			ssidContent += "<div class='lets-go-div-ssid'>"+value+"<span onclick='deleteWiFi(\""+value+"\");'>[delete]</span></div>";
+			ssidContent += "<div class='lets-go-div-ssid'>"+value+" <span onclick='deleteWiFi(\""+value+"\");'>[delete]</span></div>";
 
 		});
 		document.getElementById('lets-go-div').innerHTML = ssidContent;
+
+
+	}
+	});
+ 
+}
+
+
+
+
+
+
+function deleteWiFi(getSSID) {
+
+	$.ajax({
+	url: 'ajax.php',
+	type: 'POST',
+	cache: false,
+	data: { request: 'delete-wifi', ssid: getSSID },
+	success: function(response) {
+
+		console.log(response);
+		var resParse = JSON.parse(response);
+		console.log(resParse);
+		wifiManage()
 
 
 	}
