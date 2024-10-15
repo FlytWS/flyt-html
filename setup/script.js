@@ -159,8 +159,6 @@ function WiFiBack() {
 
 
 
-
-
 function getflytstats(request) {
 	
 	
@@ -194,7 +192,11 @@ function getflytstats(request) {
 					console.log("check state wlan0");
 					
 					$('#panel-wifi').addClass('active');
-					$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
+					if (($('#network-state').html).includes("WiFi") {
+						// Do Not Re-Write
+					} else {
+						$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
+					}
 					
 				}
 				if (obj.network_address_eth0 && obj.network_address_wlan0) {
