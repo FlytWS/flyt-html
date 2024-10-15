@@ -361,6 +361,7 @@ cockpitMap.on('click',function(e){
 function skipSetup() {
  
 	$.ajax({
+	url: 'ajax.php',
 	type: 'POST',
 	cache: false,
 	data: { request: 'skip-setup' },
@@ -373,6 +374,7 @@ function skipSetup() {
 function completeSetup() {
  
 	$.ajax({
+	url: 'ajax.php',
 	type: 'POST',
 	cache: false,
 	data: { request: 'complete-setup' },

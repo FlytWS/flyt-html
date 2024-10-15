@@ -153,12 +153,7 @@ clearstatcache();
 		
 
 	}
-		
-		
-		
-		
-		
-	
+
 
 
 	if ($_POST['request'] == "skip-setup") {
