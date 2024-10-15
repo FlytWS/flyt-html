@@ -135,6 +135,7 @@ function WiFiBack() {
 	$("#wifiback").css('display', 'none');
 	$("#wifiManage").css('display', 'block');
 	$("#wifirescan").css('visibility', 'visible');
+	$("#network-stats").html('<div id="lets-go-div" style="text-align:center;"></div>');
 	getflytstats("wifi");
 	wifiScan();
 	
