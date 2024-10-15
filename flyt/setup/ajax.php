@@ -247,12 +247,20 @@ clearstatcache();
 
 	if ($_POST['request'] == "skip-setup") {
 
-		exec("echo -n '0' | tee '/var/www/html/data/setupskipped'", $output, $retval);
+		$filename = "/var/www/html/data/setupskipped";
+		$file = fopen($filename, "w+") or die("Unable to open file!");
+		$text = "";
+		fwrite($file, $text);
+		fclose($file);
 		
 	}
 	if ($_POST['request'] == "complete-setup") {
 
-		exec("echo -n '0' | tee '/var/www/html/data/setupcomplete'", $output, $retval);
+		$filename = "/var/www/html/data/setupcomplete";
+		$file = fopen($filename, "w+") or die("Unable to open file!");
+		$text = "";
+		fwrite($file, $text);
+		fclose($file);
 		
 	}
 
