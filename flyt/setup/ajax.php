@@ -43,9 +43,16 @@ clearstatcache();
 		
 		$latitude = $_POST['latitude'];
 		$longitude = $_POST['longitude'];
-
-		exec("echo '{".$latitude.",".$longitude."}' | tee /etc/flyt/data/location.json", $output, $retval);
 		
+		
+		$filename = "/etc/flyt/data/location.json";
+		$file = fopen($filename, "w") or die("Unable to open file!");
+		$text = "{".$latitude.",".$longitude."}";
+		fwrite($file, $text);
+		fclose($file);
+
+
+		//exec("echo '{".$latitude.",".$longitude."}' | tee /etc/flyt/data/location.json", $output, $retval);
 		#exec("bash /etc/flyt/scripts/set-readsb-location.sh ".$obj->{'lat'}." ".$obj->{'lon'}."", $output, $retval);
 
 		$file = '/etc/flyt/data/location';
