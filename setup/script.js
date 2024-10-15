@@ -192,7 +192,7 @@ function getflytstats(request) {
 					console.log("check state wlan0");
 					
 					$('#panel-wifi').addClass('active');
-					var networkStateText = $('#network-state').html;
+					var networkStateText = $('#network-state').html();
 					if (networkStateText.includes("WiFi") == true) {
 						// Do Not Re-Write
 					} else {
