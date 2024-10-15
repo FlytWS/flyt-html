@@ -192,7 +192,8 @@ function getflytstats(request) {
 					console.log("check state wlan0");
 					
 					$('#panel-wifi').addClass('active');
-					if (($('#network-state').html).includes("WiFi") == true) {
+					var networkStateText = $('#network-state').html;
+					if (networkStateText.includes("WiFi") == true) {
 						// Do Not Re-Write
 					} else {
 						$('#network-state').hide().html('You are connected to WiFi on IP address '+obj.network_address_wlan0).fadeIn();
