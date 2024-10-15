@@ -667,6 +667,7 @@ function deleteWiFi(getSSID) {
 		console.log(response);
 		var resParse = JSON.parse(response);
 		console.log(resParse);
+		$('#network-state').html(resParse);
 		wifiManage()
 
 

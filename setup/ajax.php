@@ -43,7 +43,7 @@ clearstatcache();
 	if ($_POST['request'] == "scan-wifi") {
 		
 		$lines=array();
-		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-scan.py"');
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-scan.py');
 		$file = '/etc/flyt/data/flyt-wifi-scan.json';
 		if (file_exists($file)) {
 			
@@ -86,16 +86,16 @@ clearstatcache();
 		
 		
 		
-		
+		'nmcli', '-t', '-f', 'NAME', 'connection', 'show'
 	
 	if ($_POST['request'] == "manage-wifi") {
 		
 		$lines=array();
-		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-manage.py"');
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-manage.py');
 		$file = '/etc/flyt/data/flyt-wifi-manage.json';
 		if (file_exists($file)) {
 			
-			$reject = array("Wired connection","supervisor0","lo");
+			$reject = array("Wired connection 1","supervisor0","lo");
 			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
 			 foreach ( $fileopen as $line ) {
 				
@@ -124,11 +124,11 @@ clearstatcache();
 	if ($_POST['request'] == "active-wifi") {
 		
 		$lines=array();
-		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py"');
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py');
 		$file = '/etc/flyt/data/flyt-wifi-active.json';
 		if (file_exists($file)) {
 			
-			$reject = array("Wired connection","supervisor0","lo");
+			$reject = array("Wired connection 1","supervisor0","lo");
 			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
 			 foreach ( $fileopen as $line ) {
 				
