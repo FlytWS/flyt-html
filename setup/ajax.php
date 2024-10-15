@@ -124,7 +124,7 @@ clearstatcache();
 	if ($_POST['request'] == "active-wifi") {
 		
 		$lines=array();
-		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py');
+		//exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py');
 		$file = '/etc/flyt/data/flyt-wifi-active.json';
 		if (file_exists($file)) {
 			

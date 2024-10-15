@@ -592,6 +592,22 @@ function wifiScan() {
 	url: 'ajax.php',
 	type: 'POST',
 	cache: false,
+	data: { request: 'active-wifi' },
+	success: function(response) {
+
+		console.log(response);
+		var resParse = JSON.parse(response);
+		console.log(resParse);
+
+	}
+	});
+	
+	
+	
+	$.ajax({
+	url: 'ajax.php',
+	type: 'POST',
+	cache: false,
 	data: { request: 'scan-wifi' },
 	success: function(response) {
 
@@ -648,8 +664,7 @@ function wifiManage() {
 
 		var ssidContent = "";
 		jQuery.each(resParse, function (index, value) {
-
-			ssidContent += "<div class='lets-go-div-ssid'>"+value+" <span onclick='deleteWiFi(\""+value+"\");'>[delete]</span></div>";
+			ssidContent += "<div class='lets-go-div-ssid' id='ssid_"+index+"'>"+value+" <span onclick='deleteWiFi(\""+index+"\",\""+value+"\");'>[delete]</span></div>";
 
 		});
 		document.getElementById('lets-go-div').innerHTML = ssidContent;
@@ -665,7 +680,7 @@ function wifiManage() {
 
 
 
-function deleteWiFi(getSSID) {
+function deleteWiFi(getIndex, getSSID) {
 
 	$.ajax({
 	url: 'ajax.php',
@@ -678,7 +693,9 @@ function deleteWiFi(getSSID) {
 		var resParse = JSON.parse(response);
 		console.log(resParse);
 		$('#network-state').html(resParse);
-		wifiManage()
+		$(getIndex).remove();
+		
+		//wifiManage()
 
 
 	}
