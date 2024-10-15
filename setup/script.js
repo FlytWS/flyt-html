@@ -609,6 +609,7 @@ function wifiScan() {
 
 
 
+var wifimanagerotate = 0;
 function wifiManage() {
 
 	$.ajax({
@@ -618,9 +619,21 @@ function wifiManage() {
 	data: { request: 'manage-wifi' },
 	success: function(response) {
 
+	
 		console.log(response);
 		var resParse = JSON.parse(response);
 		console.log(resParse);
+		
+		wifimanagerotate += 360;
+		$('#wifiManage').stop().animate(
+		  {rotation: wifimanagerotate},
+		  {
+			duration: 500,
+			step: function(now, fx) {
+			  $(this).css({"transform": "rotate("+now+"deg)"});
+			}
+		  }
+		);
 
 
 		var ssidContent = "";

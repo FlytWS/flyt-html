@@ -113,7 +113,6 @@ clearstatcache();
 			 
 
 			$uniqueLines = array_unique($lines);
-			array_push($uniqueLines,"Hidden Network");
 			echo json_encode($uniqueLines);
 		};
 		
@@ -147,7 +146,6 @@ clearstatcache();
 			 
 
 			$uniqueLines = array_unique($lines);
-			array_push($uniqueLines,"Hidden Network");
 			echo json_encode($uniqueLines);
 		};
 		
