@@ -132,8 +132,8 @@
 	<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;"></div>
 	<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
 	Congratulations, your setup is now complete.<br>
-	<br>If you are planning to access your Node from WiFi after setup, please use the new URL of http://192.168.1.x
-	<br><br>Click finish to continue to your Flyt dash.
+	<span id="finishIP"></span>
+	<br><br>Click finish to continue to your Flyt console.
 	</div>
 
 	<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
