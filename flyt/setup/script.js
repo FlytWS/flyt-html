@@ -714,8 +714,7 @@ function deleteWiFi(getIndex, getSSID) {
 		$('#network-state').html(resParse);
 		$('#ssid_'+getIndex).remove();
 		
-		//wifiManage()
-
+		getflytstats("check-state");
 
 	}
 	});
