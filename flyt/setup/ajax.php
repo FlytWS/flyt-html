@@ -233,18 +233,7 @@ clearstatcache();
 
 		$ssid = $_POST['ssid'];
 		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli connection delete "'.$ssid.'"  2>&1');
-
-
-		$host = "localhost";
-		$port = 65432;
-		$f = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-		socket_set_option($f, SOL_SOCKET, SO_SNDTIMEO, array('sec' => 1, 'usec' => 500000));
-		$s = socket_connect($f, $host, $port);
-		$msg = "flyt-stats-1";
-		$len = strlen($msg);
-		socket_sendto($f, $msg, $len, 0, $host, $port);
-		socket_close($f);
-
+		shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-stats-1.py 2>&1');
 
 		$output = str_replace("\u001b[2K","",$output);
 		$output = str_replace("\n","",$output);
