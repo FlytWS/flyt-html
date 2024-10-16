@@ -47,7 +47,7 @@ clearstatcache();
 		
 		$filename = "/etc/flyt/data/flyt-location.json";
 		$file = fopen($filename, "w+") or die("Unable to open file!");
-		$text = '{"lat":"'.$latitude.'","lon":"'.$longitude.'"}';
+		$text = '{"latitude":"'.$latitude.'","longitude":"'.$longitude.'"}';
 		fwrite($file, $text);
 		fclose($file);
 

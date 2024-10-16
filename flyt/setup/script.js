@@ -454,6 +454,8 @@ function getLocation() {
 		data: { request: 'get-location' },
 		success: function(response) {
 			
+			console.log(response);
+			
 			try {
 			var resParse = JSON.parse(response);
 			
