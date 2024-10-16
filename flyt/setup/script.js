@@ -208,7 +208,7 @@ function getflytstats(request) {
 					$('#panel-ethernet').addClass('active');
 					$('#panel-wifi').addClass('active');
 					$('#network-state').hide().html('You are connected to Ethernet on IP address '+obj.network_address_eth0+' and WiFi on IP address '+obj.network_address_wlan0).fadeIn();
-					$('#finishIP').html('<br>If you are planning to access your Node from WiFi after setup, please use the new URL of <a href="http://'+obj.network_address_wlan0+'">http://'+obj.network_address_wlan0+'</a>');
+					$('#finishIP').html('<br>If you are planning to access your Node from WiFi after setup, please use the new URL of <a style="    text-decoration: none;    color: #fbfbfb80;" href="http://'+obj.network_address_wlan0+'/flyt">http://'+obj.network_address_wlan0+'/flyt</a>');
 				}
 				
 				
