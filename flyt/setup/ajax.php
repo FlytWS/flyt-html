@@ -235,6 +235,10 @@ clearstatcache();
 		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli connection delete "'.$ssid.'"  2>&1');
 		shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-stats-1.py 2>&1');
 
+
+
+
+
 		$output = str_replace("\u001b[2K","",$output);
 		$output = str_replace("\n","",$output);
 		$output = str_replace("\r","",$output);
