@@ -39,7 +39,7 @@ clearstatcache();
 		
 	}
 	
-	if ($_POST['request'] == "save-location") {
+	if ($_POST['request'] == "set-location") {
 		
 		$latitude = $_POST['latitude'];
 		$longitude = $_POST['longitude'];
@@ -47,7 +47,7 @@ clearstatcache();
 		
 		$filename = "/etc/flyt/data/flyt-location.json";
 		$file = fopen($filename, "w+") or die("Unable to open file!");
-		$text = "{".$latitude.",".$longitude."}";
+		$text = '{"lat":"'.$latitude.'","lon":"'.$longitude.'"}';
 		fwrite($file, $text);
 		fclose($file);
 

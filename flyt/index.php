@@ -1,6 +1,6 @@
 <?php
 
-$filenameComplete = '/data/setupcomplete';
+$filenameComplete = '../data/setupcomplete';
 $filenameSkipped = '../data/setupskipped';
 
 if (isset($_GET['clearcache'])) {

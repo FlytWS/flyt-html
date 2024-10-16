@@ -354,7 +354,7 @@ cockpitMap.on('click',function(e){
 		url: 'ajax.php',
 		type: 'POST',
 		cache: false,
-		data: { request: 'save-location', latitude: lat, longitude: lon },
+		data: { request: 'set-location', latitude: lat, longitude: lon },
 		success: function(response) {
 			console.log(response);
 		}
