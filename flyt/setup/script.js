@@ -90,7 +90,7 @@ function WiFiConnectBtn() {
 				$('#network-wifi-connect-wait').hide();
 				$('#network-wifi-connect').fadeIn();
 			}
-				
+			
 			
 			
 		},
