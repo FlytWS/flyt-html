@@ -118,7 +118,12 @@ clearstatcache();
 		$ssid = $_POST['ssid'];
 		$passphrase = $_POST['passphrase'];
 		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli dev wifi connect "'.$ssid.'" password "'.$passphrase.'"  2>&1');
-		//shell_exec('python3 /etc/flyt/scripts/flyt-stats-1.py');
+		
+		$filename = "/etc/flyt/data/flyt-watchdog-network";
+		$file = fopen($filename, "w+") or die();
+		$text = "";
+		fwrite($file, $text);
+		fclose($file);
 		
 		$output = str_replace("\u001b[2K","",$output);
 		$output = str_replace("\n","",$output);
@@ -235,10 +240,9 @@ clearstatcache();
 
 		$ssid = $_POST['ssid'];
 		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli connection delete "'.$ssid.'"  2>&1');
-		//shell_exec('python3 /etc/flyt/scripts/flyt-stats-1.py');
 		
 		$filename = "/etc/flyt/data/flyt-watchdog-network";
-		$file = fopen($filename, "w+") or die("Unable to open file!");
+		$file = fopen($filename, "w+") or die();
 		$text = "";
 		fwrite($file, $text);
 		fclose($file);

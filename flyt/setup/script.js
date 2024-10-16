@@ -713,8 +713,6 @@ function deleteWiFi(getIndex, getSSID) {
 		console.log(resParse);
 		$('#network-state').html(resParse);
 		$('#ssid_'+getIndex).remove();
-		
-		getflytstats("check-state");
 
 	}
 	});
