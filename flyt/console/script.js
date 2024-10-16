@@ -243,7 +243,7 @@ function getGNSSLocation() {
 				}
 				$('#state_gnss').removeClass("health-poor");
 				
-				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd96", radius: 6 });
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd9690", radius: 4 });
 				var from = markerFrom.getLatLng();
 
 				markerFrom.bindPopup('GNSS ' + (from).toString());

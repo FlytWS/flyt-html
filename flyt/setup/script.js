@@ -467,7 +467,7 @@ function getLocation() {
 					$("#n_locationset").remove();
 				}
 
-				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#6ba7ff90", radius: 10 });
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#6ba7ff", radius: 10 });
 				var from = markerFrom.getLatLng();
 
 				markerFrom.bindPopup('Radio ' + (from).toString());
@@ -532,7 +532,7 @@ function getGNSSLocation(tag) {
 				}
 				$('#state_gnss').removeClass("health-poor");
 				
-				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd96", radius: 4 });
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd9690", radius: 4 });
 				var from = markerFrom.getLatLng();
 
 				//markerFrom.bindPopup('GNSS ' + (from).toString());
