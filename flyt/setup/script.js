@@ -642,6 +642,11 @@ function wifiScan() {
 		document.getElementById('lets-go-div').innerHTML = ssidContent;
 
 
+	},
+	error: funtion(err) {
+		
+		wifiScan();
+		
 	}
 	});
  
