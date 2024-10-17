@@ -643,7 +643,7 @@ function wifiScan() {
 
 
 	},
-	error: funtion(err) {
+	error: function(err) {
 		
 		wifiScan();
 		
