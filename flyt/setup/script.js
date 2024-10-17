@@ -289,6 +289,15 @@ function nextPage(current, next) {
 		getflytstats("check-state");
 
 	}
+	
+	if (next == 4) {	 
+	 
+		var wifi_ip_string = null;
+		var ethernet_ip_string = null;
+
+		getflytstats("check-state");
+
+	}
  
  
 }
