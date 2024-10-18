@@ -345,41 +345,22 @@ function fetchReceiver() {
 		console.log(resParse);
 		
 		
-		let text = result;
-		text = text.replace(/(?:\r\n|\r|\n)/g, '');
-		text = text.replace(/  Bus=/g, "\nBus=");
-
-		var lines = text.split('\n');
-
 
 		var receiverOnline = 0;
 		
-		for (const element of lines) {
+		for (const usb of resParse) {
 			
-			const vendorID = string_between_strings("Vendor=", "ProdID=", element);
-			const productID = string_between_strings("ProdID=", "Rev=", element);
-			const revision = string_between_strings("Rev=", "Manufacturer=", element);
-			const manufacturer = string_between_strings("Manufacturer=", "Product=", element);
-			const product = string_between_strings("Product=", "SerialNumber=", element);
-			
-			const receiverArrayIDString = vendorID.trimEnd() + "&" + productID.trimEnd();
-			const receiverArrayString = manufacturer.trimEnd() + " " + product.trimEnd();
-			
-			
-			//console.log(receiverArrayString);
-			
-			
-			if (receiverArrayIDString in receiverArrayID) {
-				var updatedReceiverString = receiverArrayID[receiverArrayIDString];
+			console.log(usb);
+			console.log(usb.tag);
+						
+			if (usb.tag in receiverArrayID) {
+				var updatedReceiverString = receiverArrayID[usb.tag];
 				receiverOnline = 1;
 			};
-			if (receiverArrayString in receiverArray) {
-				var updatedReceiverString = receiverArray[receiverArrayString];
+			if (usb.tag in receiverArray) {
+				var updatedReceiverString = receiverArray[usb.tag];
 				receiverOnline = 1;
 			};
-			
-			
-
 			
 		}
 		
