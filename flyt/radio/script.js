@@ -341,6 +341,9 @@ function fetchReceiver() {
     success: function(result, textStatus, jqXHR) {
 		
 		console.log(result);
+		var resParse = JSON.parse(result);
+		console.log(resParse);
+		
 		
 		let text = result;
 		text = text.replace(/(?:\r\n|\r|\n)/g, '');
