@@ -340,7 +340,7 @@ function fetchReceiver() {
 	data: { request: 'get-usb' },
     success: function(result, textStatus, jqXHR) {
 		
-		console.log(result);
+		//console.log(result);
 		var resParse = JSON.parse(result);
 		console.log(resParse);
 		
@@ -353,12 +353,12 @@ function fetchReceiver() {
 			console.log(usb);
 			console.log(usb.tag);
 						
-			if (usb.tag in receiverArrayID) {
-				var updatedReceiverString = receiverArrayID[usb.tag];
+			if (usb.id in receiverArrayID) {
+				var updatedReceiverString = receiverArrayID[usb.id];
 				receiverOnline = 1;
 			};
-			if (usb.tag in receiverArray) {
-				var updatedReceiverString = receiverArray[usb.tag];
+			if (usb.id in receiverArray) {
+				var updatedReceiverString = receiverArray[usb.id];
 				receiverOnline = 1;
 			};
 			
