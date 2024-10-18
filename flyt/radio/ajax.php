@@ -5,7 +5,7 @@ clearstatcache();
 		
 		$file = '/run/readsb/stats.json';
 		if (file_exists($file)) {
-			echo file_get_contents('/run/readsb/stats.json');
+			echo file_get_contents($file);
 		} else {
 			echo "No File";
 		};
@@ -16,7 +16,7 @@ clearstatcache();
 		
 		$file = '/run/readsb/status.json';
 		if (file_exists($file)) {
-			echo file_get_contents('/run/readsb/status.json');
+			echo file_get_contents($file);
 		} else {
 			echo "No File";
 		};
@@ -26,9 +26,9 @@ clearstatcache();
 
 	if ($_POST['request'] == "get-usb") {
 		
-		$file = '/run/readsb/status.json';
+		$file = '/etc/flyt/data/flyt-usb-parse.json';
 		if (file_exists($file)) {
-			echo file_get_contents('/etc/flyt/data/flyt-usb');
+			echo file_get_contents($file);
 		} else {
 			echo "No File";
 		};
