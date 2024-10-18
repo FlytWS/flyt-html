@@ -340,6 +340,8 @@ function fetchReceiver() {
 	data: { request: 'get-usb' },
     success: function(result, textStatus, jqXHR) {
 		
+		console.log(result);
+		
 		let text = result;
 		text = text.replace(/(?:\r\n|\r|\n)/g, '');
 		text = text.replace(/  Bus=/g, "\nBus=");
