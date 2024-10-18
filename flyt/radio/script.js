@@ -273,55 +273,49 @@ var messagesvalid = [];
 
 
 var receiverArrayID = [];
-receiverArrayID["0bda&2832"] = "Realtek RTL2832U"
-receiverArrayID["0bda&2838"] = "Realtek RTL2832U OEM"
-receiverArrayID["0413&6680"] = "DigitalNow Quad DVB-T PCI-E card"
-receiverArrayID["0413&6f0f"] = "Leadtek WinFast DTV Dongle mini D"
-receiverArrayID["0458&707f"] = "Genius TVGo DVB-T03 USB dongle (Ver. B)"
-receiverArrayID["0ccd&00a9"] = "Terratec Cinergy T Stick Black (rev 1)"
-receiverArrayID["0ccd&00b3"] = "Terratec NOXON DAB/DAB+ USB dongle (rev 1)"
-receiverArrayID["0ccd&00b4"] = "Terratec Deutschlandradio DAB Stick"
-receiverArrayID["0ccd&00b5"] = "Terratec NOXON DAB Stick - Radio Energy"
-receiverArrayID["0ccd&00b7"] = "Terratec Media Broadcast DAB Stick"
-receiverArrayID["0ccd&00b8"] = "Terratec BR DAB Stick"
-receiverArrayID["0ccd&00b9"] = "Terratec WDR DAB Stick"
-receiverArrayID["0ccd&00c0"] = "Terratec MuellerVerlag DAB Stick"
-receiverArrayID["0ccd&00c6"] = "Terratec Fraunhofer DAB Stick"
-receiverArrayID["0ccd&00d3"] = "Terratec Cinergy T Stick RC (Rev.3)"
-receiverArrayID["0ccd&00d7"] = "Terratec T Stick PLUS"
-receiverArrayID["0ccd&00e0"] = "Terratec NOXON DAB/DAB+ USB dongle (rev 2)"
-receiverArrayID["1554&5020"] = "PixelView PV-DT235U(RN)"
-receiverArrayID["15f4&0131"] = "Astrometa DVB-T/DVB-T2"
-receiverArrayID["15f4&0133"] = "HanfTek DAB+FM+DVB-T"
-receiverArrayID["185b&0620"] = "Compro Videomate U620F"
-receiverArrayID["185b&0650"] = "Compro Videomate U650F"
-receiverArrayID["185b&0680"] = "Compro Videomate U680F"
-receiverArrayID["1b80&d393"] = "GIGABYTE GT-U7300"
-receiverArrayID["1b80&d394"] = "DIKOM USB-DVBT HD"
-receiverArrayID["1b80&d395"] = "Peak 102569AGPK"
-receiverArrayID["1b80&d397"] = "KWorld KW-UB450-T USB DVB-T Pico TV"
-receiverArrayID["1b80&d398"] = "Zaapa ZT-MINDVBZP"
-receiverArrayID["1b80&d39d"] = "SVEON STV20 DVB-T USB & FM"
-receiverArrayID["1b80&d3a4"] = "Twintech UT-40"
-receiverArrayID["1b80&d3a8"] = "ASUS U3100MINI_PLUS_V2"
-receiverArrayID["1b80&d3af"] = "SVEON STV27 DVB-T USB & FM"
-receiverArrayID["1b80&d3b0"] = "SVEON STV21 DVB-T USB & FM"
-receiverArrayID["1d19&1101"] = "Dexatek DK DVB-T Dongle (Logilink VG0002A)"
-receiverArrayID["1d19&1102"] = "Dexatek DK DVB-T Dongle (MSI DigiVox mini II V3.0)"
-receiverArrayID["1d19&1103"] = "Dexatek Technology Ltd. DK 5217 DVB-T Dongle"
-receiverArrayID["1d19&1104"] = "MSI DigiVox Micro HD"
-receiverArrayID["1f4d&a803"] = "Sweex DVB-T USB"
-receiverArrayID["1f4d&b803"] = "GTek T803"
-receiverArrayID["1f4d&c803"] = "Lifeview LV5TDeluxe"
-receiverArrayID["1f4d&d286"] = "MyGica TD312"
-receiverArrayID["1f4d&d803"] = "PROlectrix DV107669"
+receiverArrayID["0bda:2832"] = "Realtek RTL2832U"
+receiverArrayID["0bda:2838"] = "Realtek RTL2832U OEM"
+receiverArrayID["0413:6680"] = "DigitalNow Quad DVB-T PCI-E card"
+receiverArrayID["0413:6f0f"] = "Leadtek WinFast DTV Dongle mini D"
+receiverArrayID["0458:707f"] = "Genius TVGo DVB-T03 USB dongle (Ver. B)"
+receiverArrayID["0ccd:00a9"] = "Terratec Cinergy T Stick Black (rev 1)"
+receiverArrayID["0ccd:00b3"] = "Terratec NOXON DAB/DAB+ USB dongle (rev 1)"
+receiverArrayID["0ccd:00b4"] = "Terratec Deutschlandradio DAB Stick"
+receiverArrayID["0ccd:00b5"] = "Terratec NOXON DAB Stick - Radio Energy"
+receiverArrayID["0ccd:00b7"] = "Terratec Media Broadcast DAB Stick"
+receiverArrayID["0ccd:00b8"] = "Terratec BR DAB Stick"
+receiverArrayID["0ccd:00b9"] = "Terratec WDR DAB Stick"
+receiverArrayID["0ccd:00c0"] = "Terratec MuellerVerlag DAB Stick"
+receiverArrayID["0ccd:00c6"] = "Terratec Fraunhofer DAB Stick"
+receiverArrayID["0ccd:00d3"] = "Terratec Cinergy T Stick RC (Rev.3)"
+receiverArrayID["0ccd:00d7"] = "Terratec T Stick PLUS"
+receiverArrayID["0ccd:00e0"] = "Terratec NOXON DAB/DAB+ USB dongle (rev 2)"
+receiverArrayID["1554:5020"] = "PixelView PV-DT235U(RN)"
+receiverArrayID["15f4:0131"] = "Astrometa DVB-T/DVB-T2"
+receiverArrayID["15f4:0133"] = "HanfTek DAB+FM+DVB-T"
+receiverArrayID["185b:0620"] = "Compro Videomate U620F"
+receiverArrayID["185b:0650"] = "Compro Videomate U650F"
+receiverArrayID["185b:0680"] = "Compro Videomate U680F"
+receiverArrayID["1b80:d393"] = "GIGABYTE GT-U7300"
+receiverArrayID["1b80:d394"] = "DIKOM USB-DVBT HD"
+receiverArrayID["1b80:d395"] = "Peak 102569AGPK"
+receiverArrayID["1b80:d397"] = "KWorld KW-UB450-T USB DVB-T Pico TV"
+receiverArrayID["1b80:d398"] = "Zaapa ZT-MINDVBZP"
+receiverArrayID["1b80:d39d"] = "SVEON STV20 DVB-T USB & FM"
+receiverArrayID["1b80:d3a4"] = "Twintech UT-40"
+receiverArrayID["1b80:d3a8"] = "ASUS U3100MINI_PLUS_V2"
+receiverArrayID["1b80:d3af"] = "SVEON STV27 DVB-T USB & FM"
+receiverArrayID["1b80:d3b0"] = "SVEON STV21 DVB-T USB & FM"
+receiverArrayID["1d19:1101"] = "Dexatek DK DVB-T Dongle (Logilink VG0002A)"
+receiverArrayID["1d19:1102"] = "Dexatek DK DVB-T Dongle (MSI DigiVox mini II V3.0)"
+receiverArrayID["1d19:1103"] = "Dexatek Technology Ltd. DK 5217 DVB-T Dongle"
+receiverArrayID["1d19:1104"] = "MSI DigiVox Micro HD"
+receiverArrayID["1f4d:a803"] = "Sweex DVB-T USB"
+receiverArrayID["1f4d:b803"] = "GTek T803"
+receiverArrayID["1f4d:c803"] = "Lifeview LV5TDeluxe"
+receiverArrayID["1f4d:d286"] = "MyGica TD312"
+receiverArrayID["1f4d:d803"] = "PROlectrix DV107669"
 
-
-
-var receiverArray = [];
-receiverArray['RTLSDRBlog Blog V4'] = "RTL-SDR Blog V4"
-receiverArray['Realtek RTL2838UHIDIR'] = "RTL-SDR Blog V3"
-receiverArray['Nooelec NESDR SMArt v5'] = "Nooelec NESDR SMArt v5"
 
 
 
@@ -355,10 +349,6 @@ function fetchReceiver() {
 						
 			if (usb.id in receiverArrayID) {
 				var updatedReceiverString = receiverArrayID[usb.id];
-				receiverOnline = 1;
-			};
-			if (usb.id in receiverArray) {
-				var updatedReceiverString = receiverArray[usb.id];
 				receiverOnline = 1;
 			};
 			
