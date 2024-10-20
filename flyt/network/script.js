@@ -29,9 +29,9 @@ function getflytstats() {
 		data: { request: 'get-flyt-stats' },
 		success: function(response) {
 			
-			console.log(response);
+			//console.log(response);
 			var obj = JSON.parse(response);
-			console.log(obj);
+			//console.log(obj);
 			
 			// IP address
 			
@@ -95,7 +95,8 @@ function fetchBandwidth() {
     success: function(result) {
 
 		console.log(result);
-
+		var obj = JSON.parse(response);
+		console.log(obj);
 
 		
 		// Network
@@ -193,8 +194,8 @@ function fetchBandwidth() {
 
 		
 		var bandwidthString = "Download Last Month "+(downloadLastMonth / 1000000).toFixed()+"MB &emsp; Upload Last Month "+(uploadLastMonth / 1000000).toFixed()+"MB &emsp;&emsp; "+"Download This Month "+(downloadMonth / 1000000).toFixed()+"MB &emsp; Upload This Month "+(uploadMonth / 1000000).toFixed()+"MB";
-		document.getElementById("bandwidthMonth").innerHTML = bandwidthString;
-		
+		//document.getElementById("bandwidthMonth").innerHTML = bandwidthString;
+		console.log(bandwidthString);
 		
 
 		
