@@ -76,10 +76,15 @@
 
 <header style="margin-top:1rem; border-radius:0.75rem; display: flex; flex-direction: column; grid-gap: 1rem;    padding: 0;">
 <header class="large-panel-button" style="height:auto; width:100%; padding:0; ">
-<canvas id="messages" style="padding: 1rem; max-height: 30rem; display: block; box-sizing: border-box;"></canvas>
+<canvas id="bandwidthLive" style="padding: 1rem; max-height: 30rem; display: block; box-sizing: border-box;"></canvas>
 </header>
 </header>
 
+<header style="margin-top:1rem; border-radius:0.75rem; display: flex; flex-direction: column; grid-gap: 1rem;    padding: 0;">
+<header class="large-panel-button" style="height:auto; width:100%; padding:0; ">
+<canvas id="consumptionLive" style="padding: 1rem; max-height: 30rem; display: block; box-sizing: border-box;"></canvas>
+</header>
+</header>
 
 
 

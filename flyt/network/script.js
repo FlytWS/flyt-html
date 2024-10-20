@@ -281,11 +281,8 @@ function fetchBandwidth() {
 		
 		
 		
-		
-		
-		
-/*
-		
+		// Bandwidth Live
+
 		chartNetwork.data.labels = networkEth0Ar.map(row => timeConverterHMS(row.element));
 		
 		chartNetwork.data.datasets[0].data = networkEth0Ar.map(row => row.rxcount);
@@ -304,14 +301,10 @@ function fetchBandwidth() {
 		
 		
 		
-		
-*//*
-		
+
 		
 		
-		
-		// Bandwidth
-		
+		// Consumption Live
 		
 		
 				
@@ -379,7 +372,7 @@ function fetchBandwidth() {
 		
 		
 		
-	*/	
+	
 		
 		
 		
@@ -414,6 +407,251 @@ function fetchBandwidth() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(async function() {
+
+
+  chartNetwork = new Chart(
+    document.getElementById('bandwidthLive'),
+    {
+      type: 'line',
+      data: {
+        labels: dataEth0RX.map(row => row.element),
+        datasets: [
+          {
+			label: 'Ethernet 0 Download Kb/s',
+            data: dataEth0RX.map(row => row.count),
+			backgroundColor: [
+                '#6ba7ff'
+			],
+			borderWidth: 3,
+			borderColor: '#6ba7ff',
+          },
+		  {
+			label: 'Ethernet 0 Upload Kb/s',
+            data: dataEth0TX.map(row => row.count),
+			backgroundColor: [
+                '#6ba7ff99'
+			],
+			borderWidth: 3,
+			borderColor: '#6ba7ff99',
+          },
+		  {
+			label: 'Ethernet 1 Download Kb/s',
+            data: dataEth1RX.map(row => row.count),
+			backgroundColor: [
+                '#FF936B'
+			],
+			borderWidth: 3,
+			borderColor: '#FF936B',
+          },
+		  {
+			label: 'Ethernet 1 Upload Kb/s',
+            data: dataEth1TX.map(row => row.count),
+			backgroundColor: [
+                '#FF936B99'
+			],
+			borderWidth: 3,
+			borderColor: '#FF936B99',
+          },
+		  {
+			label: 'WiFi 0 Download Kb/s',
+            data: dataWlan0RX.map(row => row.count),
+			backgroundColor: [
+                '#936BFF'
+			],
+			borderWidth: 3,
+			borderColor: '#936BFF',
+          },
+		  {
+			label: 'WiFi 0 Upload Kb/s',
+            data: dataWlan0TX.map(row => row.count),
+			backgroundColor: [
+                '#936BFF99'
+			],
+			borderWidth: 3,
+			borderColor: '#936BFF99',
+          },
+		  {
+			label: 'WiFi 1 Download Kb/s',
+            data: dataWlan1RX.map(row => row.count),
+			backgroundColor: [
+                '#6BFF93'
+			],
+			borderWidth: 3,
+			borderColor: '#6BFF93',
+          },
+		  {
+			label: 'WiFi 1 Upload Kb/s',
+            data: dataWlan1TX.map(row => row.count),
+			backgroundColor: [
+                '#6BFF9399'
+			],
+			borderWidth: 3,
+			borderColor: '#6BFF9399',
+          }
+		  
+        ]
+      }, 
+	  options: {
+		responsive: true,
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
+	  }
+    }
+  );
+})();
+
+
+
+
+
+
+
+
+
+(async function() {
+
+
+  chartBandwidth = new Chart(
+    document.getElementById('consumptionLive'),
+    {
+      type: 'line',
+      data: {
+        labels: bandwidthEth0Ar.map(row => row.element),
+        datasets: [
+          {
+			label: 'Ethernet 0 Download MB',
+            data: bandwidthEth0Ar.map(row => row.rxcount),
+			backgroundColor: [
+                '#6ba7ff'
+			],
+			borderWidth: 3,
+			borderColor: '#6ba7ff',
+          },
+		  {
+			label: 'Ethernet 0 Upload MB',
+            data: bandwidthEth0Ar.map(row => row.txcount),
+			backgroundColor: [
+                '#6ba7ff99'
+			],
+			borderWidth: 3,
+			borderColor: '#6ba7ff99',
+          },
+		  {
+			label: 'Ethernet 1 Download MB',
+            data: bandwidthEth1Ar.map(row => row.rxcount),
+			backgroundColor: [
+                '#FF936B'
+			],
+			borderWidth: 3,
+			borderColor: '#FF936B',
+          },
+		  {
+			label: 'Ethernet 1 Upload MB',
+            data: bandwidthEth1Ar.map(row => row.txcount),
+			backgroundColor: [
+                '#FF936B99'
+			],
+			borderWidth: 3,
+			borderColor: '#FF936B99',
+          },
+		  {
+			label: 'WiFi 0 Download MB',
+            data: bandwidthWlan0Ar.map(row => row.rxcount),
+			backgroundColor: [
+                '#936BFF'
+			],
+			borderWidth: 3,
+			borderColor: '#936BFF',
+          },
+		  {
+			label: 'WiFi 0 Upload MB',
+            data: bandwidthWlan0Ar.map(row => row.txcount),
+			backgroundColor: [
+                '#936BFF99'
+			],
+			borderWidth: 3,
+			borderColor: '#936BFF99',
+          },
+		  {
+			label: 'WiFi 1 Download MB',
+            data: bandwidthWlan1Ar.map(row => row.rxcount),
+			backgroundColor: [
+                '#6BFF93'
+			],
+			borderWidth: 3,
+			borderColor: '#6BFF93',
+          },
+		  {
+			label: 'WiFi 1 Upload MB',
+            data: bandwidthWlan1Ar.map(row => row.txcount),
+			backgroundColor: [
+                '#6BFF9399'
+			],
+			borderWidth: 3,
+			borderColor: '#6BFF9399',
+          }
+		  
+        ]
+      }, 
+	  options: {
+		responsive: true,
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
+	  }
+    }
+  );
+})();
+
+
+
+
+
+
+
+
+function secondsToDHM(seconds) {
+	seconds = Number(seconds);
+	var d = Math.floor(seconds / (3600*24));
+	var h = Math.floor(seconds % (3600*24) / 3600);
+	var m = Math.floor(seconds % 3600 / 60);
+
+	var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days ") : "";
+	var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours ") : "";
+	var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes ") : "";
+	return dDisplay + hDisplay + mDisplay;
+}
 
 
 
