@@ -208,10 +208,10 @@ function fetchBandwidth() {
 		// Number of days past in the month
 		var dpim = dim - drim;
 		
-		var uploadedLastMonthGB = (uploadLastMonth / 1000000000).toFixed();
-		var downloadedLastMonthGB = (downloadLastMonth / 1000000000).toFixed();
-		var uploadedThisMonthGB = (uploadMonth / 1000000000).toFixed();
-		var downloadedThisMonthGB = (downloadMonth / 1000000000).toFixed();
+		var uploadedLastMonthGB = (uploadLastMonth / 1000000000).toFixed(2);
+		var downloadedLastMonthGB = (downloadLastMonth / 1000000000).toFixed(2);
+		var uploadedThisMonthGB = (uploadMonth / 1000000000).toFixed(2);
+		var downloadedThisMonthGB = (downloadMonth / 1000000000).toFixed(2);
 		
 		var predictedUploadThisMonthGB = (uploadedThisMonthGB / dpim) * dim;
 		var predictedDownloadThisMonthGB = (downloadedThisMonthGB / dpim) * dim;
