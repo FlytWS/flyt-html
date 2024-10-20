@@ -213,8 +213,8 @@ function fetchBandwidth() {
 		var uploadedThisMonthGB = (uploadMonth / 1000000000).toFixed(2);
 		var downloadedThisMonthGB = (downloadMonth / 1000000000).toFixed(2);
 		
-		var predictedUploadThisMonthGB = (uploadedThisMonthGB / dpim) * dim;
-		var predictedDownloadThisMonthGB = (downloadedThisMonthGB / dpim) * dim;
+		var predictedUploadThisMonthGB = (((uploadedThisMonthGB / dpim) * dim) - uploadedThisMonthGB).toFixed(2);
+		var predictedDownloadThisMonthGB = (((downloadedThisMonthGB / dpim) * dim) - downloadedThisMonthGB).toFixed(2);
 		
 		console.log(uploadedLastMonthGB);
 		console.log(downloadedLastMonthGB);
@@ -242,7 +242,7 @@ function fetchBandwidth() {
 		borderRadius: 8,
 		},
 		{
-		label: 'Predicted Use In GB',
+		label: 'Predicted Additional Use In GB',
 		data: zValues,
 		borderColor: "#fbfbfb20",
 		backgroundColor: "#fbfbfb10",
