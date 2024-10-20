@@ -5,11 +5,16 @@ fn10sec();
 setInterval(fn10sec, 10*1000);
 
 function fn60sec() {
-    fetchBandwidth();
+
 }
 fn60sec();
-setInterval(fn10sec, 60*1000);
+setInterval(fn60sec, 60*1000);
 
+function fn30sec() {
+    fetchBandwidth();
+}
+fn30sec();
+setInterval(fn30sec, 30*1000);
 
 
 
@@ -77,7 +82,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6ba7ff'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6ba7ff',
           },
 		  {
@@ -86,7 +91,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6ba7ff99'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6ba7ff99',
           },
 		  {
@@ -95,7 +100,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#FF936B'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#FF936B',
           },
 		  {
@@ -104,7 +109,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#FF936B99'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#FF936B99',
           },
 		  {
@@ -113,7 +118,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#936BFF'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#936BFF',
           },
 		  {
@@ -122,7 +127,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#936BFF99'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#936BFF99',
           },
 		  {
@@ -131,7 +136,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6BFF93'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6BFF93',
           },
 		  {
@@ -140,7 +145,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6BFF9399'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6BFF9399',
           }
 		  
@@ -183,7 +188,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6ba7ff'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6ba7ff',
           },
 		  {
@@ -192,7 +197,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6ba7ff99'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6ba7ff99',
           },
 		  {
@@ -201,7 +206,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#FF936B'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#FF936B',
           },
 		  {
@@ -210,7 +215,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#FF936B99'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#FF936B99',
           },
 		  {
@@ -219,7 +224,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#936BFF'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#936BFF',
           },
 		  {
@@ -228,7 +233,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#936BFF99'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#936BFF99',
           },
 		  {
@@ -237,7 +242,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6BFF93'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6BFF93',
           },
 		  {
@@ -246,7 +251,7 @@ var bandwidthWlan1Ar = [];
 			backgroundColor: [
                 '#6BFF9399'
 			],
-			borderWidth: 3,
+			borderWidth: 2,
 			borderColor: '#6BFF9399',
           }
 		  
@@ -441,7 +446,7 @@ function fetchBandwidth() {
 		
 		for (intface in result.interfaces) {
 			
-			const lastFive = takeRight(result.interfaces[intface].traffic.fiveminute, 24);
+			const lastFive = takeRight(result.interfaces[intface].traffic.fiveminute, 13);
 			
 			const lastMonth = takeRight(result.interfaces[intface].traffic.month, 2);
 

@@ -6,7 +6,7 @@ $(document).ready(function () {
 	
 
 	setInterval(fetchStats1, 30000);
-	setInterval(fetchStats2, 10000);	
+	setInterval(fetchStats2, 5000);
 
 	
 });
