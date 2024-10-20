@@ -193,11 +193,75 @@ function fetchBandwidth() {
 
 
 		
-		var bandwidthString = "Download Last Month "+(downloadLastMonth / 1000000).toFixed()+"MB &emsp; Upload Last Month "+(uploadLastMonth / 1000000).toFixed()+"MB &emsp;&emsp; "+"Download This Month "+(downloadMonth / 1000000).toFixed()+"MB &emsp; Upload This Month "+(uploadMonth / 1000000).toFixed()+"MB";
+		//var bandwidthString = "Download Last Month "++"MB &emsp; Upload Last Month "++"MB &emsp;&emsp; "+"Download This Month "++"MB &emsp; Upload This Month "++"MB";
 		//document.getElementById("bandwidthMonth").innerHTML = bandwidthString;
-		console.log(bandwidthString);
+		//console.log(bandwidthString);
+		
+		
 		
 
+				
+		const xValues = ["Last Month Upload", "Last Month Download", "This Month Upload", "This Month Download"];
+		const yValues = [(uploadLastMonth / 1000000).toFixed(), (downloadLastMonth / 1000000).toFixed(), (uploadMonth / 1000000).toFixed(), (downloadMonth / 1000000).toFixed()];
+		const zValues = [0, 0, 130.78, 425];
+
+
+		new Chart("myChart", {
+		type: "bar",
+		data: {
+		labels: xValues,
+		datasets: [{
+		label: 'Data Use In GB',
+		data: yValues,
+		borderColor: "#fbfbfb40",
+		backgroundColor: "#fbfbfb30",
+		borderWidth: 2,
+		borderRadius: 8,
+		},
+		{
+		label: 'Predicted Use In GB',
+		data: zValues,
+		borderColor: "#fbfbfb20",
+		backgroundColor: "#fbfbfb10",
+		borderWidth: 2,
+		borderRadius: 8,
+		}]
+		},
+		options: {
+
+		responsive: true,
+		scales: {
+		x: {
+		stacked: true,
+		},
+		y: {
+		stacked: true,
+		}
+		},
+
+		plugins: {
+		legend: {
+		display: false
+		}
+		}
+		}
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*
 		
 		chartNetwork.data.labels = networkEth0Ar.map(row => timeConverterHMS(row.element));
 		
@@ -218,7 +282,7 @@ function fetchBandwidth() {
 		
 		
 		
-		
+*//*
 		
 		
 		
@@ -292,7 +356,7 @@ function fetchBandwidth() {
 		
 		
 		
-		
+	*/	
 		
 		
 		
@@ -345,49 +409,3 @@ function fetchBandwidth() {
 
 
 
-
-const xValues = ["Last Month Upload", "Last Month Download", "This Month Upload", "This Month Download"];
-const yValues = [183.47, 5.28, 40.78, 1.18];
-const zValues = [0, 0, 130.78, 51.18];
-
-
-new Chart("myChart", {
-type: "bar",
-data: {
-labels: xValues,
-datasets: [{
-label: 'Data Use In GB',
-data: yValues,
-borderColor: "#fbfbfb40",
-backgroundColor: "#fbfbfb30",
-borderWidth: 2,
-borderRadius: 8,
-},
-{
-label: 'Predicted Use In GB',
-data: zValues,
-borderColor: "#fbfbfb20",
-backgroundColor: "#fbfbfb10",
-borderWidth: 2,
-borderRadius: 8,
-}]
-},
-options: {
-
-responsive: true,
-scales: {
-x: {
-stacked: true,
-},
-y: {
-stacked: true,
-}
-},
-
-plugins: {
-legend: {
-display: false
-}
-}
-}
-});
