@@ -95,7 +95,7 @@ function fetchBandwidth() {
     success: function(result) {
 
 		console.log(result);
-		var obj = JSON.parse(result);
+		result = JSON.parse(result);
 		console.log(obj);
 
 		
