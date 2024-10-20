@@ -22,6 +22,43 @@ setInterval(fn10sec, 60*1000);
 
 
 
+var dataEth0RXAr = [];
+var dataEth0TXAr = [];
+var dataEth0RX = [];
+var dataEth0TX = [];
+
+var dataEth1RXAr = [];
+var dataEth1TXAr = [];
+var dataEth1RX = [];
+var dataEth1TX = [];
+
+var dataEnd0RXAr = [];
+var dataEnd0TXAr = [];
+var dataEnd0RX = [];
+var dataEnd0TX = [];
+
+var dataWlan0RXAr = [];
+var dataWlan0TXAr = [];
+var dataWlan0RX = [];
+var dataWlan0TX = [];
+
+var dataWlan1RXAr = [];
+var dataWlan1TXAr = [];
+var dataWlan1RX = [];
+var dataWlan1TX = [];
+
+
+
+
+var bandwidthEth0Ar = [];
+var bandwidthEth1Ar = [];
+var bandwidthWlan0Ar = [];
+var bandwidthWlan1Ar = [];
+
+
+
+
+
 
 
 (async function() {
@@ -250,42 +287,6 @@ function secondsToDHM(seconds) {
 
 
 
-
-
-
-
-var dataEth0RXAr = [];
-var dataEth0TXAr = [];
-var dataEth0RX = [];
-var dataEth0TX = [];
-
-var dataEth1RXAr = [];
-var dataEth1TXAr = [];
-var dataEth1RX = [];
-var dataEth1TX = [];
-
-var dataEnd0RXAr = [];
-var dataEnd0TXAr = [];
-var dataEnd0RX = [];
-var dataEnd0TX = [];
-
-var dataWlan0RXAr = [];
-var dataWlan0TXAr = [];
-var dataWlan0RX = [];
-var dataWlan0TX = [];
-
-var dataWlan1RXAr = [];
-var dataWlan1TXAr = [];
-var dataWlan1RX = [];
-var dataWlan1TX = [];
-
-
-
-
-var bandwidthEth0Ar = [];
-var bandwidthEth1Ar = [];
-var bandwidthWlan0Ar = [];
-var bandwidthWlan1Ar = [];
 
 
 
