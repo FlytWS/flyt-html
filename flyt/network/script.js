@@ -80,7 +80,10 @@ function getflytstats() {
 
 
 
-
+function daysInThisMonth() {
+  var now = new Date();
+  return new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+}
 
 
 
@@ -198,11 +201,12 @@ function fetchBandwidth() {
 		//console.log(bandwidthString);
 		
 		
-		
+		console.log(daysInThisMonth);
+		console.log(daysInThisMonth() - (new Date()).getDate());
 
 				
 		const xValues = ["Last Month Upload", "Last Month Download", "This Month Upload", "This Month Download"];
-		const yValues = [(uploadLastMonth / 1000000).toFixed(), (downloadLastMonth / 1000000).toFixed(), (uploadMonth / 1000000).toFixed(), (downloadMonth / 1000000).toFixed()];
+		const yValues = [(uploadLastMonth / 1000000000).toFixed(), (downloadLastMonth / 1000000000).toFixed(), (uploadMonth / 1000000000).toFixed(), (downloadMonth / 1000000000).toFixed()];
 		const zValues = [0, 0, 130.78, 425];
 
 
