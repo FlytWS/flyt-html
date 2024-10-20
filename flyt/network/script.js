@@ -201,18 +201,25 @@ function fetchBandwidth() {
 		//console.log(bandwidthString);
 		
 		
+		// Number of days in the month
 		var dim = daysInThisMonth()
+		// Number of days left in the month
 		var drim = daysInThisMonth() - (new Date()).getDate();
+		// Number of days past in the month
 		var dpim = dim - drim;
 		
-		console.log(dim);
-		console.log(dpim);
-		console.log(drim);
+		var uploadedLastMonthGB = (uploadLastMonth / 1000000000).toFixed();
+		var downloadedLastMonthGB = (downloadLastMonth / 1000000000).toFixed();
+		var uploadedThisMonthGB = (uploadMonth / 1000000000).toFixed();
+		var downloadedThisMonthGB = (downloadMonth / 1000000000).toFixed();
+		
+		var predictedUploadThisMonthGB = (uploadedThisMonthGB / dpim) * dim;
+		var predictedDownloadThisMonthGB = (downloadedThisMonthGB / dpim) * dim;
 
-				
+
 		const xValues = ["Last Month Upload", "Last Month Download", "This Month Upload", "This Month Download"];
-		const yValues = [(uploadLastMonth / 1000000000).toFixed(), (downloadLastMonth / 1000000000).toFixed(), (uploadMonth / 1000000000).toFixed(), (downloadMonth / 1000000000).toFixed()];
-		const zValues = [0, 0, 130.78, 425];
+		const yValues = [uploadedLastMonthGB, downloadedLastMonthGB, uploadedThisMonthGB, downloadedThisMonthGB];
+		const zValues = [0, 0, predictedUploadThisMonthGB, predictedDownloadThisMonthGB];
 
 
 		new Chart("myChart", {
