@@ -201,8 +201,13 @@ function fetchBandwidth() {
 		//console.log(bandwidthString);
 		
 		
-		console.log(daysInThisMonth);
-		console.log(daysInThisMonth() - (new Date()).getDate());
+		var dim = daysInThisMonth()
+		var drim = daysInThisMonth() - (new Date()).getDate();
+		var dpim = dim - drim;
+		
+		console.log(dim);
+		console.log(dpim);
+		console.log(drim);
 
 				
 		const xValues = ["Last Month Upload", "Last Month Download", "This Month Upload", "This Month Download"];
