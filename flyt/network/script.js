@@ -215,6 +215,13 @@ function fetchBandwidth() {
 		
 		var predictedUploadThisMonthGB = (uploadedThisMonthGB / dpim) * dim;
 		var predictedDownloadThisMonthGB = (downloadedThisMonthGB / dpim) * dim;
+		
+		console.log(uploadedLastMonthGB);
+		console.log(downloadedLastMonthGB);
+		console.log(uploadedThisMonthGB);
+		console.log(downloadedThisMonthGB);
+		console.log(predictedUploadThisMonthGB);
+		console.log(predictedDownloadThisMonthGB);
 
 
 		const xValues = ["Last Month Upload", "Last Month Download", "This Month Upload", "This Month Download"];
