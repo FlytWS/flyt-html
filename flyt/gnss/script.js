@@ -6,6 +6,20 @@ $(document).ready(function () {
 
 
 
+
+function generateRandomData(numPoints) {
+    const data = [];
+    for (let i = 0; i < numPoints; i++) {
+        data.push({
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            r: Math.random() * 20 // Random radius between 0 and 20
+        });
+    }
+    return data;
+}
+
+
 (async function() {
   const data = [
     { element: "Satellite", count: 0 }
@@ -15,19 +29,14 @@ $(document).ready(function () {
     document.getElementById('satellites'),
     {
       type: 'bubble',
-      data: {
-        labels: data.map(row => row.element),
-        datasets: [
-          {
-            data: data.map(row => row.count),
-			backgroundColor: [
-                '#6ba7ff',
-				'rgba(255, 255, 255, 0.05)'
-			],
-			borderWidth: 0
-          }
-        ]
-      }, 
+	  data: {
+        datasets: [{
+            label: 'Random Dataset',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            data: generateRandomData(10) // Generate 10 random points
+        }]
+		},
 	  options: {
 		  
 		responsive: true,
@@ -97,16 +106,20 @@ function fetchGNSS() {
 		console.log(obj.satellites / 1);
 
 		
-		messages = [
-			{ element: "Satellite", count: (obj.satellites / 1) }
-		];
+		//messages = [
+		//	{ element: "Satellite", count: (obj.satellites / 1) }
+		//];
 		
-		chartSatellites.data.labels = messages.map(row => row.element);
-		chartSatellites.data.datasets[0].data = messages.map(row => row.count);		
+		//chartSatellites.data.labels = messages.map(row => row.element);
+		//chartSatellites.data.datasets[0].data = messages.map(row => row.count);		
 	
+		//chartSatellites.update();
+		
+		
+		const newData = generateRandomData(obj.satellites / 1);
+		chartSatellites.data.datasets[0].data.push(...newData);
 		chartSatellites.update();
-		
-		
+	
 		
 		
 
