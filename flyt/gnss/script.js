@@ -21,9 +21,6 @@ function generateRandomData(numPoints) {
 
 
 (async function() {
-  const data = [
-    { element: "Satellite", count: 0 }
-  ];
 
   chartSatellites = new Chart(
     document.getElementById('satellites'),
@@ -34,13 +31,13 @@ function generateRandomData(numPoints) {
             label: 'Satellite',
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
-            data: generateRandomData(0) // Generate 10 random points
+            data: generateRandomData(0)
         }]
 		},
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true,
+		maintainAspectRatio: false,
 		plugins: {
             legend: {
                 display: false
@@ -112,19 +109,7 @@ function fetchGNSS() {
 		}
 		
 		
-		
-		console.log(obj.satellites / 1);
-
-		
-		//messages = [
-		//	{ element: "Satellite", count: (obj.satellites / 1) }
-		//];
-		
-		//chartSatellites.data.labels = messages.map(row => row.element);
-		//chartSatellites.data.datasets[0].data = messages.map(row => row.count);		
-	
-		//chartSatellites.update();
-		
+			
 		
 		const newData = generateRandomData(obj.satellites / 1);
 		chartSatellites.data.datasets[0].data.push(...newData);
