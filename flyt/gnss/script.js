@@ -13,7 +13,7 @@ function generateRandomData(numPoints) {
         data.push({
             x: Math.random() * 100,
             y: Math.random() * 100,
-            r: Math.random() * 20 // Random radius between 0 and 20
+            r: 10
         });
     }
     return data;
@@ -31,10 +31,10 @@ function generateRandomData(numPoints) {
       type: 'bubble',
 	  data: {
         datasets: [{
-            label: 'Random Dataset',
+            label: 'Satellite',
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)',
-            data: generateRandomData(10) // Generate 10 random points
+            data: generateRandomData(0) // Generate 10 random points
         }]
 		},
 	  options: {
@@ -49,6 +49,17 @@ function generateRandomData(numPoints) {
 		scales: {
       x: {
         ticks: {
+          display: false
+		},
+		grid: {
+          display: false
+		}
+	  },
+	  y: {
+        ticks: {
+          display: false
+		},
+		grid: {
           display: false
 		}
 	  }
