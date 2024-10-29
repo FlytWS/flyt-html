@@ -45,7 +45,14 @@ function generateRandomData(numPoints) {
             legend: {
                 display: false
             }
-        }
+        },
+		scales: {
+      x: {
+        ticks: {
+          display: false
+		}
+	  }
+		},
 	  }
     }
   );
