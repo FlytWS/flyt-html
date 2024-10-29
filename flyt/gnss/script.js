@@ -84,17 +84,17 @@ function fetchGNSS() {
 		var obj = JSON.parse(result);
 		console.log(obj); 
 		
-		var objDevice = JSON.parse(obj.device);
 		
 		if (document.getElementById('driver').innerHTML == "") {
-			document.getElementById('driver').innerHTML = objDevice.driver;
+			document.getElementById('driver').innerHTML = obj.device.driver;
 		}
 		if (document.getElementById('path').innerHTML == "") {
-			document.getElementById('path').innerHTML = objDevice.path;
+			document.getElementById('path').innerHTML = obj.device.path;
 		}
 		
 		
 		
+		console.log(obj.satellites / 1);
 
 		
 		messages = [
