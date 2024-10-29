@@ -41,7 +41,7 @@
 <header style="border-radius:0.75rem; display: flex;    flex-wrap: wrap;    grid-gap: 1rem;    padding: 0;    justify-content: center;">
 
 <header class="large-panel-button" style="height: auto;">
-<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
+<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80; width:100%; min-height:20rem;">
 <canvas id="satellites" style="padding: 1rem; display: block; box-sizing: border-box;" ></canvas>
 </div>
 <div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">Satellites</div></div>

@@ -50,28 +50,10 @@ function generateRandomData(numPoints) {
       x: {
 		  
 		display:false,
-        ticks: {
-          display: false
-		},
-		grid: {
-          display: false
-		},
-		gridLines: {
-			drawBorder: false
-		},
 	  },
 	  y: {
 		
 		display:false,
-        ticks: {
-          display: false
-		},
-		grid: {
-          display: false
-		},
-		gridLines: {
-			drawBorder: false
-		},
 	  }
 		},
 	  }
