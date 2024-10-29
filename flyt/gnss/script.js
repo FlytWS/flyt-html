@@ -122,7 +122,8 @@ function fetchGNSS() {
 			chartSatellites.update();
 			
 			document.getElementById('satellitesTitle').innerHTML = obj.satellites + " Satellites";
-		
+			
+			satCount = (obj.satellites / 1);
 		}
 		
 
