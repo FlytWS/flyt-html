@@ -119,7 +119,8 @@ function fetchGNSS() {
 		const newData = generateRandomData(obj.satellites / 1);
 		chartSatellites.data.datasets[0].data.push(...newData);
 		chartSatellites.update();
-	
+		
+		document.getElementById('satellitesTitle').innerHTML = obj.satellites + " Satellites";
 		
 		
 
