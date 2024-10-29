@@ -40,34 +40,26 @@
 
 	<header style="border-radius:0.75rem; display: flex;    flex-wrap: wrap;    grid-gap: 1rem;    padding: 0;    justify-content: center;">
 
-	<header class="large-panel-button" style="height: auto;">
-	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
-	<canvas id="gain" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="240" height="240"></canvas>
-	</div>
-	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">CPU</div></div>
-	</header>
+		<header class="large-panel-button" style="height: auto;">
+		<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
+		<canvas id="gain" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="240" height="240"></canvas>
+		</div>
+		<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">Gain</div></div>
+		</header>
 
-	<header class="large-panel-button" style="height: auto;">
-	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
-	<canvas id="signal" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="240" height="240"></canvas>
-	</div>
-	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">RAM</div></div>
-	</header>
+		<header class="large-panel-button" style="height: auto;">
+		<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
+		<canvas id="signal" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="240" height="240"></canvas>
+		</div>
+		<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">Signal</div></div>
+		</header>
 
-	<header class="large-panel-button" style="height: auto;">
-	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
-	<canvas id="noise" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="240" height="240"></canvas>
-	</div>
-	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">Storage</div></div>
-	</header>
-
-	<header class="large-panel-button" style="height: auto;">
-	<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
-	<canvas id="x" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="240" height="240"></canvas>
-	</div>
-	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">Temperature</div></div>
-	</header>
-
+		<header class="large-panel-button" style="height: auto;">
+		<div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
+		<canvas id="noise" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="240" height="240"></canvas>
+		</div>
+		<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">Noise</div></div>
+		</header>
 
 	</header>		  
 

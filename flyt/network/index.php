@@ -73,13 +73,17 @@
 </header>
 
 
-
+	<div id="page-title" style=" margin-bottom:1rem;    line-height: 1rem;    letter-spacing: 0.4rem;    text-transform: uppercase;    font-weight: 400;	margin-top:4rem;    display: flex; justify-content: center;"><h1>Bandwidth</h1></div>
+	
 <header style="margin-top:1rem; border-radius:0.75rem; display: flex; flex-direction: column; grid-gap: 1rem;    padding: 0;">
 <header class="large-panel-button" style="height:auto; width:100%; padding:0; ">
 <canvas id="bandwidthLive" style="padding: 1rem; max-height: 30rem; display: block; box-sizing: border-box;"></canvas>
 </header>
 </header>
 
+	<div id="page-title" style=" margin-bottom:1rem;    line-height: 1rem;    letter-spacing: 0.4rem;    text-transform: uppercase;    font-weight: 400;	margin-top:4rem;    display: flex; justify-content: center;"><h1>Consumption</h1></div>
+	
+	
 <header style="margin-top:1rem; border-radius:0.75rem; display: flex; flex-direction: column; grid-gap: 1rem;    padding: 0;">
 <header class="large-panel-button" style="height:auto; width:100%; padding:0; ">
 <canvas id="consumptionLive" style="padding: 1rem; max-height: 30rem; display: block; box-sizing: border-box;"></canvas>

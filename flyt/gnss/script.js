@@ -46,12 +46,13 @@ function fetchGNSS() {
 		var obj = JSON.parse(result);
 		console.log(obj); 
 		
+		var objDevice = JSON.parse(obj.device);
 		
 		if (document.getElementById('driver').innerHTML == "") {
-			document.getElementById('driver').innerHTML = obj.device['driver'];
+			document.getElementById('driver').innerHTML = objDevice.driver;
 		}
 		if (document.getElementById('path').innerHTML == "") {
-			document.getElementById('path').innerHTML = obj.device['path'];
+			document.getElementById('path').innerHTML = objDevice.path;
 		}
 		
 		
