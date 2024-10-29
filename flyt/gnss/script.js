@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	
 	fetchGNSS();
+	setInterval(fetchGNSS, 10000);
 	
 });
 
@@ -89,7 +90,7 @@ function secondsToDHM(seconds) {
 
 
 
-
+satCount = 0;
 
 function fetchGNSS() {
 
@@ -114,14 +115,15 @@ function fetchGNSS() {
 		}
 		
 		
+		if (satCount !== (obj.satellites / 1) {
+		
+			const newData = generateRandomData(obj.satellites / 1);
+			chartSatellites.data.datasets[0].data.push(...newData);
+			chartSatellites.update();
 			
+			document.getElementById('satellitesTitle').innerHTML = obj.satellites + " Satellites";
 		
-		const newData = generateRandomData(obj.satellites / 1);
-		chartSatellites.data.datasets[0].data.push(...newData);
-		chartSatellites.update();
-		
-		document.getElementById('satellitesTitle').innerHTML = obj.satellites + " Satellites";
-		
+		}
 		
 
 
