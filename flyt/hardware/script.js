@@ -295,10 +295,10 @@ function fetchStats1() {
 		console.log(result);
 		var obj = JSON.parse(result);
 
-		if (obj.temperature_current_cpu_thermal > 60) {
+		if (obj.temperature_current_cpu_thermal > 85) {
 		 var max_temperature_current_cpu_thermal = (obj.temperature_current_cpu_thermal).toFixed();
 		} else {
-		 var max_temperature_current_cpu_thermal = 60;
+		 var max_temperature_current_cpu_thermal = 85;
 		}
 
 		chartTemperature.data.datasets[0].data[0] = (obj.temperature_current_cpu_thermal/1).toFixed();
