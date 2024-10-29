@@ -37,6 +37,7 @@ function generateRandomData(numPoints) {
 	  options: {
 		  
 		tooltips: {
+			enabled: false,
 		  mode: 'index',
 		  intersect: false
 	   },
