@@ -36,16 +36,9 @@ function generateRandomData(numPoints) {
 		},
 	  options: {
 		  
-		tooltips: {
-			enabled: false,
-		  mode: 'index',
-		  intersect: false
-	   },
-	   hover: {
-		  mode: 'index',
-		  intersect: false
-	   },
-			  
+tooltips: {enabled: false},
+    hover: {mode: null},
+	
 		responsive: true,
 		maintainAspectRatio: false,
 		plugins: {
