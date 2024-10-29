@@ -36,12 +36,14 @@ function generateRandomData(numPoints) {
 		},
 	  options: {
 		  
-tooltips: {enabled: false},
-    hover: {mode: null},
+
 	
 		responsive: true,
 		maintainAspectRatio: false,
 		plugins: {
+			tooltip: {
+                        enabled: false
+                    },
             legend: {
                 display: false
             }
