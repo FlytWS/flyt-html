@@ -42,9 +42,9 @@
 
 <header class="large-panel-button" style="height: auto;">
 <div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;">
-<canvas id="cpu" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="180" height="180"></canvas>
+<canvas id="satellites" style="padding: 1rem; display: block; box-sizing: border-box; height: 240px; width: 240px;" width="180" height="180"></canvas>
 </div>
-<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">CPU</div></div>
+<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">Satellites</div></div>
 </header>
 
 

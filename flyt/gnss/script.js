@@ -6,6 +6,44 @@ $(document).ready(function () {
 
 
 
+(async function() {
+  const data = [
+    { element: "Satellite", count: 0 }
+  ];
+
+  chartSatellites = new Chart(
+    document.getElementById('satellites'),
+    {
+      type: 'bubble',
+      data: {
+        labels: data.map(row => row.element),
+        datasets: [
+          {
+            data: data.map(row => row.count),
+			backgroundColor: [
+                '#6ba7ff',
+				'rgba(255, 255, 255, 0.05)'
+			],
+			borderWidth: 0
+          }
+        ]
+      }, 
+	  options: {
+		  
+		responsive: true,
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
+	  }
+    }
+  );
+})();
+
+
+
 
 
 function secondsToDHM(seconds) {
@@ -54,6 +92,21 @@ function fetchGNSS() {
 		if (document.getElementById('path').innerHTML == "") {
 			document.getElementById('path').innerHTML = objDevice.path;
 		}
+		
+		
+		
+
+		
+		messages = [
+			{ element: "Satellite", count: (obj.satellites / 1) }
+		];
+		
+		chartSatellites.data.labels = messages.map(row => row.element);
+		chartSatellites.data.datasets[0].data = messages.map(row => row.count);		
+	
+		chartSatellites.update();
+		
+		
 		
 		
 
