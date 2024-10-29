@@ -40,7 +40,7 @@ function generateRandomData(numPoints) {
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true,
+		maintainAspectRatio: false,
 		plugins: {
             legend: {
                 display: false
@@ -53,7 +53,10 @@ function generateRandomData(numPoints) {
 		},
 		grid: {
           display: false
-		}
+		},
+		gridLines: {
+			drawBorder: false
+		},
 	  },
 	  y: {
         ticks: {
@@ -61,7 +64,10 @@ function generateRandomData(numPoints) {
 		},
 		grid: {
           display: false
-		}
+		},
+		gridLines: {
+			drawBorder: false
+		},
 	  }
 		},
 	  }
