@@ -48,6 +48,8 @@ function generateRandomData(numPoints) {
         },
 		scales: {
       x: {
+		  
+		display:false,
         ticks: {
           display: false
 		},
@@ -59,6 +61,8 @@ function generateRandomData(numPoints) {
 		},
 	  },
 	  y: {
+		
+		display:false,
         ticks: {
           display: false
 		},
