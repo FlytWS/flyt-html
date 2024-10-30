@@ -257,6 +257,10 @@ function clickDisplayMarker(value) {
 function displayMarker(currentValue) {
 	
 	
+	$('#display-control').animate({bottom: '-3.2rem'});
+	$('#display-control-altitude-container').animate({bottom: '0rem'});	
+	
+	
 	selectedAircraft = currentValue.hex;
 	
 	consoleWindowWrite("Displaying aircraft "+selectedAircraft);
@@ -601,6 +605,11 @@ function mapCraftClose() {
 	if ($('#map-list-container').css('left') === '0px') {
 		$('#map-list').animate({marginLeft: '0rem'});
 	};
+	
+	
+	$('#display-control-altitude-container').animate({bottom: '-3.2rem'});
+	$('#display-control').animate({bottom: '0rem'});
+	
 
 
 }

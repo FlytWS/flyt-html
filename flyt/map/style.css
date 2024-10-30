@@ -85,10 +85,11 @@ transition: 0.5s ease-in-out all;
 .display-craft-subsection-title {
     text-transform: uppercase;
     font-size: 0.8rem;
-    font-weight: 600;
 }
 
-
+#display-control-altitude-container {
+	bottom:-3.2rem;
+}
 .display-craft-section {
 	height:1em;
 	width:calc(100% - 3.2rem);
@@ -484,7 +485,7 @@ footer {
 	left:-100vw;
 	top:3.2rem;
 	width:22rem;
-	height: calc(100% - 10.2rem);
+	height: calc(100% - 6.4rem);
 	z-index:20;
 	font-size: 0.8rem;
 }
