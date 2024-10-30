@@ -462,7 +462,6 @@ footer {
 	height:calc(100vh - 3.2rem);
 	position: absolute;
 	top:0rem;
-	
 	z-index:10;
 	overflow: hidden;
 	
@@ -471,6 +470,7 @@ footer {
 
 #map-list-container {
 	left:-100vw;
+	z-index:19;
 }
 #map-console {
 	left:-100vw;

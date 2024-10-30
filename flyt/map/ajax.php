@@ -19,9 +19,9 @@ clearstatcache();
 		$location = null;
 		$wingbitsantennaid = null;
 		
-		$file = '/etc/flyt/data/location';
+		$file = '/etc/flyt/data/flyt-location.json';
 		if (file_exists($file)) {
-			$location = file_get_contents('/etc/flyt/data/location');
+			$location = file_get_contents($file);
 		};
 		$file = '/etc/flyt/data/wingbits';
 		if (file_exists($file)) {
