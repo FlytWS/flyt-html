@@ -91,6 +91,7 @@ function secondsToDHM(seconds) {
 
 
 satCount = 0;
+var receiverTagMaster = "";
 
 function fetchGNSS() {
 
@@ -106,12 +107,10 @@ function fetchGNSS() {
 		var obj = JSON.parse(result);
 		console.log(obj); 
 		
-		
-		if (document.getElementById('driver').innerHTML == "") {
-			document.getElementById('driver').innerHTML = obj.device.driver;
-		}
-		if (document.getElementById('path').innerHTML == "") {
-			document.getElementById('path').innerHTML = obj.device.path;
+		var receiverTag = '<span id="driver">'+obj.device.driver+'</span><br><span id="path" style="color:#fbfbfb90;">'+obj.device.path+'</span>';
+		if (receiverTagMaster !== receiverTag) {
+			document.getElementById('receiver').innerHTML = receiverTag;
+			receiverTagMaster = receiverTag;
 		}
 		
 		if (obj.mode == 1) {
@@ -130,11 +129,11 @@ function fetchGNSS() {
 		}
 		
 		
-		document.getElementById('gnssLat').innerHTML = obj.latitude;
-		document.getElementById('gnssLon').innerHTML = obj.longitude;
-		document.getElementById('gnssMode').innerHTML = obj.mode;
-		document.getElementById('gnssSat').innerHTML = obj.satellites;
-		document.getElementById('gnssAlt').innerHTML = obj.altitude;
+		document.getElementById('gnssLat').innerHTML = obj.latitude + " Latitude";
+		document.getElementById('gnssLon').innerHTML = obj.longitude + " Longitude";
+		document.getElementById('gnssMode').innerHTML = obj.mode + "D Fix";
+		document.getElementById('gnssSat').innerHTML = obj.satellites + " Satellite(s)";
+		document.getElementById('gnssAlt').innerHTML = obj.altitude + " Altitude";
 
 
 
