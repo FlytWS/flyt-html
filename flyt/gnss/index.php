@@ -4,7 +4,7 @@
 <head>
 <title>Flyt GNSS</title>
 <?php include_once('../includes/head.php'); ?>
-<link rel="stylesheet" href="/flyt/global/style/leaflet.1.9.4.css"/>
+<link rel="stylesheet" href="/global/style/leaflet.1.9.4.css"/>
 <link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -130,10 +130,10 @@
 
 
 
-<script src="/flyt/global/script/jquery.min.3.7.1.js"></script>
-<script src="/flyt/global/script/jquery-ui.min.1.11.3.js"></script>
-<script src="/flyt/global/script/bluebird.min.3.3.1.js"></script>
-<script src="/flyt/global/script/chart.min.3.9.1.js"></script>
-<script src="/flyt/global/script/moment.min.2.30.0.js"></script>
-<script src="/flyt/global/script/script.js"></script>
+<script src="/global/script/jquery.min.3.7.1.js"></script>
+<script src="/global/script/jquery-ui.min.1.11.3.js"></script>
+<script src="/global/script/bluebird.min.3.3.1.js"></script>
+<script src="/global/script/chart.min.3.9.1.js"></script>
+<script src="/global/script/moment.min.2.30.0.js"></script>
+<script src="/global/script/script.js"></script>
 <script src="script.js"></script>
