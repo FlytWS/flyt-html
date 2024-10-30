@@ -1681,6 +1681,6 @@ const intervalFetch = setInterval(function() {
 	consoleWindowWrite("Scanning For Aircraft");
 	fetchReADSBCraft();
 	drawOutlineJson();
-}, 1000);
+}, 5000);
 
 

@@ -8,13 +8,13 @@
 		<section id="menu-body">
 				<header>
 					<div class="menu-top">
-					<div onclick="navigate('/flyt/console')" class="pointer" style="display: flex; flex-direction: column;"><h1>Console</h1><sub>Your Node at a glance</sub></div>
-					<div onclick="navigate('/flyt/radio')" class="pointer" style="display: flex; flex-direction: column;"><h1>Radio</h1><sub>Software-defined radio stats</sub></div>
-					<div onclick="navigate('/flyt/hardware')" class="pointer" style="display: flex; flex-direction: column;"><h1>Hardware</h1><sub>Node hardware metrics</sub></div>
-					<div onclick="navigate('/flyt/network')" class="pointer" style="display: flex; flex-direction: column;"><h1>Network</h1><sub>Network metrics and data</sub></div>
-					<div onclick="navigate('/flyt/gnss')" class="pointer" style="display: flex; flex-direction: column;"><h1>GNSS</h1><sub>GNSS satellite fix</sub></div>
-					<div onclick="navigate('/flyt/map')" class="pointer" style="display: flex; flex-direction: column;"><h1>Map</h1><sub>Mapping your ADS-B signals</sub></div>
-					<div onclick="navigate('/flyt/report')" class="pointer" style="display: flex; flex-direction: column;"><h1>Report</h1><sub>Investigate your reports to improve tracking</sub></div>
+					<div onclick="navigate('/console')" class="pointer" style="display: flex; flex-direction: column;"><h1>Console</h1><sub>Your Node at a glance</sub></div>
+					<div onclick="navigate('/radio')" class="pointer" style="display: flex; flex-direction: column;"><h1>Radio</h1><sub>Software-defined radio stats</sub></div>
+					<div onclick="navigate('/hardware')" class="pointer" style="display: flex; flex-direction: column;"><h1>Hardware</h1><sub>Node hardware metrics</sub></div>
+					<div onclick="navigate('/network')" class="pointer" style="display: flex; flex-direction: column;"><h1>Network</h1><sub>Network metrics and data</sub></div>
+					<div onclick="navigate('/gnss')" class="pointer" style="display: flex; flex-direction: column;"><h1>GNSS</h1><sub>GNSS satellite fix</sub></div>
+					<div onclick="navigate('/map')" class="pointer" style="display: flex; flex-direction: column;"><h1>Map</h1><sub>Mapping your ADS-B signals</sub></div>
+					<div onclick="navigate('/report')" class="pointer" style="display: flex; flex-direction: column;"><h1>Report</h1><sub>Investigate your reports to improve tracking</sub></div>
 					</div>
 					<div class="menu-bottom">
 						<svg class="pointer" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
