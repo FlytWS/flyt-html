@@ -1,27 +1,20 @@
 function fn10sec() {
     getflytstats();
 }
-fn10sec();
-setInterval(fn10sec, 10*1000);
-
-function fn60sec() {
-
-}
-fn60sec();
-setInterval(fn60sec, 60*1000);
-
 function fn30sec() {
     fetchBandwidth();
 }
-fn30sec();
-setInterval(fn30sec, 30*1000);
 
 
 
+window.addEventListener('load', (event) => {
+	
+	fn10sec();
+	setInterval(fn10sec, 10*1000);
+	fn30sec();
+	setInterval(fn30sec, 30*1000);
 
-
-
-
+}
 
 
 

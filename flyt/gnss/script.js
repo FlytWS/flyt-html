@@ -114,7 +114,9 @@ function fetchGNSS() {
 			document.getElementById('path').innerHTML = obj.device.path;
 		}
 		
-		
+		if (obj.mode == 1) {
+			obj.satellites = 0;
+		}
 		if (satCount !== (obj.satellites / 1)) {
 		
 			const newData = generateRandomData(obj.satellites / 1);
