@@ -1150,7 +1150,7 @@ function fetchReADSBCraft() {
 					theMarker = L.marker([currentValue.lat, currentValue.lon], {
 					icon: new L.DivIcon({
 					className: 'infoPanel',
-					html: '<img id="mapMarker-'+currentValue.hex+'" class="mapMarker" style="'+filter+' transform: rotate(' + currentValue.track + 'deg); width:'+ craftSizeArray[currentValue.category] +';" src="/flyt/global/image/' + currentValue.category + '.svg"/>' 
+					html: '<img id="mapMarker-'+currentValue.hex+'" class="mapMarker" style="'+filter+' transform: rotate(' + currentValue.track + 'deg); width:'+ craftSizeArray[currentValue.category] +';" src="/global/image/' + currentValue.category + '.svg"/>' 
 					}),
 					forceZIndex:currentValue.alt_baro
 					}).on('click', function(e) { displayMarker(currentValue); });
@@ -1300,7 +1300,7 @@ function fetchReADSBCraft() {
 				// Country
 				try {
 					
-					document.getElementById('display-list-country-'+currentValue.hex).innerHTML = "<img title='" + resultFetchAR.response.aircraft.registered_owner_country_iso_name + "' src='/flyt/global/image/flags/4x3/"+(resultFetchAR.response.aircraft.registered_owner_country_iso_name).toLowerCase()+".png' style='width:1rem;' />";
+					document.getElementById('display-list-country-'+currentValue.hex).innerHTML = "<img title='" + resultFetchAR.response.aircraft.registered_owner_country_iso_name + "' src='/global/image/flags/4x3/"+(resultFetchAR.response.aircraft.registered_owner_country_iso_name).toLowerCase()+".png' style='width:1rem;' />";
 
 				} catch (err) {
 					
