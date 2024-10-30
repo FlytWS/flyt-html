@@ -44,15 +44,7 @@ transition: 0.5s ease-in-out all;
     height: 5rem;
 	background-image: linear-gradient(#222431da 0%, transparent 100%);
 }
-.display-craft-header-action-bottomfade {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 99;
-	width: 100%;
-    height: 5rem;
-	background-image: linear-gradient(transparent 0%, #222431da 100%);
-}
+
 
 
 
@@ -231,7 +223,7 @@ footer {
 	display: flex;
     flex-wrap: nowrap;
     justify-content: start;
-	bottom:0.7rem;
+	bottom:0.6rem;
 	left: 0;
     position: absolute;
     width: 2rem;
@@ -243,7 +235,7 @@ footer {
 	display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-	bottom:0.7rem;
+	bottom:0.6rem;
 	left: 0;
     position: absolute;
     width: 4rem;
@@ -255,7 +247,7 @@ footer {
 	display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-	bottom:0.7rem;
+	bottom:0.6rem;
 	left: 0;
     position: absolute;
     width: 4rem;
@@ -267,7 +259,7 @@ footer {
 	display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-	bottom:0.7rem;
+	bottom:0.6rem;
 	left: 0;
     position: absolute;
     width: 4rem;
@@ -279,7 +271,7 @@ footer {
 	display: flex;
     flex-wrap: nowrap;
     justify-content: end;
-	bottom:0.7rem;
+	bottom:0.6rem;
 	left: 0;
     position: absolute;
     width: 4rem;
