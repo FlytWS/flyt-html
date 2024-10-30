@@ -11,7 +11,7 @@
 
 <body>
 
-<section id="page-title" style="position:absolute; z-index: 500; width: 100vw;">
+<section id="page-title" style="position:absolute; z-index: 15; width: 100vw;">
 <header>
 <?php $pageTitle = "Map"; ?>
 <?php include_once('../includes/main-nav.php'); ?>
@@ -358,52 +358,6 @@
 		
 		
 		
-	<div class="principle-container" id="stats-hero">
-	
-		<div class="stats-hero-sub">
-			<div style="position: relative; width:50%; max-width:26rem; text-align:center; padding:3rem; padding-bottom:0rem;" data-tooltip="Gain"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg></div>
-			
-			<div style="position: relative; width:50%; max-width:26rem; text-align:center; padding:3rem; padding-bottom:0rem;" data-tooltip="Signal"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg></div>
-			<div class="stats-hero-sub-canvas"><canvas id="gain" style="padding: 3rem; display: block; box-sizing: border-box; height: 416px; width: 416px;" width="520" height="520"></canvas></div>
-			<div class="stats-hero-sub-canvas"><canvas id="signal" style="padding: 3rem; display: block; box-sizing: border-box; height: 416px; width: 416px;" width="520" height="520"></canvas></div>
-		</div>
-		
-		<div class="stats-hero-sub">
-			<div style="position: relative; width:50%; max-width:26rem; text-align:center; padding:3rem; padding-bottom:0rem;" data-tooltip="Noise"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-speaker"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><circle cx="12" cy="14" r="4"></circle><line x1="12" y1="6" x2="12.01" y2="6"></line></svg></div>
-			<div style="position: relative; width:50%; max-width:26rem; text-align:center; padding:3rem; padding-bottom:0rem;" data-tooltip="State"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg></div>
-			<div class="stats-hero-sub-canvas"><canvas id="noise" style="padding: 3rem; display: block; box-sizing: border-box; height: 416px; width: 416px;" width="520" height="520"></canvas></div>
-			<div class="stats-hero-sub-canvas"><canvas id="state" style="padding: 3rem; display: block; box-sizing: border-box; height: 416px; width: 416px;" width="520" height="520"></canvas></div>
-		</div>
-		
-
-	</div>	
-
-	
-	
-	<div class="principle-container" style="width:100%; display:flex; justify-content: space-evenly; background-color:#171e25; margin-bottom:4rem;">
-			
-			<div class="aircraft-hero-sub">
-				<div style="position: relative; width:50%; max-width:26rem; text-align:center; padding-bottom:0rem; cursor:pointer;" data-tooltip="Stats" onclick="showStats();" id="statsChev"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-				<div id="stat_container" style="padding: 2rem; padding-top:0rem; display:none;">
-				
-				<div class="announcement-title">Now</div>
-				<div class="stats" id="statsNow">
-				</div>
-				<div class="announcement-title">1 Minute</div>
-				<div class="stats" id="statsLast1Min">
-				</div>
-				<div class="announcement-title">5 Minutes</div>
-				<div class="stats" id="statsLast5Min">
-				</div>
-				<div class="announcement-title">15 Minutes</div>
-				<div class="stats" id="statsLast15Min">
-				</div>
-				
-				
-				</div>
-			</div>
-
-		</div>
 	
 	
 	
