@@ -98,6 +98,9 @@
 
 
 
+<header style="margin-top:1rem; border-radius:0.75rem; flex-direction: column; padding:0rem; overflow:hidden; ">
+<div id="cMap"></div>
+</header>
 
 
 
@@ -132,6 +135,7 @@
 
 <script src="/global/script/jquery.min.3.7.1.js"></script>
 <script src="/global/script/jquery-ui.min.1.11.3.js"></script>
+<script src="/global/script/leaflet.min.1.9.4.js"></script>
 <script src="/global/script/bluebird.min.3.3.1.js"></script>
 <script src="/global/script/chart.min.3.9.1.js"></script>
 <script src="/global/script/moment.min.2.30.0.js"></script>
