@@ -1,18 +1,12 @@
 .leaflet-control-container { position: absolute; right: 4rem; top:0.5rem; } 
 
-#page-title { width: max-content; }
-
 .leaflet-control-layers-expanded {
   width:8rem;
 }
 
-
 #display-control-altitude-reference {
 transition: 0.5s ease-in-out all;
 }
-
-
-
 
 .overlay {
 	
@@ -374,7 +368,7 @@ footer {
 	
 	height: calc(100vh);
 	width: calc(100vw - 3rem);
-	position:fixed;
+	position:relative;
 	top:0;
 	left:0;
 	z-index:1;
