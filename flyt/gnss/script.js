@@ -12,19 +12,15 @@ let cockpitMap = L.map('cMap', { zoomControl: false,    scrollWheelZoom: false }
 
 var markerGroupL = L.layerGroup().addTo(cockpitMap);
 var markerGroupG = L.layerGroup().addTo(cockpitMap);
-
-function getMap() {
 	
-	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		className: 'cockpit-tiles'
-	}).addTo(cockpitMap);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	className: 'cockpit-tiles'
+}).addTo(cockpitMap);
 
-	let markers = L.layerGroup().addTo(cockpitMap);
-	cockpitMap.dragging.disable();
+let markers = L.layerGroup().addTo(cockpitMap);
+cockpitMap.dragging.disable();
 
-	cockpitMap.setView([0,0], 1);
-
-};
+cockpitMap.setView([0,0], 1);
 
 
 
