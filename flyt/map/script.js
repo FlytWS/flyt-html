@@ -866,7 +866,7 @@ function showStats() {
 function fetchReADSBCraft() {
 
 
-    let request = jQuery.ajax({ url: '/flyt/data/aircraft.json', cache: false, dataType: 'json' });
+    let request = jQuery.ajax({ url: '/data/aircraft.json', cache: false, dataType: 'json' });
     request.done(function(data) {		
 		
 
@@ -1583,7 +1583,7 @@ let polygon;
 function drawOutlineJson() {
 	
 
-    let request = jQuery.ajax({ url: '/flyt/data/outline.json',
+    let request = jQuery.ajax({ url: '/data/outline.json',
         cache: false,
         dataType: 'json' });
     request.done(function(data) {
