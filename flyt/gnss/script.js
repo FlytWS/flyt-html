@@ -118,6 +118,7 @@ function fetchGNSS() {
 		if (satCount !== (obj.satellites / 1)) {
 		
 			const newData = generateRandomData(obj.satellites / 1);
+			chartSatellites.data.datasets[0].data = null;
 			chartSatellites.data.datasets[0].data.push(...newData);
 			chartSatellites.update();
 			
