@@ -765,10 +765,11 @@ function setLocation() {
 			try {
 				
 				var resParse = JSON.parse(response);
+				console.log(resParse);
 				
-				if (resParse.location.lat) {
+				if (resParse.location.latitude) {
 
-					markerFrom = L.circleMarker([resParse.location.lat,resParse.location.lon], { color: "#6ba7ff", radius: 12 });
+					markerFrom = L.circleMarker([resParse.location.latitude,resParse.location.longitude], { color: "#6ba7ff", radius: 12 });
 					from = markerFrom.getLatLng();
 
 					markerFrom.bindPopup(resParse.name + '<br>' + (from).toString());
