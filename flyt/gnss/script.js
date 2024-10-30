@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.addEventListener('load', (event) => {
 	
 	fetchGNSS();
 	setInterval(fetchGNSS, 10000);
@@ -124,11 +124,18 @@ function fetchGNSS() {
 			chartSatellites.data.datasets[0].data.push(...newData);
 			chartSatellites.update();
 			
-			document.getElementById('satellitesTitle').innerHTML = obj.satellites + " Satellites";
+			//document.getElementById('satellitesTitle').innerHTML = obj.satellites + " Satellites";
 			
 			satCount = (obj.satellites / 1);
 		}
 		
+		
+		document.getElementById('gnssLat').innerHTML = obj.latitude;
+		document.getElementById('gnssLon').innerHTML = obj.longitude;
+		document.getElementById('gnssMode').innerHTML = obj.mode;
+		document.getElementById('gnssSat').innerHTML = obj.satellites;
+		document.getElementById('gnssAlt').innerHTML = obj.altitude;
+
 
 
 	},
