@@ -26,6 +26,8 @@ clearstatcache();
 		$file = '/etc/flyt/data/wingbits';
 		if (file_exists($file)) {
 			$wingbitsantennaid = str_replace(PHP_EOL, '', file_get_contents('/etc/flyt/data/wingbits'));
+		} else {
+			$wingbitsantennaid = "Unknown";
 		};
 		echo '{"location":'.$location.',"name":"'.$wingbitsantennaid.'"}';
 		
