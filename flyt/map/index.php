@@ -496,11 +496,10 @@
 
 
 
-<div id="display-control-altitude" class="overlayControl display-control">
+<div id="display-control-altitude-container" class="overlayControl display-control">
 
 		<section>
-		<div id="display-control-altitude">
-		</div>
+		<div id="display-control-altitude"></div>
 		<div id="display-control-altitude-reference-pad">
 		<div id="display-control-altitude-reference">O</div>
 		</div>
