@@ -448,7 +448,7 @@ footer {
 	height:100vh;
 	position: absolute;
 	top:0;
-	background-color: #19222a;
+	background-color: #19222ada;
 	z-index:10;
 	overflow: hidden;
 	
@@ -459,7 +459,7 @@ footer {
 	height:100vh;
 	position: absolute;
 	top:0;
-	background-color: #19222a;
+	background-color: #19222ada;
 	z-index:10;
 	
 	
@@ -470,7 +470,7 @@ footer {
 	height:100vh;
 	position: absolute;
 	top:0;
-	background-color: #19222a;
+	background-color: #19222ada;
 	z-index:10;
 	overflow: hidden;
 	
@@ -519,7 +519,7 @@ footer {
 	padding:0.8rem;
 	padding-left:1.2rem;
 	padding-right:1.2rem;
-	background-color:#19222a99;
+	background-color:#19222ada99;
 	border-radius:0.4rem;
 	margin:0.8rem;
 	text-align:center;
@@ -759,7 +759,7 @@ footer {
 	#mMap {
 		
 		width:100vw;
-		height:calc(100vh - 6.9rem);
+		height:100vh;
 		
 	}
 
