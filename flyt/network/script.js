@@ -14,7 +14,7 @@ window.addEventListener('load', (event) => {
 	fn30sec();
 	setInterval(fn30sec, 30*1000);
 
-}
+});
 
 
 
