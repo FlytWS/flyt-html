@@ -283,7 +283,9 @@ margin:0;
 }
 
 
-
+#page-title {
+	height:3.2rem;
+}
 #page-title header {
 	display:flex;
 	justify-content: space-between;
