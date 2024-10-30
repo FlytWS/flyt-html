@@ -11,7 +11,7 @@
 
 <body>
 
-<section id="page-title">
+<section id="page-title" style="position:absolute; z-index: 500; width: 100vw;">
 <header>
 <?php $pageTitle = "Map"; ?>
 <?php include_once('../includes/main-nav.php'); ?>
