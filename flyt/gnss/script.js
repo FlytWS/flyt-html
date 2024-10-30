@@ -167,9 +167,9 @@ function fetchGNSS() {
 
 
 
-		if (resParse.latitude) {
+		if (obj.latitude) {
 
-			var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd9690", radius: 4 });
+			var markerFrom = L.circleMarker([obj.latitude,obj.longitude], { color: "#fdfd9690", radius: 4 });
 			var from = markerFrom.getLatLng();
 
 			markerFrom.bindPopup('GNSS ' + (from).toString());
@@ -177,7 +177,7 @@ function fetchGNSS() {
 			markerGroupG.clearLayers();
 			markerFrom.addTo(markerGroupG);
 
-			cockpitMap.setView([resParse.latitude,resParse.longitude], 16);
+			cockpitMap.setView([obj.latitude,obj.longitude], 16);
 
 		}
 
