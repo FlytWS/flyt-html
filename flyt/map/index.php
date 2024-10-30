@@ -480,18 +480,25 @@
 
 
 
-<div id="display-control" class="overlayControl display-control animated fadeIn">
+<div id="display-control" class="overlayControl display-control">
 
-
-		
 		<section>
 		<div id="display-control-menu">
-		<div class="display-control-menu-item" onclick="openSettings('map-list-container')" id="display-control-menu-item-list"><div style="display: flex;  justify-content: center;    align-items: center;"><div><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></svg></div><div style="height: 1.8rem;"><span id="display-control-menu-item-list-quantity"></span></div></div></div>
+		<div class="display-control-menu-item" onclick="openSettings('map-list-container')" id="display-control-menu-item-list"><div style="display: flex;  justify-content: center;    align-items: center;"><div><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></svg></div><div style="height: 1.9rem;"><span id="display-control-menu-item-list-quantity"></span></div></div></div>
 		<div class="display-control-menu-item" onclick="openSettings('map-stats')" id="display-control-menu-item-stats"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-pie"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg></div>
 		<div class="display-control-menu-item" onclick="displayMode()" id="display-control-menu-item-mode"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></div>
 		<div class="display-control-menu-item" onclick="openSettings('map-console')" id="display-control-menu-item-console"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-chevron-right"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 8 4 4-4 4"/></svg></div>
 		<div class="display-control-menu-item" onclick="openSettings('map-settings')" id="display-control-menu-item-settings"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-2"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></div>
 		</div>
+		</section>
+
+</div>
+
+
+
+<div id="display-control-altitude" class="overlayControl display-control">
+
+		<section>
 		<div id="display-control-altitude">
 		</div>
 		<div id="display-control-altitude-reference-pad">
@@ -504,22 +511,7 @@
 		<div id="display-control-altitude-100">40,000 ft +</div>
 		</section>
 		
-
-
-
-
-
-
-
-</section>
-
-
-
-	
 </div>
-
-
-
 
 
 

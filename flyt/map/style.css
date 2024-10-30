@@ -42,7 +42,7 @@ transition: 0.5s ease-in-out all;
     z-index: 99;
 	width: 100%;
     height: 5rem;
-	background-image: linear-gradient(#222431 0%, transparent 100%);
+	background-image: linear-gradient(#222431da 0%, transparent 100%);
 }
 .display-craft-header-action-bottomfade {
     position: absolute;
@@ -51,7 +51,7 @@ transition: 0.5s ease-in-out all;
     z-index: 99;
 	width: 100%;
     height: 5rem;
-	background-image: linear-gradient(transparent 0%, #222431 100%);
+	background-image: linear-gradient(transparent 0%, #222431da 100%);
 }
 
 
@@ -136,11 +136,10 @@ transition: 0.5s ease-in-out all;
 .overlayControl {
 	
 	width: 100%;
-	height: 7rem;
-	background-color: #222431;
+	height: 6.4rem;
+	background-color: #222431da;
 	position: fixed;
-    bottom: 0rem;
-	right: 3rem;
+    bottom: -3.2rem;
 	padding:0rem;
 	z-index:48;
 	
@@ -170,6 +169,7 @@ footer {
     left: 0.4rem;
     width: 0rem;
 	color:#e5e5e5ad;
+	font-size:0.8rem;
 }
 
 
@@ -235,7 +235,7 @@ footer {
     position: absolute;
     width: 2rem;
 	margin-left:calc(0%);
-	font-size:0.7rem;
+	font-size:0.6rem;
 }
 #display-control-altitude-25 {
 	padding:1rem;
@@ -247,7 +247,7 @@ footer {
     position: absolute;
     width: 4rem;
 	margin-left:calc(25% - 2rem);
-	font-size:0.7rem;
+	font-size:0.6rem;
 }
 #display-control-altitude-50 {
 	padding:1rem;
@@ -259,7 +259,7 @@ footer {
     position: absolute;
     width: 4rem;
 	margin-left:calc(50% - 2rem);
-	font-size:0.7rem;
+	font-size:0.6rem;
 }
 #display-control-altitude-75 {
 	padding:1rem;
@@ -271,7 +271,7 @@ footer {
     position: absolute;
     width: 4rem;
 	margin-left:calc(75% - 2rem);
-	font-size:0.7rem;
+	font-size:0.6rem;
 }
 #display-control-altitude-100 {
 	padding:1rem;
@@ -283,11 +283,11 @@ footer {
     position: absolute;
     width: 4rem;
 	margin-left:calc(100% - 6rem);
-	font-size:0.7rem;
+	font-size:0.6rem;
 }
 #display-control-altitude-reference {
     width: 0rem;
-	height: 0.8rem;
+	height: 0.9rem;
 	margin-left:0rem;
 	font-size:1rem;
 	font-weight:600;
@@ -303,7 +303,6 @@ footer {
 	width:calc(100% - 2rem);
 }
 #display-control-menu {
-	border-bottom: 0.01rem solid #e5e5e560;
     height: 2.5rem;
     padding: 0.4rem;
     padding-left: 1rem;
@@ -318,6 +317,8 @@ footer {
 .display-control-menu-item {
 	flex-grow:1;
 	text-align:center;
+	display: flex;
+    justify-content: center;
 }
 .display-control-menu-item svg {
 		width: 1.2rem;
@@ -448,7 +449,7 @@ footer {
 	height:100vh;
 	position: absolute;
 	top:0;
-	background-color: #19222ada;
+	background-color: #222431da;
 	z-index:10;
 	overflow: hidden;
 	
@@ -459,7 +460,7 @@ footer {
 	height:100vh;
 	position: absolute;
 	top:0;
-	background-color: #19222ada;
+	background-color: #222431da;
 	z-index:10;
 	
 	
@@ -470,7 +471,7 @@ footer {
 	height:100vh;
 	position: absolute;
 	top:0;
-	background-color: #19222ada;
+	background-color: #222431da;
 	z-index:10;
 	overflow: hidden;
 	
@@ -519,7 +520,7 @@ footer {
 	padding:0.8rem;
 	padding-left:1.2rem;
 	padding-right:1.2rem;
-	background-color:#19222ada99;
+	background-color:#222431da99;
 	border-radius:0.4rem;
 	margin:0.8rem;
 	text-align:center;
@@ -542,7 +543,7 @@ footer {
 
 #stats-hero {
 
-	width:100%; background-color:#222431; min-height:10rem; padding-bottom:0rem; display: flex;  flex-wrap: wrap;
+	width:100%; background-color:#222431da; min-height:10rem; padding-bottom:0rem; display: flex;  flex-wrap: wrap;
 
 }
 .stats-hero-sub {
