@@ -540,5 +540,6 @@
 <script src="/flyt/global/script/bluebird.min.3.3.1.js"></script>
 <script src="/flyt/global/script/chart.min.3.9.1.js"></script>
 <script src="/flyt/global/script/moment.min.2.30.0.js"></script>
+<script src="/flyt/global/script/registrations.js"></script>
 <script src="/flyt/global/script/script.js"></script>
 <script src="script.js"></script>
