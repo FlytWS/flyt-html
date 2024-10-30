@@ -1677,10 +1677,10 @@ fetchReADSBCraft();
 drawOutlineJson();
 
 
-const intervalFetch = setInterval(function() {
-	consoleWindowWrite("Scanning For Aircraft");
-	fetchReADSBCraft();
-	drawOutlineJson();
-}, 5000);
-
-
+window.addEventListener('load', (event) => {
+	const intervalFetch = setInterval(function() {
+		consoleWindowWrite("Scanning For Aircraft");
+		fetchReADSBCraft();
+		drawOutlineJson();
+	}, 5000);
+});

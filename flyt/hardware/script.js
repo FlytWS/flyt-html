@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.addEventListener('load', (event) => {
 	
 	fetchModel();
 	fetchStats1();

@@ -393,11 +393,13 @@ function fetchReceiver() {
 	
 }
 
-fetchReceiver();
-const intervalFetchReceiver = setInterval(function() {
-	fetchReceiver();
-}, 15000);
 
+window.addEventListener('load', (event) => {
+	fetchReceiver();
+	const intervalFetchReceiver = setInterval(function() {
+		fetchReceiver();
+	}, 15000);
+})
 
 
 
@@ -607,11 +609,13 @@ function fetchStats() {
 	
 }
 
-fetchStats();
-const intervalFetchStats = setInterval(function() {
-	fetchStats();
-}, 10000);
 
+window.addEventListener('load', (event) => {
+	fetchStats();
+	const intervalFetchStats = setInterval(function() {
+		fetchStats();
+	}, 10000);
+})
 
 
 function loopThroughObjRecurs (obj, propExec) {
@@ -695,12 +699,12 @@ function fetchStatus() {
 	
 }
 
-fetchStatus();
-const intervalFetchStatus = setInterval(function() {
+window.addEventListener('load', (event) => {
 	fetchStatus();
-}, 10000);
-
-
+	const intervalFetchStatus = setInterval(function() {
+		fetchStatus();
+	}, 10000);
+});
 
 
 
