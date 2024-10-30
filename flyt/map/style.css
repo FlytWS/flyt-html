@@ -136,10 +136,10 @@ transition: 0.5s ease-in-out all;
 .overlayControl {
 	
 	width: 100%;
-	height: 6.4rem;
+	height: 3.2rem;
 	background-color: #222431da;
 	position: fixed;
-    bottom: -3.2rem;
+    bottom: 0rem;
 	padding:0rem;
 	z-index:48;
 	
@@ -303,12 +303,8 @@ footer {
 	width:calc(100% - 2rem);
 }
 #display-control-menu {
-    height: 2.5rem;
+    height: 2.6rem;
     padding: 0.4rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-	margin-left:1rem;
-	margin-right:1rem;
     align-items: center;
     font-size: 0.9rem;
     display: flex;
