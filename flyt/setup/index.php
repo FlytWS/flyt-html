@@ -24,7 +24,7 @@
 	<section id="page-body">
 	<header style="flex-direction: column; margin-top:2rem;">
 	<div class="page-title-center" style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">Welcome to your Flyt Console, connecting you to the Wingbits aviation tracking network. We'll now guide you through the quick setup.<br><br>Buckle up and let's take Flyt.</div>
-	<div class="page-title-center"><img src="\flyt\global\image\plane.png" style="height:30vh; margin-top:5rem;" /></div>
+	<div class="page-title-center"><img src="\global\image\plane.png" style="height:30vh; margin-top:5rem;" /></div>
 	</header>
 	</section>
 

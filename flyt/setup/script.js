@@ -391,7 +391,7 @@ function skipSetup() {
 	cache: false,
 	data: { request: 'skip-setup' },
 	success: function(response) {
-		window.location.href = '/flyt';
+		window.location.href = '/';
 	}
 	});
  
@@ -404,7 +404,7 @@ function completeSetup() {
 	cache: false,
 	data: { request: 'complete-setup' },
 	success: function(response) {
-		window.location.href = '/flyt';
+		window.location.href = '/';
 	}
 	});
  
