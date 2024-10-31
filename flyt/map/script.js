@@ -222,8 +222,8 @@ function setDisplayMode() {
 	} else {
 		displayModeFlag = 0;
 		$('.map-tiles').css({"filter" : "none"});
-		${'#page-title header').css({"color": "#fbfbfb"});
-		${'#page-title header svg').css({"stroke": "#fbfbfb"});
+		$('#page-title header').css({"color": "#fbfbfb"});
+		$('#page-title header svg').css({"stroke": "#fbfbfb"});
 		
 	}
 
