@@ -33,6 +33,9 @@ transition: 0.5s ease-in-out all;
 }
 #panelCraftImage {
 	height:12rem;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .display-craft-header-action-topfade {

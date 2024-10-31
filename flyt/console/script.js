@@ -496,3 +496,23 @@ function fetchStats1() {
 	})
 
 }
+
+
+
+
+
+
+function fetchReADSBCraft() {
+
+
+    let request = jQuery.ajax({ url: '/data/stats.json', cache: false, dataType: 'json' });
+    request.done(function(data) {
+		
+		var resParse = data;
+		
+		document.getElementById('list-ac-active').innerHTML = resParse.aircraft_with_pos + " Positions";
+		document.getElementById('list-ac-pulses').innerHTML = resParse.estimated_ppm + " Pulses";
+		
+	});
+
+};
