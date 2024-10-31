@@ -190,6 +190,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(mapMap);
 
 let markers = L.layerGroup().addTo(mapMap);
+var markerGroupG = L.layerGroup().addTo(mapMap);
 
 mapMap.on('moveend', function(e) {
    localStorage.theZoom = mapMap.getZoom();
