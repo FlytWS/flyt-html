@@ -754,6 +754,8 @@ function getDistance(to) {
 
 
 
+var isLocationSet = 0;
+
 function setLocation() {
 	
 	$.ajax({
@@ -771,6 +773,8 @@ function setLocation() {
 				console.log(resParse);
 				
 				if (resParse.location.latitude) {
+					
+					isLocationSet = 1;
 
 					markerFrom = L.circleMarker([resParse.location.latitude,resParse.location.longitude], { color: "#6ba7ff", radius: 12 });
 					from = markerFrom.getLatLng();
@@ -1770,11 +1774,13 @@ setDisplayMode();
 
 window.addEventListener('load', (event) => {
 	
-	setAltitudeKey();
+	
 	setLocation();
 	getGNSSLocation();
-	//fetchReADSBCraft();
-	//drawOutlineJson();
+	fetchReADSBCraft();
+	drawOutlineJson();
+	setAltitudeKey();
+	
 	
 	
 	const intervalFetch = setInterval(function() {
