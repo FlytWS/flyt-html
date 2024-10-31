@@ -1,5 +1,5 @@
-.leaflet-control-container { position: absolute; right: 4rem; top:0.5rem; } 
-
+.leaflet-control-container { position: absolute; right: 4rem; top:4rem; } 
+.leaflet-control-attribution { left: -100vw;    position: absolute; }
 .leaflet-control-layers-expanded {
   width:8rem;
 }
@@ -336,8 +336,8 @@ footer {
 }
 
 .header-action svg {
-	width:2rem;
-	height:2rem;
+	width:1.6rem;
+	height:1.6rem;
 	stroke-width:1px;
 }
 .header-action svg:hover {
@@ -439,10 +439,11 @@ footer {
 	height:100vh;
 	position: absolute;
 	top:0;
-	background-color: #222431da;
 	z-index:10;
 	overflow: hidden;
 	z-index: 20;
+	background: #222431da;
+	background: linear-gradient(180deg, rgba(34,36,49,1) 0%, rgba(34,36,49,0.85) 100%);
 	
 	
 }
@@ -452,7 +453,8 @@ footer {
 	position: absolute;
 	top:0;
 	z-index:10;
-	background-color: #222431da;
+	background: #222431da;
+	background: linear-gradient(180deg, rgba(34,36,49,1) 0%, rgba(34,36,49,0.85) 100%);
 	
 	
 }

@@ -216,12 +216,14 @@ function setDisplayMode() {
 		displayModeFlag = 1;
 		//$('.map-tiles').css({"filter" : "brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7)"});
 		$('.map-tiles').css({"filter" : "invert(1.2) sepia(1) hue-rotate(190deg)  opacity(0.3)"});
-
+		${'#page-title header').css({"color": "#222431"});
+		${'#page-title header svg').css({"stroke": "#222431"});
 
 	} else {
 		displayModeFlag = 0;
 		$('.map-tiles').css({"filter" : "none"});
-
+		${'#page-title header').css({"color": "#fbfbfb"});
+		${'#page-title header svg').css({"stroke": "#fbfbfb"});
 		
 	}
 

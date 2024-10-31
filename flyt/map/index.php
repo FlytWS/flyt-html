@@ -351,7 +351,7 @@
 
 
 <div class="map-bar" id="map-stats">
-		<div style="display: flex;    align-items: center;    justify-content: space-between;"><section id="page-title"><header><h1>Stats</h1></header></section><div style="height:2rem; padding:2rem; padding-right:3rem; align-items: center;    display: flex;" class="closeSettings"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left" onclick="closeSettings('map-stats')"><polyline points="15 18 9 12 15 6"></polyline></svg></div></div>
+		<div style="display: flex;    align-items: center;    justify-content: space-between;"><section id="page-title"><header><h1>Stats</h1></header></section><div style="height:2rem; padding:2rem; padding-right:3rem; align-items: center;    display: flex;" class="closeSettings header-action"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left" onclick="closeSettings('map-stats')"><polyline points="15 18 9 12 15 6"></polyline></svg></div></div>
 
 		
 		
