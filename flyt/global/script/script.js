@@ -57,7 +57,7 @@ function navigateExternal(url) {
 }
 function navigate(url) {
 	
-	window.location.replace(url);
+	window.location.href = url;
 	
 }
 function copyStat(get) {
