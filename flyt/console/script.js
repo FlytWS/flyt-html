@@ -5,11 +5,14 @@ window.addEventListener('load', (event) => {
 	getMap();
     getLocation();
 	getGNSSLocation();
+	fetchReADSBCraft();
 	getNews();
+	
 	
 	setInterval(fetchStats, 10000);
 	setInterval(getLocation, 600000);
 	setInterval(getGNSSLocation, 10000);
+	setInterval(fetchReADSBCraft, 10000);
 	setInterval(getNews, 600000);
 	
 	
