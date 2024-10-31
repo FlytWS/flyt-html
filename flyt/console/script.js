@@ -514,7 +514,7 @@ function fetchReADSBCraft() {
 		var resParse = data;
 		
 		document.getElementById('list-ac-active').innerHTML = resParse.aircraft_with_pos + " Positions";
-		document.getElementById('list-ac-pulses').innerHTML = resParse.estimated_ppm + " Pulses";
+		document.getElementById('list-ac-pulses').innerHTML = resParse.last1min.messages_valid + " Pulses";
 		
 	});
 
