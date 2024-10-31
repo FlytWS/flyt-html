@@ -1676,6 +1676,86 @@ function drawOutlineJson() {
 
 
 
+function getGNSSLocation() {
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-gnss' },
+		success: function(response) {
+			
+			console.log(response);
+			
+			try {
+			var resParse = JSON.parse(response);
+			
+			if (resParse.latitude) {
+				
+				
+				if ($("#n_gnssnotdetected").length == 1) {
+					$("#n_gnssnotdetected").remove();
+				}
+				$('#state_gnss').removeClass("health-poor");
+				
+				var markerFrom = L.circleMarker([resParse.latitude,resParse.longitude], { color: "#fdfd9690", radius: 4 });
+				var from = markerFrom.getLatLng();
+
+				markerFrom.bindPopup('GNSS ' + (from).toString());
+
+				markerGroupG.clearLayers();
+				markerFrom.addTo(markerGroupG);
+				
+				
+				if (isLocationSet == 0) {
+					mapMap.setView([resParse.latitude,resParse.longitude], 16);
+				}
+
+
+			} else {
+				
+				
+				markerGroupG.clearLayers();
+				
+				if ($("#n_gnssnotdetected").length == 0) {
+					notifyConsole("n_gnssnotdetected","GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
+				}
+				
+				$('#state_gnss').addClass("health-poor");
+				
+				
+			}
+			
+			if (resParse.satellites) {
+				if (resParse.satellites < 6) {
+					if ($("#n_limitedgnss").length == 0) {
+						notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
+					}
+				} else {
+					$("#n_limitedgnss").remove();
+				}
+			}
+			
+			} catch (err) {				
+				console.log(err);
+			}				
+			
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+				
+			
+		}
+	});
+	
+};
+
+
+
+
+
 
 
 
@@ -1684,13 +1764,18 @@ function drawOutlineJson() {
 
 
 setDisplayMode();
-setAltitudeKey();
-setLocation();
-fetchReADSBCraft();
-drawOutlineJson();
+
 
 
 window.addEventListener('load', (event) => {
+	
+	setAltitudeKey();
+	setLocation();
+	getGNSSLocation();
+	//fetchReADSBCraft();
+	//drawOutlineJson();
+	
+	
 	const intervalFetch = setInterval(function() {
 		consoleWindowWrite("Scanning For Aircraft");
 		fetchReADSBCraft();
