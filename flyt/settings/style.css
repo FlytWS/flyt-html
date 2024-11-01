@@ -6,3 +6,7 @@
     padding: 0;
 	flex-grow:1;
 }
+
+.flexcol {
+	flex: 1 0 21%;
+}
