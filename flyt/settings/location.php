@@ -9,17 +9,16 @@
 				
 
 			<header style="flex-direction: column;">
-			<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
-			<br>Please ensure your GPS reciever is connected and has clear visibility of the sky. An approximate GPS position of your node will be displayed below. Please confirm your nodes exact location by selecting it on the map, to better assist with mapping.
-			<br><br>
-			<header style="margin-top:1rem; border-radius:0.75rem; flex-direction: column; padding:0rem; overflow:hidden; ">
-			<div id="cMap"></div>
-			</header>
-			</div>
-
-			<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
-
-			</div>
+			
+				<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
+					<br>Please ensure your GPS reciever is connected and has clear visibility of the sky. An approximate GPS position of your node will be displayed below. Please confirm your nodes exact location by selecting it on the map, to better assist with mapping.
+				</div>
+				
+				<div class="page-title-center"  style="flex-grow:1; margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
+					<header style="margin-top:1rem; border-radius:0.75rem; flex-direction: column; padding:0rem; overflow:hidden; ">
+					<div id="cMap"></div>
+					</header>
+				</div>
 
 			</header>
 
