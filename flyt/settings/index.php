@@ -41,13 +41,13 @@
 <header style="margin-top:1rem; border-radius:0.75rem; display: flex;    flex-wrap: wrap;    grid-gap: 1rem;    padding: 0;    justify-content: space-between;">
 
 
-<header class="large-panel-button flexcol">
+<header class="large-panel-button flexcol" onclick="menumanual('sm-node')">
 <div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-drive"><line x1="22" x2="2" y1="12" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg></div>
 <div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;" id="gnssMode">Node</div></div>
 </header>
 
 
-<header class="large-panel-button flexcol">
+<header class="large-panel-button flexcol" onclick="menumanual('sm-location')">
 <div style="font-size:1.4rem; padding:1.5rem; padding-top:2.5rem;  padding-bottom:0; color:#fbfbfb80;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-branch"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
 <div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;"><div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;" id="gnssMode">Release</div></div>
 </header>
@@ -147,8 +147,16 @@
 
 
 
+<?php include_once('node.php') ?>
+<?php include_once('location.php') ?>
+
+
+
+
+
 <script src="/global/script/jquery.min.3.7.1.js"></script>
 <script src="/global/script/jquery-ui.min.1.11.3.js"></script>
+<script src="/global/script/leaflet.min.1.9.4.js"></script>
 <script src="/global/script/moment.min.2.30.0.js"></script>
 <script src="/global/script/script.js"></script>
 <script src="script.js"></script>
