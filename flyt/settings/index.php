@@ -142,6 +142,7 @@
 
 
 <?php include_once('node.php') ?>
+<?php include_once('release.php') ?>
 <?php include_once('location.php') ?>
 
 
