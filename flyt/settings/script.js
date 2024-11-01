@@ -94,8 +94,22 @@ function getNode() {
 			console.log(response);
 
 			var obj = JSON.parse(response);
-			$('#node-cpu').html(obj.platform_processor);
-			$('#node-ram').html(obj.memory_total);
+			
+			coreAr = [];
+			coreAr['1'] = "Solo-Core";
+			coreAr['2'] = "Dual-Core";
+			coreAr['4'] = "Quad-Core";
+			coreAr['6'] = "Hexa-Core"
+			coreAr['8'] = "Octa-Core"
+			coreAr['10'] = "Deca-Core"
+			
+			
+			$('#node-manufacturer').html("Flyt");
+			$('#node-system').html(obj.platform_system);
+			$('#node-architecture').html(obj.platform_machine);
+			$('#node-cpu').html(coreAr[obj.cpu_cores] + " " + obj.cpu_frequency_max + "Mhz");
+			$('#node-ram').html((obj.memory_total / 1000000) + "MB");
+			$('#node-ram').html();
 			
 		
 		},

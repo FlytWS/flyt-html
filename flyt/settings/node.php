@@ -5,28 +5,34 @@
 		  <div id="page-title-right" onclick="menumanual('sm-node')" class="slideout-manual-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
         </header>
 		<div class="menuBoundry">
-		<section id="menu-body">
+		<section id="slideout-body" style="width:100%;">
 				
 
 			<header style="flex-direction: column;">
 			
-				<div class="page-title"  style="margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div>Manufacturer : </div><div>Flyt</div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">Manufacturer</div>&emsp;<div id="node-manufacturer"></div>
 				</div>
-				<div class="page-title"  style="margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div>Model : </div><div id="node-model""></div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">Model</div>&emsp;<div id="node-model"></div>
 				</div>
-				<div class="page-title"  style="margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div>CPU : </div><div id="node-cpu"></div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">System</div>&emsp;<div id="node-system"></div>
 				</div>
-				<div class="page-title"  style="margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div>RAM : </div><div id="node-ram"></div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">Architecture</div>&emsp;<div id="node-architecture"></div>
 				</div>
-				<div class="page-title"  style="margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div>Storage : </div><div id="node-storage"></div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">CPU</div>&emsp;<div id="node-cpu"></div>
 				</div>
-				<div class="page-title"  style="margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div>Uptime : </div><div id="node-uptime"></div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">RAM</div>&emsp;<div id="node-ram"></div>
+				</div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">Storage</div>&emsp;<div id="node-storage"></div>
+				</div>
+				<div class="page-title"  style="flex-direction: column; display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600;">Uptime</div>&emsp;<div id="node-uptime"></div>
 				</div>
 
 			</header>
