@@ -44,14 +44,71 @@ function menumanual(key) {
 
 
 
+// Location
+
+window.addEventListener('load', (event) => {
+
+	getModel();
+	getNode();
+
+});
 
 
 
 
+function getModel() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-model' },
+		success: function(response) {
+			
+			console.log(response);
+			$('#node-model').html(response);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
 
 
+function getNode() {
 
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-stats-0' },
+		success: function(response) {
+			
+			console.log(response);
 
+			var obj = JSON.parse(response);
+			$('#node-cpu').html(obj.platform_processor);
+			$('#node-ram').html(obj.memory_total);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
 
 
 
