@@ -7,6 +7,11 @@
 	flex-grow:1;
 }
 
+.large-panel-button:hover {
+	background-color:#ffffff20;
+	cursor:pointer;
+}
+
 .flexcol {
 	flex: 1 0 21%;
 }
