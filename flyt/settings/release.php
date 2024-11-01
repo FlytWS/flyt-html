@@ -11,29 +11,15 @@
 			<header style="flex-direction: column;">
 			
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Manufacturer</div>&emsp;<div id="node-manufacturer"></div>
+					<div style="font-weight:600;">Core</div>&emsp;<div id="release-core"></div>
 				</div>
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Model</div>&emsp;<div id="node-model"></div>
+					<div style="font-weight:600;">Web</div>&emsp;<div id="release-web"></div>
 				</div>
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">System</div>&emsp;<div id="node-system"></div>
+					<div style="font-weight:600;">Script</div>&emsp;<div id="release-script"></div>
 				</div>
-				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Architecture</div>&emsp;<div id="node-architecture"></div>
-				</div>
-				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">CPU</div>&emsp;<div id="node-cpu"></div>
-				</div>
-				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">RAM</div>&emsp;<div id="node-ram"></div>
-				</div>
-				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Storage</div>&emsp;<div id="node-storage"></div>
-				</div>
-				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Uptime</div>&emsp;<div id="node-uptime"></div>
-				</div>
+
 
 			</header>
 

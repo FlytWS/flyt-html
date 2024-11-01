@@ -29,6 +29,33 @@ clearstatcache();
 	
 	
 	
+// Release
+
+
+
+	if ($_POST['request'] == "get-flyt-release-web") {
+		
+		$file = '/var/www/html/_release';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+		
+	}
+
+
+	if ($_POST['request'] == "get-flyt-release-script") {
+		
+		$file = '/etc/flyt/scripts/_release';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+		
+	}
+
+
+	
+	
+	
 	
 	
 

@@ -38,6 +38,69 @@ function menumanual(key) {
 
 
 
+// Release
+
+window.addEventListener('load', (event) => {
+
+	getWebRelease();
+	getScriptRelease();
+
+});
+
+
+
+
+function getWebRelease() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-release-web' },
+		success: function(response) {
+			
+			console.log(response);
+			$('#release-web').html(response);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
+
+function getScriptRelease() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-release-script' },
+		success: function(response) {
+			
+			console.log(response);
+			$('#release-script').html(response);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
 
 
 
@@ -108,7 +171,7 @@ function getNode() {
 			$('#node-system').html(obj.platform_system);
 			$('#node-architecture').html(obj.platform_machine);
 			$('#node-cpu').html(coreAr[obj.cpu_cores] + " " + obj.cpu_frequency_max + "Mhz");
-			$('#node-ram').html((obj.memory_total / 1000000) + "MB");
+			$('#node-ram').html((obj.memory_total / 1000000).toFixed(0) + "MB");
 			$('#node-ram').html();
 			
 		
