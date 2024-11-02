@@ -516,6 +516,13 @@ function fetchReADSBCraft() {
 		document.getElementById('list-ac-active').innerHTML = resParse.aircraft_with_pos + " Positions";
 		document.getElementById('list-ac-pulses').innerHTML = resParse.last1min.messages_valid + " Pulses";
 		
+		if (resParse.last1min.messages_valid < 10 || resParse.aircraft_with_pos < 1) {
+			$('#state_activity').addClass("health-poor");
+		} else {
+			$('#state_activity').removeClass("health-poor");
+		}
+	
+		
 	});
 
 };
