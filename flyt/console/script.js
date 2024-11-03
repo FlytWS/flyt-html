@@ -137,7 +137,7 @@ function getWingbitsName() {
 		success: function(response) {
 			
 			if (response.length > 0) {
-				$('#wingbits-name').html(response).fadeIn();
+				$('#wingbits-name').html(response.replace(/-/g, " - ")).fadeIn();
 			} else {
 				$('#wingbits-name').html('Not Yet Registered').fadeIn();
 			}
