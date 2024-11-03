@@ -137,9 +137,9 @@ function getWingbitsName() {
 		success: function(response) {
 			
 			if (response.length > 0) {
-				$('#wingbits-name').html('Registered Name : '+response).fadeIn();
+				$('#wingbits-name').html(response).fadeIn();
 			} else {
-				$('#wingbits-name').html('Registered Name : Not Yet Registered').fadeIn();
+				$('#wingbits-name').html('Not Yet Registered').fadeIn();
 			}
 			
 		},
@@ -147,7 +147,7 @@ function getWingbitsName() {
 			//Unable to save
 			console.log(err);
 
-			$('#wingbits-name').html('Registered Name : Name Not Found').fadeIn();
+			$('#wingbits-name').html('Error Retrieving Name').fadeIn();
 			
 		}
 	});

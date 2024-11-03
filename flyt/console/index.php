@@ -30,7 +30,7 @@
 <header style="margin-bottom:1rem; border-radius:0.75rem; display: flex;    flex-wrap: wrap;    grid-gap: 1rem;    padding: 0;    justify-content: space-between;">
 
 <header id="network-wifi" class="large-panel-button active" style="height:2rem;">
-<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;">Harlequin - Ferret - Otter</div>
+<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfbCC;" id="wingbits-name">-</div>
 </header>
 
 </header>
