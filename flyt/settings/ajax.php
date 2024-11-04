@@ -203,6 +203,23 @@ clearstatcache();
 		};
 		
 	}
+	
+	
+	
+
+// Terminal
+
+
+	if ($_POST['request'] == "terminal-command") {
+		
+		$command = $_POST['data'];
+		
+		$output=null;
+		$retval=null;
+		exec($command, $output, $retval);
+		echo json_encode($output);
+		
+	}
 
 	
 ?>

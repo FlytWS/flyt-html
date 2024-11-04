@@ -74,10 +74,10 @@
 <style type="text/css">
 
 #terminal {
-  background: #000;
+  background: #ffffff10;
   color: #0F0;
   font-family: monospace;
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -157,6 +157,37 @@ function focusAndMoveCursorToTheEnd(e) {
 function handleCommand(command) {
 	
 	console.log(command);
+	
+		$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'terminal-command', data: command },
+		success: function(response) {
+			console.log(response);
+			var resParse = JSON.parse(response);
+			console.log(resParse);
+			if (resParse.length > 0) {
+				resParse.forEach(function(line){
+					//$('#terminalOutput').prepend(line+"<br>");
+					console.log(line+"<br>");
+				});
+			} else {
+				//$('#terminalOutput').prepend("No Output<br>");
+				console.log("No Output");
+			}			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+
+			//$('#terminalOutput').prepend('UTR');
+			console.log("UTR");
+			
+		}
+	});
+	
+	
 	
   const line = document.createElement('DIV');
   
