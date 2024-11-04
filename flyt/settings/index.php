@@ -142,7 +142,7 @@
 <?php include_once('location.php') ?>
 <?php include_once('keys.php') ?>
 <?php include_once('usb.php') ?>
-
+<?php include_once('terminal.php') ?>
 
 
 
