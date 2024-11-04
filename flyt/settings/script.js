@@ -684,7 +684,7 @@ function getUSBDump() {
 		
 		console.log(usbstring);
 		
-		document.getElementById('usb-dump').innerHTML = usbstring;
+		document.getElementById('usb-dump').innerHTML = usbstring.substring(14);
 
 	},
 	error: function(err)
