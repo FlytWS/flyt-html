@@ -155,6 +155,9 @@ function focusAndMoveCursorToTheEnd(e) {
 }
 
 function handleCommand(command) {
+	
+	console.log(command);
+	
   const line = document.createElement('DIV');
   
   line.textContent = `> ${ command }`;
@@ -218,8 +221,7 @@ input.addEventListener('keydown', (e) => {
     handleCommand(input.textContent);    
     input.textContent = '';
     focusAndMoveCursorToTheEnd();
-	
-	console.log(input.textContent);
+
 	
   }
 });
