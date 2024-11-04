@@ -674,18 +674,17 @@ function getUSBDump() {
 		let usbstring = result;
 		
 		usbheader.forEach(element => {
-			
-			console.log(element);
-			
+
 		if (element == "Bus=") {
-			usbstring = usbstring.replaceAll(element, "<br><br>-<br><br>"+element);
+			usbstring = usbstring.replaceAll(element, "<br>&emsp;<br>"+element);
 		} else if (element == "Manufacturer=" || element == "#Ifs=") {
 			usbstring = usbstring.replaceAll(element, "<br>"+element);
 		} else {
 			usbstring = usbstring.replaceAll(element, "&emsp;"+element);
 		}
 		});
-	
+		
+		console.log(usbstring);
 		
 		document.getElementById('usb-dump').innerHTML = usbstring;
 
