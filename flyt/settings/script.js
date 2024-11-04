@@ -598,11 +598,62 @@ function getGNSSLocation(tag) {
 
 
 window.addEventListener('load', (event) => {
-
-	getUSBDump();
+	
 	getUSBJSON();
+	getUSBDump();
+	
 
 });
+
+
+
+
+function getUSBJSON() {
+	
+
+  	$.ajax({
+    url: "ajax.php",
+    type: "POST",
+	cache: false,
+	dataType: "text",
+	data: { request: 'get-usb' },
+    success: function(result, textStatus, jqXHR) {
+		
+		var resParse = JSON.parse(result);
+		console.log(resParse);
+		
+		var usbString = "";
+		
+		for (const usb of resParse) {
+			
+			usbString += usb.tag;
+			usbString += "<br />";
+			usbString += usb.device;
+			usbString += "<br />";
+			usbString += "<br />";
+
+		}
+		
+		
+		document.getElementById('usb-parsed').innerHTML = usbString;
+		
+
+
+	},
+	error: function(err)
+    {
+
+		console.log(err);
+
+    }
+  
+  
+	})
+	
+
+
+	
+}
 
 
 
@@ -624,7 +675,7 @@ function getUSBDump() {
 		
 		usbheader.forEach(element => {
 		if (element == "Bus=") {
-			usbstring = usbstring.replaceAll(element, "<br><br>----------<br><br>"+element);
+			usbstring = usbstring.replaceAll(element, "<br><br>-<br><br>"+element);
 		} else if (element == "Manufacturer=" || element == "#Ifs=") {
 			usbstring = usbstring.replaceAll(element, "<br>"+element);
 		} else {
@@ -633,7 +684,7 @@ function getUSBDump() {
 		});
 	
 		
-		document.getElementById('settings-usb-interfaces').innerHTML = usbstring;
+		document.getElementById('usb-dump').innerHTML = usbstring;
 
 	},
 	error: function(err)
@@ -652,44 +703,4 @@ function getUSBDump() {
 
 
 
-
-
-function getUSBJSON() {
-	
-
-  	$.ajax({
-    url: "ajax.php",
-    type: "POST",
-	cache: false,
-	dataType: "text",
-	data: { request: 'get-usb' },
-    success: function(result, textStatus, jqXHR) {
-		
-		console.log(result);
-		var resParse = JSON.parse(result);
-		console.log(resParse);
-		
-		for (const usb of resParse) {
-			
-			console.log(usb);
-			console.log(usb.tag);
-
-		}
-
-
-	},
-	error: function(err)
-    {
-
-		console.log(err);
-
-    }
-  
-  
-	})
-	
-
-
-	
-}
 

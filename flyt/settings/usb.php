@@ -10,8 +10,27 @@
 
 			<header style="flex-direction: column;">
 
+			
+				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600; white-space: nowrap;">USB Devices</div>
+				</div>
 
-				<div id="settings-usb-interfaces"></div>
+
+				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div id="usb-parsed" style="width: 100%;    word-wrap: break-word;    display: inline-block;"></div>
+				</div>
+				
+				
+				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600; white-space: nowrap;">USB Dump</div>
+				</div>
+
+
+				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div id="usb-dump" style="width: 100%;    word-wrap: break-word;    display: inline-block;"></div>
+				</div>
+				
+				
 
 
 			</header>
