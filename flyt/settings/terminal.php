@@ -8,7 +8,7 @@
 		
 		
 		
-		<section id="menu-body">
+		<section id="menu-body" style="width:100%;">
 				
 
 			<header style="flex-direction: column;">
@@ -17,7 +17,7 @@
 					<div style="font-weight:600; white-space: nowrap;">Terminal</div>&emsp;<div style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;">Use with caution</div>
 				</div>
 				
-				<div class="page-title-center" style="width: 100%; flex-grow:1; margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
+				<div class="page-title-center" style="width: 100%; flex-grow:1; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
 					<header style="    height: 100%;    width: 100%; margin-top:1rem; border-radius:0.75rem; flex-direction: column; padding:0rem; overflow:hidden; ">
 					
 					
@@ -218,6 +218,9 @@ input.addEventListener('keydown', (e) => {
     handleCommand(input.textContent);    
     input.textContent = '';
     focusAndMoveCursorToTheEnd();
+	
+	console.log(input.textContent);
+	
   }
 });
 
