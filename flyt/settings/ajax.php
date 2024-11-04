@@ -83,41 +83,6 @@ clearstatcache();
 	
 	
 	
-	
-// Keys
-
-
-
-	if ($_POST['request'] == "get-flyt-serial-number") {
-		
-		$file = '/etc/flyt/serial';
-		if (file_exists($file)) {
-			echo file_get_contents($file);
-		};		
-		
-	}
-
-
-	if ($_POST['request'] == "get-flyt-key-public") {
-		
-		$file = '/etc/flyt/publickey';
-		if (file_exists($file)) {
-			echo file_get_contents($file);
-		};
-		
-	}
-
-
-	if ($_POST['request'] == "get-flyt-key-access") {
-		
-		$file = '/etc/flyt/accesskey.json';
-		if (file_exists($file)) {
-			echo file_get_contents($file);
-		};
-				
-	}
-	
-	
 		
 	
 	
@@ -172,36 +137,40 @@ clearstatcache();
 
 
 
-// Regional
 
 
 	
-	if ($_POST['request'] == "get-regional-settings") {
+// Keys
+
+
+
+	if ($_POST['request'] == "get-flyt-serial-number") {
 		
-		$file = '/etc/flyt/data/timezone';
+		$file = '/etc/flyt/serial';
 		if (file_exists($file)) {
-			echo trim(file_get_contents('/etc/flyt/data/timezone'));
+			echo file_get_contents($file);
+		};		
+		
+	}
+
+
+	if ($_POST['request'] == "get-flyt-key-public") {
+		
+		$file = '/etc/flyt/publickey';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
 		};
 		
 	}
-	
-	if ($_POST['request'] == "get-regional-settings-region-full") {
-		
-		$output=null;
-		$retval=null;
-		$output = shell_exec('timedatectl list-timezones 2>&1');
-		echo $output;
 
-	}
-	
-	if ($_POST['request'] == "save-regional-settings-region") {
+
+	if ($_POST['request'] == "get-flyt-key-access") {
 		
-		$output=null;
-		$retval=null;
-		$output = shell_exec('sudo timedatectl set-timezone '.$_POST['data'].' 2>&1');
-		exec("echo -n '".$_POST['data']."' | tee /etc/flyt/data/timezone", $output, $retval);
-		echo $output;
-		
+		$file = '/etc/flyt/accesskey.json';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+				
 	}
 	
 	
@@ -211,6 +180,29 @@ clearstatcache();
 
 
 
+// USB
+
+
+	if ($_POST['request'] == "get-usb-dump") {
+		
+		$file = '/etc/flyt/data/flyt-usb-dump';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+				
+	}
+	
+	
+		if ($_POST['request'] == "get-usb") {
+		
+		$file = '/etc/flyt/data/flyt-usb-parse.json';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		} else {
+			echo "No File";
+		};
+		
+	}
 
 	
 ?>
