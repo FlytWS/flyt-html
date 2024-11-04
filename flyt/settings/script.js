@@ -676,9 +676,7 @@ function getUSBDump() {
 		usbheader.forEach(element => {
 
 		if (element == "Bus=") {
-			usbstring = usbstring.replaceAll(element, "<br>&emsp;<br>"+element);
-		} else if (element == "Manufacturer=" || element == "#Ifs=") {
-			usbstring = usbstring.replaceAll(element, "<br>"+element);
+			usbstring = usbstring.replaceAll("T:  Bus=", "<br>&emsp;<br>T:  Bus=");
 		} else {
 			usbstring = usbstring.replaceAll(element, "&emsp;"+element);
 		}
