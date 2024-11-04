@@ -167,6 +167,50 @@ clearstatcache();
 		
 	}
 		
+
+
+
+
+
+// Regional
+
+
 	
+	if ($_POST['request'] == "get-regional-settings") {
+		
+		$file = '/etc/flyt/data/timezone';
+		if (file_exists($file)) {
+			echo trim(file_get_contents('/etc/flyt/data/timezone'));
+		};
+		
+	}
+	
+	if ($_POST['request'] == "get-regional-settings-region-full") {
+		
+		$output=null;
+		$retval=null;
+		$output = shell_exec('timedatectl list-timezones 2>&1');
+		echo $output;
+
+	}
+	
+	if ($_POST['request'] == "save-regional-settings-region") {
+		
+		$output=null;
+		$retval=null;
+		$output = shell_exec('sudo timedatectl set-timezone '.$_POST['data'].' 2>&1');
+		exec("echo -n '".$_POST['data']."' | tee /etc/flyt/data/timezone", $output, $retval);
+		echo $output;
+		
+	}
+	
+	
+
+
+
+
+
+
+
 	
 ?>

@@ -283,7 +283,7 @@ function getAccessKey() {
 
 
 
-// Location
+// Node
 
 window.addEventListener('load', (event) => {
 
@@ -575,4 +575,171 @@ function getGNSSLocation(tag) {
 	});
 	
 };
+
+
+
+
+
+
+
+
+
+// Regional
+
+window.addEventListener('load', (event) => {
+
+	getRegionalSettingsRegionFull();
+	getRegionalSettingsSet();
+
+});
+
+
+
+function getRegionalSettingsRegionFull() {
+	
+		$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-regional-settings-region-full' },
+		success: function(response) {
+			
+
+			var regions = response.split('\n')
+			var list = document.getElementById('settings-regional-settings-region-input');
+
+			regions.forEach(function(item){
+			   
+				var opt = document.createElement('option');
+				opt.value = item;
+				opt.innerHTML = item;
+				list.appendChild(opt);					
+	
+			});
+
+
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+			
+		}
+	});
+	
+	
+}
+
+
+
+
+
+function getRegionalSettingsSet() {
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-regional-settings' },
+		success: function(response) {
+			
+			console.log(response);
+			if (response.length > 0) {
+				$('#settings-regional-settings-region-input').val(response.trim());
+			}
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+
+			
+		}
+	});
+	
+};
+
+
+
+
+function saveRegionalSettingsRegion() {
+	
+	var rsRegion = document.getElementById('settings-regional-settings-region-input').value;
+	
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'save-regional-settings-region', data: rsRegion },
+		success: function(response) {
+			console.log(response);
+			location.reload();
+			
+		},
+		error: function(err) {
+			//Unable to save
+			console.log(err);
+			document.getElementById('settings-wingbits-antenna-id-save').html = '<svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>';
+			
+		}
+	});
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+// USB
+
+
+
+
+function getUSBInterfaces() {
+	
+	const usbheader = ["Bus=", "Lev=", "Prnt=", "Port=", "Cnt=", "Dev#=", "Spd=", "MxCh=", "Ver=", "Cls=", "Sub=", "Prot=", "MxPS=", "#Cfgs=", "Vendor=", "ProdID=", "Rev=", "Manufacturer=", "Product=", "SerialNumber=", "#Ifs=", "Cfg#=", "Atr=", "MxPwr=", "If#=", "Alt=", "#EPs=", "Driver=", "Ad=", "Ivl="];
+
+	
+ 	$.ajax({
+    url: "/flyt-data/stats_usb.json",
+    type: "GET",
+	cache: false,
+	dataType: "html",
+    success: function(result, textStatus, jqXHR) {
+		
+		console.log(result);
+		let usbstring = result;
+		
+		usbheader.forEach(element => {
+		if (element == "Bus=") {
+			usbstring = usbstring.replaceAll(element, "<br><br>----------<br><br>"+element);
+		} else if (element == "Manufacturer=" || element == "#Ifs=") {
+			usbstring = usbstring.replaceAll(element, "<br>"+element);
+		} else {
+			usbstring = usbstring.replaceAll(element, "&emsp;"+element);
+		}
+		});
+	
+		
+		document.getElementById('settings-usb-interfaces').innerHTML = usbstring;
+
+	},
+	error: function(err)
+    {
+
+		console.log(err);
+
+    }
+  
+  
+	})
+	
+	
+}
 
