@@ -57,6 +57,69 @@ clearstatcache();
 	
 	
 	
+// Wingbits
+
+
+
+	if ($_POST['request'] == "get-wingbits-identifier") {
+		
+		$file = '/etc/flyt/wingbits';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+		
+	}
+
+
+	if ($_POST['request'] == "get-wingbits-release") {
+		
+
+		
+	}
+
+
+	
+	
+	
+	
+	
+	
+// Keys
+
+
+
+	if ($_POST['request'] == "get-flyt-serial-number") {
+		
+		$file = '/etc/flyt//etc/flyt/serial';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};		
+		
+	}
+
+
+	if ($_POST['request'] == "get-flyt-key-public") {
+		
+		$file = '/etc/flyt/publickey';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+		
+	}
+
+
+	if ($_POST['request'] == "get-flyt-key-access") {
+		
+		$file = '/etc/flyt/accesskey.json';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+				
+	}
+	
+	
+		
+	
 	
 
 // Location

@@ -107,6 +107,182 @@ function getScriptRelease() {
 
 
 
+
+
+
+// Wingbits
+
+window.addEventListener('load', (event) => {
+
+	getWingbitsIdentifier();
+	getWingbitsRelease();
+
+});
+
+
+
+
+function getWingbitsIdentifier() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-wingbits-identifier' },
+		success: function(response) {
+			
+			console.log(response);
+			$('#wingbits-identifier').html(response);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
+
+function getWingbitsRelease() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-wingbits-release' },
+		success: function(response) {
+			
+			console.log(response);
+			$('#wingbits-release').html(response);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
+
+
+
+
+// Keys
+
+window.addEventListener('load', (event) => {
+
+	getSerialNumber();
+	getPublicKey();
+	getAccessKey();
+
+});
+
+
+
+
+function getSerialNumber() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-serial-number' },
+		success: function(response) {
+			
+			console.log(response);
+			$('#key-serial').html(response);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
+
+function getPublicKey() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-key-public' },
+		success: function(response) {
+			
+			console.log(response);
+			$('#key-public').html(response);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
+
+
+function getAccessKey() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-key-access' },
+		success: function(response) {
+			
+			var obj = JSON.parse(response);
+			console.log(obj);
+			$('#key-access').html(obj.accesskey);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
+
+
+
+
+
+
+
+
+
 // Location
 
 window.addEventListener('load', (event) => {
