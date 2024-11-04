@@ -170,7 +170,15 @@ function handleCommand(command) {
 			if (resParse.length > 0) {
 				resParse.forEach(function(line){
 					//$('#terminalOutput').prepend(line+"<br>");
-					console.log(line+"<br>");
+					console.log(line);
+					
+					const line = document.createElement('DIV');
+
+					line.textContent = `> ${ line }`;
+
+					history.appendChild(line);
+					  
+					  
 				});
 			} else {
 				//$('#terminalOutput').prepend("No Output<br>");
