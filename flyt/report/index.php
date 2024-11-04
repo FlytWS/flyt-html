@@ -4,7 +4,6 @@
 <head>
 	<title>Flyt Report</title>
 	<?php include_once('../includes/head.php'); ?>
-	<link rel="stylesheet" href="/global/style/leaflet.1.9.4.css"/>
 	<link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -365,9 +364,8 @@ foreach ($node as $key=>$nodeElement) {
 
 
 
+<script src="/global/script/jquery.min.3.7.1.js"></script>
+<script src="/global/script/jquery-ui.min.1.11.3.js"></script>
+<script src="/global/script/moment.min.2.30.0.js"></script>
 <script src="/global/script/script.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-<script src="/global/script/bluebird.min.3.3.1.js"></script>
-<script src="/global/script/chart.min.3.9.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.0/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="script.js"></script>
+<script src="script.js"></script>

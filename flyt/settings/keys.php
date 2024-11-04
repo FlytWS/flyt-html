@@ -16,15 +16,15 @@
 				
 				
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Serial Number</div>&emsp;<div id="key-serial"></div>
+					<div style="font-weight:600; white-space: nowrap;">Serial Number</div>&emsp;<div id="key-serial" style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;"></div>
 				</div>
 				
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Public Key</div>&emsp;<div id="key-public"></div>
+					<div style="font-weight:600; white-space: nowrap;">Public Key</div>&emsp;<div id="key-public" style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;"></div>
 				</div>
 				
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Access Key</div>&emsp;<div id="key-access"></div>
+					<div style="font-weight:600; white-space: nowrap;">Access Key</div>&emsp;<div id="key-access" style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;"></div>
 				</div>
 				
 

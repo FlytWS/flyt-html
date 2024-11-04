@@ -90,7 +90,7 @@ clearstatcache();
 
 	if ($_POST['request'] == "get-flyt-serial-number") {
 		
-		$file = '/etc/flyt//etc/flyt/serial';
+		$file = '/etc/flyt/serial';
 		if (file_exists($file)) {
 			echo file_get_contents($file);
 		};		
