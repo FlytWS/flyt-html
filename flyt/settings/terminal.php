@@ -168,15 +168,15 @@ function handleCommand(command) {
 			var resParse = JSON.parse(response);
 			console.log(resParse);
 			if (resParse.length > 0) {
-				resParse.forEach(function(line){
+				resParse.forEach(function(responseline){
 					//$('#terminalOutput').prepend(line+"<br>");
-					console.log(line);
+					console.log(responseline);
 					
-					const line = document.createElement('DIV');
+					var innerline = document.createElement('DIV');
 
-					line.textContent = `> ${ line }`;
+					innerline.textContent = `> ${ responseline }`;
 
-					history.appendChild(line);
+					history.appendChild(innerline);
 					  
 					  
 				});
