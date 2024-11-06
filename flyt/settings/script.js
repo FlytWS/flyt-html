@@ -742,7 +742,7 @@ function getServices() {
 			console.log(obj);
 			
 			for (const key in obj){
-			  document.getElementById('services-list').innerHTML += `<div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div>`;
+			  document.getElementById('services-list').innerHTML += `<div><div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div></div>`;
 			};
 
 		
