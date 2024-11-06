@@ -10,8 +10,8 @@
 
 		<header style="flex-direction: column;">
 			
-				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600;">Manufacturer</div>&emsp;<div id="node-manufacturer"></div>
+				<div class="page-title" id="services-list" style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					
 				</div>
 
 
