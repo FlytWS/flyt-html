@@ -750,7 +750,7 @@ function getServices() {
 			
 			
 			for (const key in obj){
-			  document.getElementById('services-list').innerHTML += `<div style="display: flex;"><div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div><br><div>${serAr[key]}</div></div>`;
+			  document.getElementById('services-list').innerHTML += `<div style="padding-botton:1rem;"><div style="display: flex;"><div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div></div></div><div>${serAr[key]}</div>`;
 			};
 
 		
