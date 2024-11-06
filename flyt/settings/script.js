@@ -738,11 +738,11 @@ function getServices() {
 		data: { request: 'get-flyt-services' },
 		success: function(response) {
 			
-			var obj = JSON.parse(response);
+			var obj = JSON.parse(response.responseText);
 			console.log(obj);
 			
-			obj.forEach((value, index) => {
-			  document.getElementById('services-list').innerHTML += `<div style="font-weight:600;">${index}</div>&emsp;<div id="node-manufacturer">${value}</div>`;
+			for (const key in obj){
+			  document.getElementById('services-list').innerHTML += `<div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div>`;
 			});
 
 		
