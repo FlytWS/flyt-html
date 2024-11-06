@@ -221,5 +221,25 @@ clearstatcache();
 		
 	}
 
+
+
+
+
+
+
+
+// Services
+
+	if ($_POST['request'] == "get-flyt-services") {
+		
+		$file = '/etc/flyt/data/flyt-services.json';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+
+	}
+
+
+
 	
 ?>

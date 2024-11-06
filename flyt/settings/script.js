@@ -704,3 +704,55 @@ function getUSBDump() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Services
+
+window.addEventListener('load', (event) => {
+
+	getServices();
+
+});
+
+
+
+
+
+function getServices() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-services' },
+		success: function(response) {
+			
+			console.log(response);
+
+			var obj = JSON.parse(response);
+			
+			console.log(obj);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};

@@ -14,10 +14,11 @@
 			<header style="flex-direction: column;">
 			
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600; white-space: nowrap;">Terminal</div>&emsp;<div style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;">Use with caution</div>
+					<div style="font-weight:600; white-space: nowrap;">Terminal</div>&emsp;<div style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;">Use with absolute caution, you may brick your device</div>
 				</div>
 				
-				<div class="page-title-center" style="width: 100%; flex-grow:1; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+				
+				<div class="page-title-center" style="width: 100%; height: calc(100% - 5rem); flex-grow:1; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
 					<header style="    height: 100%;    width: 100%; margin-top:1rem; border-radius:0.75rem; flex-direction: column; padding:0rem; overflow:hidden; ">
 					
 					
@@ -169,7 +170,6 @@ function handleCommand(command) {
 			console.log(resParse);
 			if (resParse.length > 0) {
 				resParse.forEach(function(responseline){
-					//$('#terminalOutput').prepend(line+"<br>");
 					console.log(responseline);
 					
 					var innerline = document.createElement('DIV');
@@ -181,16 +181,11 @@ function handleCommand(command) {
 					  
 				});
 			} else {
-				//$('#terminalOutput').prepend("No Output<br>");
 				console.log("No Output");
 			}			
 		},
 		error: function(err) {
-			//Unable to save
 			console.log(err);
-
-			//$('#terminalOutput').prepend('UTR');
-			console.log("UTR");
 			
 		}
 	});
@@ -204,12 +199,7 @@ function handleCommand(command) {
   history.appendChild(line);
 }
 
-// Every time the selection changes, add or remove the .noCursor
-// class to show or hide, respectively, the bug square cursor.
-// Note this function could also be used to enforce showing always
-// a big square cursor by always selecting 1 chracter from the current
-// cursor position, unless it's already at the end, in which case the
-// #cursor element should be displayed instead.
+
 document.addEventListener('selectionchange', () => {
   if (document.activeElement.id !== 'input') return;
   
@@ -226,8 +216,7 @@ document.addEventListener('selectionchange', () => {
 });
 
 input.addEventListener('input', () => {    
-  // If we paste HTML, format it as plain text and break it up
-  // input individual lines/commands:
+
   if (input.childElementCount > 0) {
     const lines = input.innerText.replace(/\n$/, '').split('\n');
     const lastLine = lines[lines.length - 1];
@@ -241,15 +230,14 @@ input.addEventListener('input', () => {
     focusAndMoveCursorToTheEnd();
   }
   
-  // If we delete everything, display the square caret again:
+
   if (input.innerText.length === 0) {
     input.classList.remove('noCaret');  
   }  
 });
 
 document.addEventListener('keydown', (e) => {   
-  // If some key is pressed outside the input, focus it and move the cursor
-  // to the end:
+
   if (e.target !== input) focusAndMoveCursorToTheEnd();
 });
 
@@ -265,7 +253,7 @@ input.addEventListener('keydown', (e) => {
   }
 });
 
-// Set the focus to the input so that you can start typing straigh away:
+
 input.focus();
 
 

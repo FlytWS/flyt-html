@@ -10,13 +10,14 @@
 
 			<header style="flex-direction: column;">
 			
-				<div class="page-title-center"  style="margin-bottom:2rem; color:#fbfbfb80; text-align:center; font-size:0.75rem;">
-					<br>Please ensure your keys are never publicly exposed and only used on authorised systems.
+				
+				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
+					<div style="font-weight:600; white-space: nowrap;">Keys</div>&emsp;<div style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;">Please ensure your keys are never publicly exposed and only used on authorised systems.</div>
 				</div>
 				
 				
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
-					<div style="font-weight:600; white-space: nowrap;">Serial Number</div>&emsp;<div id="key-serial" style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;"></div>
+					<div style="font-weight:600; white-space: nowrap;">Serial Key</div>&emsp;<div id="key-serial" style="width: calc(100% - 6rem);    word-wrap: break-word;    display: inline-block;"></div>
 				</div>
 				
 				<div class="page-title"  style="display: flex; width:100%; margin-bottom:2rem; color:#fbfbfb80; font-size:0.75rem;">
