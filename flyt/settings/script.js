@@ -743,10 +743,16 @@ function getServices() {
 			
 			
 			
-			serAr = [];
-			serAr['cron'] = "The cron command-line utility is a job scheduler on Unix-like operating systems.";
-			serAr['gpsd'] = "The gpsd service daemon monitors one or more GPSes or AIS receivers attached to a host computer through serial or USB ports";
 			
+			serAr = [];
+			serAr['cron'] = "This service assists with job scheduling";
+			serAr['gpsd'] = "This service assists with monitoring GPS data services";
+			serAr['lm-sensors'] = "This service assists with temperature and hardware monitoring"
+			serAr['vnstat'] = "This service assists with network traffic statistics"
+			serAr['readsb'] = "This service is critical for parsing ADS-B communications"
+			serAr['vector'] = "This service is critical for relaying ADS-B communications into the Wingbits network"
+			serAr['tar1090'] = "An ancillary readsb mapping service not critical for operation"
+			serAr['graphs1090'] = "An ancillary readsb monitor not critical for operation"
 			
 			
 			for (const key in obj){
