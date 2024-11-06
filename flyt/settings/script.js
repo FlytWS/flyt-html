@@ -738,7 +738,7 @@ function getServices() {
 		data: { request: 'get-flyt-services' },
 		success: function(response) {
 			
-			var obj = JSON.parse(response.responseText);
+			var obj = JSON.parse(response);
 			console.log(obj);
 			
 			for (const key in obj){
