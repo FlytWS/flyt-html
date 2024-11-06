@@ -741,8 +741,16 @@ function getServices() {
 			var obj = JSON.parse(response);
 			console.log(obj);
 			
+			
+			
+			serAr = [];
+			serAr['cron'] = "The cron command-line utility is a job scheduler on Unix-like operating systems.";
+			serAr['gpsd'] = "The gpsd service daemon monitors one or more GPSes or AIS receivers attached to a host computer through serial or USB ports";
+			
+			
+			
 			for (const key in obj){
-			  document.getElementById('services-list').innerHTML += `<div><div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div></div>`;
+			  document.getElementById('services-list').innerHTML += `<div style="display: flex;"><div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div><br><div>${serAr[key]}</div></div>`;
 			};
 
 		
