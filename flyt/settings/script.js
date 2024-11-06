@@ -743,7 +743,7 @@ function getServices() {
 			
 			for (const key in obj){
 			  document.getElementById('services-list').innerHTML += `<div style="font-weight:600;">${key}</div>&emsp;<div id="node-manufacturer">${obj[key]}</div>`;
-			});
+			};
 
 		
 		},
