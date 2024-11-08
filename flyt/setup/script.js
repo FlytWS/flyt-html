@@ -6,7 +6,7 @@ $(document).ready(function () {
     getLocation();
 	getGNSSLocation("initial");
 	
-	setInterval(getGNSSLocation("update"), 10000);
+	setInterval(getGNSSLocation("update"), 5000);
 
 
 
@@ -551,9 +551,7 @@ function getGNSSLocation(tag) {
 				
 				
 				if (isLocationSet == 0) {
-					if (tag == "initial") {
 						cockpitMap.setView([resParse.latitude,resParse.longitude], 16);
-					}
 				}
 
 
@@ -561,25 +559,10 @@ function getGNSSLocation(tag) {
 				
 				
 				markerGroupG.clearLayers();
-				
-				if ($("#n_gnssnotdetected").length == 0) {
-					//notifyConsole("n_gnssnotdetected","GNSS location is not available. Please ensure your GNSS receiver is connected with visibility of the sky.");
-				}
-				
-				$('#state_gnss').addClass("health-poor");
-				
+								
 				
 			}
 			
-			if (resParse.satellites) {
-				if (resParse.satellites < 6) {
-					if ($("#n_limitedgnss").length == 0) {
-						//notifyConsole("n_limitedgnss","Limited GNSS satellites in view. Please ensure your GNSS receiver has good visibility of the sky.");
-					}
-				} else {
-					$("#n_limitedgnss").remove();
-				}
-			}
 			
 			} catch (err) {				
 				console.log(err);
