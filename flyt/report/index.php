@@ -61,7 +61,7 @@ foreach ($node as $key=>$nodeElement) {
 	<div style="font-size:1rem; padding:1.5rem; padding-top:2rem; padding-bottom:0; color:#fbfbfb80; width:100%; display:flex; justify-content: space-between;">
 	<div style="padding-left:1rem; width:1rem; height:1rem;"></div>
 	<div class="pointer" onclick="menumanual('$key','$nodeElement')" style="white-space: nowrap;    text-overflow: ellipsis;    overflow: hidden; font-size:0.9rem;">$nodeElement</div>
-	<div style="padding-right:1rem; width:1rem; height:1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+	<div style="padding-right:1rem; width:1rem; height:1rem;">&emsp;</div>
 	</div>
 	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfb80;">
 	<div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">
@@ -106,7 +106,7 @@ foreach ($node as $key=>$nodeElement) {
 	<div style="font-size:1rem; padding:1.5rem; padding-top:2rem; padding-bottom:0; color:#fbfbfb80; width:100%; display:flex; justify-content: space-between;">
 	<div style="padding-left:1rem; width:1rem; height:1rem;"></div>
 	<div class="pointer" onclick="menumanual('$key','$nodeElement')" style="white-space: nowrap;    text-overflow: ellipsis;    overflow: hidden; font-size:0.9rem;">$nodeElement</div>
-	<div style="padding-right:1rem; width:1rem; height:1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+	<div style="padding-right:1rem; width:1rem; height:1rem;">&emsp;</div>
 	</div>
 	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfb80;">
 	<div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">
@@ -157,7 +157,7 @@ foreach ($node as $key=>$nodeElement) {
 	<div style="font-size:1rem; padding:1.5rem; padding-top:2rem; padding-bottom:0; color:#fbfbfb80; width:100%; display:flex; justify-content: space-between;">
 	<div style="padding-left:1rem; width:1rem; height:1rem;"></div>
 	<div class="pointer" onclick="menumanual('$key','$nodeElement')" style="white-space: nowrap;    text-overflow: ellipsis;    overflow: hidden; font-size:0.9rem;">$nodeElement</div>
-	<div style="padding-right:1rem; width:1rem; height:1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+	<div style="padding-right:1rem; width:1rem; height:1rem;">&emsp;</div>
 	</div>
 	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfb80;">
 	<div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">
@@ -209,7 +209,7 @@ foreach ($node as $key=>$nodeElement) {
 	<div style="font-size:1rem; padding:1.5rem; padding-top:2rem; padding-bottom:0; color:#fbfbfb80; width:100%; display:flex; justify-content: space-between;">
 	<div style="padding-left:1rem; width:1rem; height:1rem;"></div>
 	<div class="pointer" onclick="menumanual('$key','$nodeElement')" style="white-space: nowrap;    text-overflow: ellipsis;    overflow: hidden; font-size:0.9rem;">$nodeElement</div>
-	<div style="padding-right:1rem; width:1rem; height:1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+	<div style="padding-right:1rem; width:1rem; height:1rem;">&emsp;</div>
 	</div>
 	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfb80;">
 	<div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">
@@ -259,7 +259,7 @@ foreach ($node as $key=>$nodeElement) {
 	<div style="font-size:1rem; padding:1.5rem; padding-top:2rem; padding-bottom:0; color:#fbfbfb80; width:100%; display:flex; justify-content: space-between;">
 	<div style="padding-left:1rem; width:1rem; height:1rem;"></div>
 	<div class="pointer" onclick="menumanual('$key','$nodeElement')" style="white-space: nowrap;    text-overflow: ellipsis;    overflow: hidden; font-size:0.9rem;">$nodeElement</div>
-	<div style="padding-right:1rem; width:1rem; height:1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+	<div style="padding-right:1rem; width:1rem; height:1rem;">&emsp;</div>
 	</div>
 	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfb80;">
 	<div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">
@@ -307,7 +307,7 @@ foreach ($node as $key=>$nodeElement) {
 	<div style="font-size:1rem; padding:1.5rem; padding-top:2rem; padding-bottom:0; color:#fbfbfb80; width:100%; display:flex; justify-content: space-between;">
 	<div style="padding-left:1rem; width:1rem; height:1rem;"></div>
 	<div class="pointer" onclick="menumanual('$key','$nodeElement')" style="white-space: nowrap;    text-overflow: ellipsis;    overflow: hidden; font-size:0.9rem;">$nodeElement</div>
-	<div style="padding-right:1rem; width:1rem; height:1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></div>
+	<div style="padding-right:1rem; width:1rem; height:1rem;">&emsp;</div>
 	</div>
 	<div style=" text-align:center; width:100%; font-size:0.7rem; color:#fbfbfb80;">
 	<div style="padding:1rem; padding-top:0.25rem; padding-bottom:2rem;">
