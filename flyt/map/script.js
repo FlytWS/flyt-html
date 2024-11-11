@@ -1649,19 +1649,19 @@ function drawOutlineJson() {
 			
 			
 			polygon1 = L.polygon(RangeAltitude1).addTo(mapMap);
-			polygon1.setStyle({fillColor: '#00000000', color: '#e484f690', weight: 2});
+			polygon1.setStyle({fillColor: '#00000000', color: '#e484f6', weight: 1});
 			
 			polygon2 = L.polygon(RangeAltitude2).addTo(mapMap);
-			polygon2.setStyle({fillColor: '#00000000', color: '#ff858290', weight: 2});
+			polygon2.setStyle({fillColor: '#00000000', color: '#ff8582', weight: 1});
 			
 			polygon3 = L.polygon(RangeAltitude3).addTo(mapMap);
-			polygon3.setStyle({fillColor: '#00000000', color: '#a9a93490', weight: 2});
+			polygon3.setStyle({fillColor: '#00000000', color: '#a9a934', weight: 1});
 			
 			polygon4 = L.polygon(RangeAltitude4).addTo(mapMap);
-			polygon4.setStyle({fillColor: '#00000000', color: '#42c26b90', weight: 2});
+			polygon4.setStyle({fillColor: '#00000000', color: '#42c26b', weight: 1});
 			
 			polygon9 = L.polygon(RangeAltitude9).addTo(mapMap);
-			polygon9.setStyle({fillColor: '#00000000', color: '#FFFFFF90', weight: 2});
+			polygon9.setStyle({fillColor: '#00000000', color: '#FFFFFF', weight: 1});
 		
 
 		
