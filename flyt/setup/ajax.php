@@ -55,7 +55,8 @@ clearstatcache();
 		#exec("bash /etc/flyt/scripts/set-readsb-location.sh ".$obj->{'lat'}." ".$obj->{'lon'}."", $output, $retval);
 		
 		#exec("bash /etc/flyt/scripts/readsb-set-location.sh ".$latitude." ".$longitude."", $output, $retval);
-		shell_exec("bash /etc/flyt/scripts/readsb-set-location.sh ".$latitude." ".$longitude." 2>&1");
+		#shell_exec("bash /etc/flyt/scripts/readsb-set-location.sh ".$latitude." ".$longitude." 2>&1");
+		shell_exec('/etc/flyt/scripts/readsb-set-location.sh "'.$latitude.'" "'.$longitude.'"');
 
 		$file = '/etc/flyt/data/flyt-location.json';
 		if (file_exists($file)) {
