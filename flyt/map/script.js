@@ -175,15 +175,15 @@ var mapCoordinatesLat = localStorage.theCoorLat;
 var mapCoordinatesLng = localStorage.theCoorLng;
 if (mapCoordinatesLat === undefined) {
 	console.log("No Coordinates");
-	mapCoordinatesLat = 51.5074;  //default
-	mapCoordinatesLng = 0.1272;  //default
+	mapCoordinatesLat = 0;  //default
+	mapCoordinatesLng = 0;  //default
 } else {
 	console.log("Coordinates Are "+mapCoordinatesLat);
 };
 	
 // === Leaflet Map Setup ===
 
-let mapMap = L.map('mMap').setView([mapCoordinatesLat, mapCoordinatesLng], mapZoomLevel);
+let mapMap = L.map('mMap', {zoomControl: false}).setView([mapCoordinatesLat, mapCoordinatesLng], mapZoomLevel);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	className: 'map-tiles'
