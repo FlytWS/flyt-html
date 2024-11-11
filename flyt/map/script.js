@@ -1624,9 +1624,11 @@ function drawOutlineJson() {
 				if (element[2] < 30000) {
 					RangeAltitude3.push(element);
 				}
+				/*
 				if (element[2] < 40000) {
 					RangeAltitude4.push(element);
 				}
+				*/
 				if (element[2] < 99999) {
 					RangeAltitude9.push(element);
 				}
@@ -1640,7 +1642,7 @@ function drawOutlineJson() {
 			mapMap.removeLayer(polygon1);
 			mapMap.removeLayer(polygon2);
 			mapMap.removeLayer(polygon3);
-			mapMap.removeLayer(polygon4);
+			//mapMap.removeLayer(polygon4);
 			mapMap.removeLayer(polygon9);
 			
 			} catch (err) {
@@ -1649,19 +1651,21 @@ function drawOutlineJson() {
 			
 			
 			polygon1 = L.polygon(RangeAltitude1, {interactive: false}).addTo(mapMap);
-			polygon1.setStyle({fillColor: '#00000000', color: '#e484f6', weight: 0.5,  dashArray: '20, 20', dashOffset: '0'});
+			polygon1.setStyle({fillColor: '#00000000', color: '#e484f6', weight: 0.5});
 			
 			polygon2 = L.polygon(RangeAltitude2, {interactive: false}).addTo(mapMap);
-			polygon2.setStyle({fillColor: '#00000000', color: '#ff8582', weight: 0.5,  dashArray: '20, 20', dashOffset: '0'});
+			polygon2.setStyle({fillColor: '#00000000', color: '#ff8582', weight: 0.5});
 			
 			polygon3 = L.polygon(RangeAltitude3, {interactive: false}).addTo(mapMap);
-			polygon3.setStyle({fillColor: '#00000000', color: '#a9a934', weight: 0.5,  dashArray: '20, 20', dashOffset: '0'});
+			polygon3.setStyle({fillColor: '#00000000', color: '#a9a934', weight: 0.5});
 			
+			/*
 			polygon4 = L.polygon(RangeAltitude4, {interactive: false}).addTo(mapMap);
-			polygon4.setStyle({fillColor: '#00000000', color: '#42c26b', weight: 0.5,  dashArray: '20, 20', dashOffset: '0'});
+			polygon4.setStyle({fillColor: '#00000000', color: '#42c26b', weight: 0.5});
+			*/
 			
 			polygon9 = L.polygon(RangeAltitude9, {interactive: false}).addTo(mapMap);
-			polygon9.setStyle({fillColor: '#00000000', color: '#FFFFFF', weight: 0.5,  dashArray: '20, 20', dashOffset: '0'});
+			polygon9.setStyle({fillColor: '#00000000', color: '#FFFFFF', weight: 0.5});
 		
 
 		
