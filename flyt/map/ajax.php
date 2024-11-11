@@ -1,19 +1,7 @@
 <?php
 clearstatcache();
 
-/*
-	if ($_POST['request'] == "get-aircraft") {
-		
-		$file = '/run/readsb/aircraft.json';
-		if (file_exists($file)) {
-			echo file_get_contents('/run/readsb/aircraft.json');
-		} else {
-			echo "No File";
-		};
-		
-	}
-*/
-	
+
 	if ($_POST['request'] == "get-location") {
 		
 		$location = null;
@@ -23,9 +11,9 @@ clearstatcache();
 		if (file_exists($file)) {
 			$location = file_get_contents($file);
 		};
-		$file = '/etc/flyt/data/wingbits';
+		$file = '/etc/flyt/wingbits';
 		if (file_exists($file)) {
-			$wingbitsantennaid = str_replace(PHP_EOL, '', file_get_contents('/etc/flyt/data/wingbits'));
+			$wingbitsantennaid = str_replace(PHP_EOL, '', file_get_contents($file));
 		} else {
 			$wingbitsantennaid = "Unknown";
 		};

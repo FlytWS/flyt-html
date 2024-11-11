@@ -882,7 +882,7 @@ footer {
 		cursor:pointer;
 		display: block;
 		height: calc(100vh - 17rem);
-		overflow: scroll;
+		overflow-x: hidden;
 		width: calc(100vw - 2rem);
 	}
 	

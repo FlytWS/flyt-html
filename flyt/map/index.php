@@ -30,8 +30,8 @@
 
 			<div class="principle-container w-100">
 				
-				<div id="zoomIn" onclick="zoom('in')" style="cursor: pointer; position: absolute;    right: 1rem;    top: 6rem;    z-index: 100;    padding: 0.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
-				<div id="zoomOut" onclick="zoom('out')" style="cursor: pointer; position: absolute;    right: 1rem;    top: 8.8rem;    z-index: 100;    padding: 0.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-minus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div>
+				<div id="zoomIn" onclick="zoom('in')" style="cursor: pointer; position: absolute;    right: 1rem;    top: 6rem;    z-index: 18;    padding: 0.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
+				<div id="zoomOut" onclick="zoom('out')" style="cursor: pointer; position: absolute;    right: 1rem;    top: 8.8rem;    z-index: 18;    padding: 0.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-minus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div>
 				<div class="common-card"><div id="mMap"></div></div>
 				
 			</div>
@@ -86,13 +86,13 @@
 		<section>
 		<div class="display-craft-subsection">
 		
-		<div class="display-craft-subsection-row flex-wa">
+		<div class="display-craft-subsection-row flex-wa" style="grid-template-columns: repeat(1, minmax(0, 1fr));">
 		<div class="display-craft-subsection-full w-100">
 		<span class="display-craft-subsection-title">Aircraft Type</span><br><span class="dc_value" id="dc_aty"></span>
 		</div>
 		</div>
 
-		<div class="display-craft-subsection-row flex-wa">
+		<div class="display-craft-subsection-row flex-wa" style="grid-template-columns: repeat(1, minmax(0, 1fr));">
 		<div class="display-craft-subsection-full w-100">
 		<span class="display-craft-subsection-title">Aircraft Category</span><br><span class="dc_value" id="dc_aca"></span>
 		</div>
