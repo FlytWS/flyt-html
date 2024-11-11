@@ -1762,7 +1762,16 @@ function getGNSSLocation() {
 
 
 
-
+function zoom(direction) {
+	
+	if (direction == "in") {
+		mapMap.zoomIn();    // Zooms in by one level
+	}
+	if (direction == "out") {
+		mapMap.zoomOut();   // Zooms out by one level
+	}
+	
+}
 
 
 
