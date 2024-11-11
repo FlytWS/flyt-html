@@ -122,44 +122,6 @@
 
 
 
-(async function() {
-	
-  const data = [
-    { element: "Connected", count: 0 },
-    { element: "Disconnected", count: 0 },
-  ];
-
-  chartState = new Chart(
-    document.getElementById('state'),
-    {
-      type: 'doughnut',
-      data: {
-        labels: data.map(row => row.element),
-        datasets: [
-          {
-            data: data.map(row => row.count),
-			backgroundColor: [
-                '#6ba7ff',
-				'#FF936B'
-			],
-			borderWidth: 0
-          }
-        ]
-      }, 
-	  options: {
-		responsive: true,
-		maintainAspectRatio: true,
-		plugins: {
-            legend: {
-                display: false
-            }
-        }
-	  }
-    }
-  );
-})();
-
-
 
 
 
