@@ -245,6 +245,9 @@ clearstatcache();
 
 	if ($_POST['request'] == "terminal-command") {
 		
+		$buildAr = array();
+		$buildAr['one'] = "echo ' ' && echo '                                               _' && echo '                 ___                          (_)' && echo '               _/XXX\' && echo '_             /XXXXXX\_                                    __' && echo 'X\__    __   /X XXXX XX\                          _       /XX\__      ___' && echo '    \__/  \_/__       \ \                       _/X\__   /XX XXX\____/XXX\' && echo '  \  ___   \/  \_      \ \               __   _/      \_/  _/  -   __  -  \' && echo ' ___/   \__/   \ \__     \\__           /  \_//  _ _ \  \     __  /  \____/' && echo '/  __    \  /     \ \_   _//_\___    __/    //           \___/  \/     __/' && echo '__/_______\________\__\_/________\__/_/____/_____________/_______\____/____' && echo '                                  ___' && echo '                                 /L|0\' && echo '                                /  |  \' && echo '                               /       \' && echo '                              /    |    \' && echo '                             /           \' && echo '                            /  __  | __   \' && echo '                           /  __/    \__   \' && echo '                          /  /__   |  __\   \' && echo '                         /___________________\' && echo '                         /          |         \' && echo '                              /   _|_   \' && echo '                      /      ____/___\____     \' && echo '                      ___________[o0o]___________' && echo '                               O   O    O' && echo ' '";
+
 		
 		$commandAr = array();
 		$commandAr['install-tar1090'] = "sudo /etc/flyt/scripts/install-optional-tar1090.sh";
@@ -255,6 +258,8 @@ clearstatcache();
 		
 		if (array_key_exists($request, $commandAr)) {
 			$command = $commandAr[$request];
+		} else if ($request == "build") {
+			$command = 'echo "build me"';			
 		} else {
 			$command = 'echo "Terminal Command Not Found"';
 		}

@@ -24,7 +24,7 @@
 					
 					
 				<div id="terminal">
-					<div id="terminalhistory"></div>
+					<div id="terminalhistory" style="white-space: pre;"></div>
 
 					> 
 
