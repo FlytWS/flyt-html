@@ -175,7 +175,7 @@ function focusAndMoveCursorToTheEnd(e) {
   selection.addRange(range);
 }
 
-function handleCommand(command) {
+async function handleCommand(command) {
 	
 	console.log(command);
 	
@@ -195,7 +195,7 @@ function handleCommand(command) {
 					
 					if (command == "build") {
 											
-						printCharByChar(responseline, terminaldelay);
+						await printCharByChar(responseline, terminaldelay);
 						
 						var innerline = document.createElement('DIV');
 
