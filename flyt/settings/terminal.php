@@ -137,6 +137,14 @@
 <script>
 
 
+
+
+const history = document.getElementById('terminalhistory');
+const input = document.getElementById('terminalinput');
+const cursor = document.getElementById('cursor');
+
+
+
 let terminaldelay = 100; // delay in milliseconds
 
 function printCharByChar(text, delay) {
@@ -149,9 +157,7 @@ function printCharByChar(text, delay) {
 }
 
 
-const history = document.getElementById('terminalhistory');
-const input = document.getElementById('terminalinput');
-const cursor = document.getElementById('cursor');
+
 
 function focusAndMoveCursorToTheEnd(e) {  
   input.focus();
