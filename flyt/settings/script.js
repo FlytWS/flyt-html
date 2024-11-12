@@ -288,7 +288,9 @@ function getAccessKey() {
 window.addEventListener('load', (event) => {
 
 	getModel();
-	getNode();
+	getNode0();
+	getNode1();
+	getNode2();
 
 });
 
@@ -321,7 +323,7 @@ function getModel() {
 };
 
 
-function getNode() {
+function getNode0() {
 
 	$.ajax({
 		url: 'ajax.php',
@@ -348,7 +350,6 @@ function getNode() {
 			$('#node-architecture').html(obj.platform_machine);
 			$('#node-cpu').html(coreAr[obj.cpu_cores] + " " + obj.cpu_frequency_max + "Mhz");
 			$('#node-ram').html((obj.memory_total / 1000000).toFixed(0) + "MB");
-			$('#node-ram').html();
 			
 		
 		},
@@ -362,6 +363,76 @@ function getNode() {
 			
 
 };
+
+
+
+function getNode1() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-stats-1' },
+		success: function(response) {
+			
+			console.log(response);
+
+			var obj = JSON.parse(response);
+			
+			
+			
+			const keyStoragePartition = Object.keys(obj).filter(key => key.startsWith('storage_partition_device_'));
+			console.log(keyStoragePartition);
+			console.log(obj[keyStoragePartition]);
+			var primaryStore = obj[keyStoragePartition];
+
+			$('#node-storage').html((obj['storage_usage_total_'+primaryStore]/1000000000).toFixed(2));
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
+
+
+function getNode2() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-stats-2' },
+		success: function(response) {
+			
+			console.log(response);
+
+			var obj = JSON.parse(response);
+
+			$('#node-uptime').html(obj.boot_timestamp);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
+
+
 
 
 
