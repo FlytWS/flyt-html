@@ -192,13 +192,27 @@ function handleCommand(command) {
 				resParse.forEach(function(responseline){
 					console.log(responseline);
 					
-					var innerline = document.createElement('DIV');
-
-					innerline.textContent = `> ${ responseline }`;
-
-					history.appendChild(innerline);
 					
-					printCharByChar(responseline, terminaldelay);
+					if (command == "build") {
+						
+						printCharByChar(responseline, terminaldelay);
+						
+						var innerline = document.createElement('DIV');
+
+						innerline.textContent = `> ${ }`;
+
+						history.appendChild(innerline);
+						
+					} else {
+						
+						var innerline = document.createElement('DIV');
+
+						innerline.textContent = `> ${ responseline }`;
+
+						history.appendChild(innerline);
+					
+					}
+					
 					  
 					  
 				});
