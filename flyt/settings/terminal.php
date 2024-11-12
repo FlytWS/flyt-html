@@ -194,12 +194,12 @@ function handleCommand(command) {
 					
 					
 					if (command == "build") {
-						
+											
 						printCharByChar(responseline, terminaldelay);
 						
 						var innerline = document.createElement('DIV');
 
-						innerline.textContent = `> ${ }`;
+						innerline.textContent = `> `;
 
 						history.appendChild(innerline);
 						
