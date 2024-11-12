@@ -232,7 +232,13 @@ clearstatcache();
 	}
 	
 	
-	
+
+
+
+
+
+
+
 
 // Terminal
 
@@ -243,7 +249,7 @@ clearstatcache();
 		$commandAr = array();
 		$commandAr['install-tar1090'] = "sudo /etc/flyt/scripts/install-optional-tar1090.sh";
 		$commandAr['install-graphs1090'] = "sudo /etc/flyt/scripts/install-optional-graphs1090.sh";
-		$commandAr['motd'] = "echo '123' && echo '456'";
+		$commandAr['motd'] = "echo ' ' && echo '  ______ _  __     _________ ' && echo ' |  ____| | \ \   / /__   __|' && echo ' | |__  | |  \ \_/ /   | |   ' && echo ' |  __| | |   \   /    | |   ' && echo ' | |    | |____| |     | |   ' && echo ' |_|    |______|_|     |_|   ' && echo ' '";
 		
 		$request = $_POST['data'];
 		
