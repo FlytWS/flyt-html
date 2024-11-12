@@ -175,7 +175,7 @@ function focusAndMoveCursorToTheEnd(e) {
   selection.addRange(range);
 }
 
-async function handleCommand(command) {
+function handleCommand(command) {
 	
 	console.log(command);
 	
@@ -184,7 +184,7 @@ async function handleCommand(command) {
 		type: 'POST',
 		cache: false,
 		data: { request: 'terminal-command', data: command },
-		success: function(response) {
+		success: async function(response) {
 			console.log(response);
 			var resParse = JSON.parse(response);
 			console.log(resParse);
