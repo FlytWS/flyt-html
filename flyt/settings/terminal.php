@@ -184,36 +184,22 @@ function handleCommand(command) {
 		type: 'POST',
 		cache: false,
 		data: { request: 'terminal-command', data: command },
-		success: async function(response) {
+		success: function(response) {
 			console.log(response);
 			var resParse = JSON.parse(response);
 			console.log(resParse);
 			if (resParse.length > 0) {
 				resParse.forEach(function(responseline){
-					console.log(responseline);
 					
-					
-					if (command == "build") {
-											
-						await printCharByChar(responseline, terminaldelay);
-						
-						var innerline = document.createElement('DIV');
+						console.log(responseline);
 
-						innerline.textContent = `> `;
-
-						history.appendChild(innerline);
-						
-					} else {
-						
 						var innerline = document.createElement('DIV');
 
 						innerline.textContent = `> ${ responseline }`;
 
 						history.appendChild(innerline);
 					
-					}
-					
-					  
+
 					  
 				});
 			} else {
