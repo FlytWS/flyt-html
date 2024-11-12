@@ -144,7 +144,7 @@ function printCharByChar(text, delay) {
         setTimeout(() => {
             console.log(text.charAt(i));
 			history.appendChild(text.charAt(i));
-        }, i * terminaldelay);
+        }, i * delay);
     }
 }
 
@@ -191,7 +191,7 @@ function handleCommand(command) {
 
 					history.appendChild(innerline);
 					
-					printCharByChar(responseline, delay);
+					printCharByChar(responseline, terminaldelay);
 					  
 					  
 				});
