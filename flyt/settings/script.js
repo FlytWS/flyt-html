@@ -42,6 +42,7 @@ function menumanual(key) {
 
 window.addEventListener('load', (event) => {
 
+	getCoreRelease();
 	getWebRelease();
 	getScriptRelease();
 
@@ -103,6 +104,32 @@ function getScriptRelease() {
 };
 
 
+function getCoreRelease() {
+
+	$.ajax({
+		url: 'ajax.php',
+		type: 'POST',
+		cache: false,
+		data: { request: 'get-flyt-release-core' },
+		success: function(response) {
+			
+			console.log(response);
+			var obj = JSON.parse(response);
+			
+			$('#release-core').html(obj.flyt_core_version);
+			
+		
+		},
+		error: function(err) {
+
+			console.log(err);
+			
+		}
+	
+	});
+			
+
+};
 
 
 
@@ -386,7 +413,7 @@ function getNode1() {
 			console.log(obj[keyStoragePartition]);
 			var primaryStore = obj[keyStoragePartition];
 
-			$('#node-storage').html((obj['storage_usage_total_'+primaryStore]/1000000000).toFixed(2));
+			$('#node-storage').html((obj['storage_usage_total_'+primaryStore]/1000000000).toFixed(2) + "GB");
 			
 		
 		},
@@ -417,7 +444,7 @@ function getNode2() {
 
 			var obj = JSON.parse(response);
 
-			$('#node-uptime').html(obj.boot_timestamp);
+			$('#node-uptime').html(secondsToDHM(obj.boot_timestamp));
 			
 		
 		},

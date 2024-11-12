@@ -1606,15 +1606,16 @@ function drawOutlineJson() {
         dataType: 'json' });
     request.done(function(data) {
 		
-			RangeAltitude1  = new Array();
-			RangeAltitude2  = new Array();
-			RangeAltitude3  = new Array();
-			RangeAltitude4  = new Array();
+			//RangeAltitude1  = new Array();
+			//RangeAltitude2  = new Array();
+			//RangeAltitude3  = new Array();
+			//RangeAltitude4  = new Array();
 			RangeAltitude9  = new Array();
 		
 			for (const element of data.actualRange.last24h.points) {
 				
 				//console.log(element[2]);
+				/*
 				if (element[2] < 10000) {
 					RangeAltitude1.push(element);
 				}
@@ -1624,7 +1625,6 @@ function drawOutlineJson() {
 				if (element[2] < 30000) {
 					RangeAltitude3.push(element);
 				}
-				/*
 				if (element[2] < 40000) {
 					RangeAltitude4.push(element);
 				}
@@ -1639,9 +1639,9 @@ function drawOutlineJson() {
 
 			try {
 			
-			mapMap.removeLayer(polygon1);
-			mapMap.removeLayer(polygon2);
-			mapMap.removeLayer(polygon3);
+			//mapMap.removeLayer(polygon1);
+			//mapMap.removeLayer(polygon2);
+			//mapMap.removeLayer(polygon3);
 			//mapMap.removeLayer(polygon4);
 			mapMap.removeLayer(polygon9);
 			
@@ -1649,7 +1649,7 @@ function drawOutlineJson() {
 				
 			}			
 			
-			
+			/*
 			polygon1 = L.polygon(RangeAltitude1, {interactive: false}).addTo(mapMap);
 			polygon1.setStyle({fillColor: '#00000000', color: '#e484f6', weight: 0.5});
 			
@@ -1659,7 +1659,7 @@ function drawOutlineJson() {
 			polygon3 = L.polygon(RangeAltitude3, {interactive: false}).addTo(mapMap);
 			polygon3.setStyle({fillColor: '#00000000', color: '#a9a934', weight: 0.5});
 			
-			/*
+			
 			polygon4 = L.polygon(RangeAltitude4, {interactive: false}).addTo(mapMap);
 			polygon4.setStyle({fillColor: '#00000000', color: '#42c26b', weight: 0.5});
 			*/

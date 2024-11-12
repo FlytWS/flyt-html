@@ -70,6 +70,14 @@ clearstatcache();
 		
 	}
 
+	if ($_POST['request'] == "get-flyt-release-core") {
+		
+		$file = '/etc/flyt/data/flyt-system-variables.json';
+		if (file_exists($file)) {
+			echo file_get_contents($file);
+		};
+		
+	}
 
 	
 	
@@ -231,8 +239,20 @@ clearstatcache();
 
 	if ($_POST['request'] == "terminal-command") {
 		
-		$command = $_POST['data'];
 		
+		$commandAr = array();
+		$commandAr['install-tar1090'] = "python3 /etc/flyt/scripts/install-optional-tar1090.sh";
+		$commandAr['install-graphs1090'] = "python3 /etc/flyt/scripts/install-optional-graphs1090.sh";
+		
+		$request = $_POST['data'];
+		
+		if (array_key_exists($request, $commandAr)) {
+			$command = $commandAr[$request];
+		} else {
+			$command = 'echo "Terminal Command Not Found"';
+		}
+		
+
 		$output=null;
 		$retval=null;
 		exec($command, $output, $retval);
