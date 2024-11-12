@@ -259,7 +259,7 @@ clearstatcache();
 		if (array_key_exists($request, $commandAr)) {
 			$command = $commandAr[$request];
 		} else if ($request == "build") {
-			$command = 'echo "build me"';			
+			$command = array_rand($buildAr, 1);
 		} else {
 			$command = 'echo "Terminal Command Not Found"';
 		}
