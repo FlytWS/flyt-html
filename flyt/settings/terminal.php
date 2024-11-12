@@ -136,6 +136,19 @@
 
 <script>
 
+
+let terminaldelay = 100; // delay in milliseconds
+
+function printCharByChar(text, delay) {
+    for (let i = 0; i < text.length; i++) {
+        setTimeout(() => {
+            console.log(text.charAt(i));
+			history.appendChild(text.charAt(i));
+        }, i * terminaldelay);
+    }
+}
+
+
 const history = document.getElementById('terminalhistory');
 const input = document.getElementById('terminalinput');
 const cursor = document.getElementById('cursor');
@@ -177,6 +190,8 @@ function handleCommand(command) {
 					innerline.textContent = `> ${ responseline }`;
 
 					history.appendChild(innerline);
+					
+					printCharByChar(responseline, delay);
 					  
 					  
 				});
