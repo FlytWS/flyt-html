@@ -151,7 +151,8 @@ function printCharByChar(text, delay) {
     for (let i = 0; i < text.length; i++) {
         setTimeout(() => {
             console.log(text.charAt(i));
-			history.appendChild(text.charAt(i));
+			var div = document.getElementById("terminalhistory");
+			div.textContent += text.charAt(i);
         }, i * delay);
     }
 }
