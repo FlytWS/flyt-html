@@ -145,19 +145,6 @@ const cursor = document.getElementById('cursor');
 
 
 
-let terminaldelay = 100; // delay in milliseconds
-
-function printCharByChar(text, delay) {
-    for (let i = 0; i < text.length; i++) {
-        setTimeout(() => {
-            console.log(text.charAt(i));
-			var div = document.getElementById("terminalhistory");
-			div.textContent += text.charAt(i);
-        }, i * delay);
-    }
-}
-
-
 
 
 function focusAndMoveCursorToTheEnd(e) {  
@@ -198,6 +185,9 @@ function handleCommand(command) {
 						innerline.textContent = `> ${ responseline }`;
 
 						history.appendChild(innerline);
+						
+						var terminalDiv = document.getElementById('terminal');
+						terminalDiv.scrollTop = terminalDiv.scrollHeight;
 					
 
 					  
