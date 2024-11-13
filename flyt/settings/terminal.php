@@ -164,6 +164,10 @@ function focusAndMoveCursorToTheEnd(e) {
 
 function handleCommand(command) {
 	
+	
+	const longscripts = ["install-tar1090", "install-graphs1090"];
+	
+	
 	console.log(command);
 	
 		$.ajax({
@@ -176,8 +180,16 @@ function handleCommand(command) {
 			var resParse = JSON.parse(response);
 			console.log(resParse);
 			if (resParse.length > 0) {
+				
+				if (longscripts.includes(command)) {
+					var innerline = document.createElement('DIV');
+					innerline.textContent = `> Please wait...`;
+					history.appendChild(innerline);
+				}
+				
 				resParse.forEach(function(responseline){
 					
+
 						console.log(responseline);
 
 						var innerline = document.createElement('DIV');
