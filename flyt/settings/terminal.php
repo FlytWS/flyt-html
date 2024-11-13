@@ -165,6 +165,11 @@ function focusAndMoveCursorToTheEnd(e) {
 function handleCommand(command) {
 	
 	
+	const line = document.createElement('DIV');
+	line.textContent = `> ${ command }`;
+	history.appendChild(line);
+	
+	
 	const longscripts = ["install-tar1090", "install-graphs1090"];
 	
 	if (longscripts.includes(command)) {
@@ -215,11 +220,7 @@ function handleCommand(command) {
 	
 	
 	
-  const line = document.createElement('DIV');
-  
-  line.textContent = `> ${ command }`;
-  
-  history.appendChild(line);
+
 }
 
 
