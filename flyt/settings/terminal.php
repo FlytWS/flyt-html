@@ -170,7 +170,7 @@ function handleCommand(command) {
 	history.appendChild(line);
 	
 	
-	const longscripts = ["install-tar1090", "install-graphs1090"];
+	const longscripts = ["install-tar1090", "install-graphs1090", "update-html", "update-scripts"];
 	
 	if (longscripts.includes(command)) {
 		var innerline = document.createElement('DIV');
