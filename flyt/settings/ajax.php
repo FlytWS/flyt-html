@@ -251,7 +251,7 @@ clearstatcache();
 		$buildAr['three'] = "echo ' ' && echo '                          q*p' && echo '___________________________T____________________________' && echo '      |                 |/(_)\|                 |' && echo '      |         -------:**^^^**:-------         |' && echo '      |               ((   o   ))               |' && echo '    -----------________\\_____//________-----------' && echo '                       /       \' && echo '                    TT/         \TT' && echo '                    ||-----------||' && echo '                    ||           ||' && echo ' '";
 		
 		$commandAr = array();
-		$commandAr['install-tar1090'] = "echo 'Please wait...' && 'sudo /etc/flyt/scripts/install-optional-tar1090.sh";
+		$commandAr['install-tar1090'] = "echo 'Please wait...' && sudo /etc/flyt/scripts/install-optional-tar1090.sh";
 		$commandAr['install-graphs1090'] = "echo 'Please wait...' && sudo /etc/flyt/scripts/install-optional-graphs1090.sh";
 		$commandAr['motd'] = "echo ' ' && echo '  ______ _  __     _________ ' && echo ' |  ____| | \ \   / /__   __|' && echo ' | |__  | |  \ \_/ /   | |   ' && echo ' |  __| | |   \   /    | |   ' && echo ' | |    | |____| |     | |   ' && echo ' |_|    |______|_|     |_|   ' && echo ' '";
 		
