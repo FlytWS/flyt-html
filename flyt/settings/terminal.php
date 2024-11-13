@@ -24,7 +24,7 @@
 					
 					
 				<div id="terminal">
-					<div id="terminalhistory" style="white-space: pre;"></div>
+					<div id="terminalhistory" style="white-space: break-spaces;"></div>
 
 					> 
 
@@ -177,6 +177,9 @@ function handleCommand(command) {
 		innerline.textContent = `> Please wait...`;
 		history.appendChild(innerline);
 	}
+	
+	var terminalDiv = document.getElementById('terminal');
+	terminalDiv.scrollTop = terminalDiv.scrollHeight;
 				
 	
 	console.log(command);
