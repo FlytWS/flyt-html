@@ -201,8 +201,7 @@ function handleCommand(command) {
 
 						var innerline = document.createElement('DIV');
 
-						//innerline.textContent = `> ${ responseline }`;
-						innerline.htmlContent = `> ${ responseline }`;
+						innerline.textContent = `> ${ responseline }`;
 
 						history.appendChild(innerline);
 						
