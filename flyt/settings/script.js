@@ -444,7 +444,7 @@ function getNode2() {
 
 			var obj = JSON.parse(response);
 
-			$('#node-uptime').html(secondsToDHM((obj.boot_timestamp*1).toFixed(0)));
+			$('#node-uptime').html(secondsToDHM(((obj.boot_timestamp*1)/1000).toFixed(0)));
 			
 		
 		},
