@@ -167,6 +167,12 @@ function handleCommand(command) {
 	
 	const longscripts = ["install-tar1090", "install-graphs1090"];
 	
+	if (longscripts.includes(command)) {
+		var innerline = document.createElement('DIV');
+		innerline.textContent = `> Please wait...`;
+		history.appendChild(innerline);
+	}
+				
 	
 	console.log(command);
 	
@@ -181,14 +187,7 @@ function handleCommand(command) {
 			console.log(resParse);
 			if (resParse.length > 0) {
 				
-				if (longscripts.includes(command)) {
-					var innerline = document.createElement('DIV');
-					innerline.textContent = `> Please wait...`;
-					history.appendChild(innerline);
-				}
-				
-				resParse.forEach(function(responseline){
-					
+				resParse.forEach(function(responseline){					
 
 						console.log(responseline);
 
