@@ -246,13 +246,28 @@ clearstatcache();
 	if ($_POST['request'] == "terminal-command") {
 		
 		$buildAr = array();
-		$buildAr['one'] = "echo ' ' && echo '                                               _' && echo '                 ___                          (_)' && echo '               _/XXX\' && echo '_             /XXXXXX\_                                    __' && echo 'X\__    __   /X XXXX XX\                          _       /XX\__      ___' && echo '    \__/  \_/__       \ \                       _/X\__   /XX XXX\____/XXX\' && echo '  \  ___   \/  \_      \ \               __   _/      \_/  _/  -   __  -  \' && echo ' ___/   \__/   \ \__     \\__           /  \_//  _ _ \  \     __  /  \____/' && echo '/  __    \  /     \ \_   _//_\___    __/    //           \___/  \/     __/' && echo '__/_______\________\__\_/________\__/_/____/_____________/_______\____/____' && echo '                                  ___' && echo '                                 /L|0\' && echo '                                /  |  \' && echo '                               /       \' && echo '                              /    |    \' && echo '                             /           \' && echo '                            /  __  | __   \' && echo '                           /  __/    \__   \' && echo '                          /  /__   |  __\   \' && echo '                         /___________________\' && echo '                         /          |         \' && echo '                              /   _|_   \' && echo '                      /      ____/___\____     \' && echo '                      ___________[o0o]___________' && echo '                               O   O    O' && echo ' '";
-		$buildAr['two'] = "echo ' ' && echo '                                   __' && echo '                 \=====================================/' && echo '                                   ||' && echo '                                   ||' && echo '                                   ||' && echo '                                   ||' && echo '              ::::::               ||               ::::::' && echo '           :::      :::            ||            :::      :::' && echo '         :::          :::          ||          :::          :::' && echo '=====oo==========================================================oo=====' && echo '       :::     MWWM     :::  )____________(  :::     MWWM     :::' && echo '       :::     MWWM     ::: /__/___||___\__\ :::     MWWM     :::' && echo '         :::   (__)   :::   |              |   :::   (__)   :::' && echo '           :::  ||  :::      \            /      :::  ||  :::' && echo '              ::::::           \________/           ::::::' && echo '                ||                 ||                 ||' && echo '                OO                 OO                 OO' && echo ' '";
-		$buildAr['three'] = "echo ' ' && echo '                          q*p' && echo '___________________________T____________________________' && echo '      |                 |/(_)\|                 |' && echo '      |         -------:**^^^**:-------         |' && echo '      |               ((   o   ))               |' && echo '    -----------________\\_____//________-----------' && echo '                       /       \' && echo '                    TT/         \TT' && echo '                    ||-----------||' && echo '                    ||           ||' && echo ' '";
-		$buildAr['four'] = "echo ' ' && echo '    __!__' && echo '_____(_)_____' && echo '   !  !  !' && echo ' '";
-		$buildAr['five'] = "echo ' ' && echo '   -----|-----' && echo '*>=====[_]L)' && echo '      -'-`-' && echo ' '";
-		$buildAr['six'] = "echo ' ' && echo '       __|__' && echo '--@--@--(_)--@--@--' && echo ' '";
-		$buildAr['seven'] = "echo ' ' && echo '            __/\__' && echo '           `==/\==`' && echo ' ____________/__\____________' && echo '/____________________________\' && echo '  __||__||__/.--.\__||__||__' && echo ' /__|___|___( >< )___|___|__\' && echo '           _/`--`\_' && echo '          (/------\)' && echo ' '";
+		$buildAr['1'] = "echo ' ' && echo '     \ /' && echo '+----o0o----+' && echo ' '";
+		$buildAr['2'] = "echo ' ' && echo '   | |' && echo '--=oOo=--' && echo ' '";
+		$buildAr['3'] = "echo ' ' && echo '   _|_' && echo '---(*)---' && echo '  \" \' \"' && echo ' '";
+		$buildAr['4'] = "echo ' ' && echo '  |\    __' && echo '..==========-' && echo '     ~~~' && echo ' '";
+		$buildAr['5'] = "echo ' ' && echo '    __|__' && echo '-----(.)-----' && echo ' '";
+		$buildAr['6'] = "echo ' ' && echo '    __|__' && echo '---o-(_)-o---' && echo ' '";
+		$buildAr['7'] = "echo ' ' && echo '       __|__' && echo '------oo(_)oo------' && echo ' '";
+		$buildAr['8'] = "echo ' ' && echo '     _|_' && echo '-----(*)-----' && echo '     / \' && echo ' '";
+		$buildAr['9'] = "echo ' ' && echo '       __|__' && echo '________(*)________' && echo '       o/ \o' && echo ' '";
+		$buildAr['10'] = "echo ' ' && echo '-----------------' && echo '       {*}' && echo '      o   o' && echo ' '";
+		$buildAr['11'] = "echo ' ' && echo '    |' && echo '---=o=---' && echo '  o/!\o' && echo ' '";
+		$buildAr['12'] = "echo ' ' && echo '   -----|-----' && echo '*>=====[_]D' && echo '      -'-`-' && echo ' '";
+		$buildAr['13'] = "echo ' ' && echo '    __|__' && echo 'o----(_)----o' && echo ' '";
+		$buildAr['14'] = "echo ' ' && echo '       _____' && echo '         |' && echo '\______0(.)0______/' && echo ' '";
+		$buildAr['15'] = "echo ' ' && echo '   __|__' && echo '\___(o)___/' && echo '   ! ! !' && echo ' '";
+		$buildAr['16'] = "echo ' ' && echo '_______|_______' && echo '  _____O_____' && echo '     o/ \o' && echo ' '";
+		$buildAr['17'] = "echo ' ' && echo '      __!__' && echo '^----o-(_)-o----^' && echo ' '";
+		$buildAr['18'] = "echo ' ' && echo '__________ __________' && echo '   \    \_e_/    /' && echo '  __\___{_+_}___/__' && echo '       :/   \:' && echo ' '";
+		$buildAr['19'] = "echo ' ' && echo '   ____________' && echo '       _I_' && echo 'O-----(__o)' && echo '       \_\__' && echo ' '";
+		$buildAr['20'] = "echo ' ' && echo '_________' && echo '  ,-'-.____()' && echo ' (____.--\"\"\"' && echo ' -'--'-' && echo ' '";
+
+		
 		
 		$commandAr = array();
 		$commandAr['install-tar1090'] = "sudo /etc/flyt/scripts/install-optional-tar1090.sh";
