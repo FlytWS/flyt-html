@@ -201,6 +201,209 @@ clearstatcache();
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+// Network
+
+
+	
+
+	if ($_POST['request'] == "scan-wifi") {
+		
+		
+		$host = "localhost";
+		$port = 65432;
+
+		$f = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+		socket_set_option($f, SOL_SOCKET, SO_SNDTIMEO, array('sec' => 1, 'usec' => 500000));
+		$s = socket_connect($f, $host, $port);
+
+		$msg = "flyt-wifi-scan";
+		$len = strlen($msg);
+
+		socket_sendto($f, $msg, $len, 0, $host, $port);
+
+		socket_close($f);
+		
+		
+		$lines=array();
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-scan.py');
+		$file = '/etc/flyt/data/flyt-wifi-scan.json';
+		if (file_exists($file)) {
+			
+			$reject = array("SSID","--");
+			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
+			 foreach ( $fileopen as $line ) {
+				
+				$line=str_replace("\n","",$line);
+				$line=str_replace("\r","",$line);
+				$line=rtrim($line," ");
+				
+				if (strlen($line) > 0) {
+					if(!in_array($line,$reject)){  
+						$lines[]=$line;
+					}
+				}
+				
+			 }
+			 
+
+			$uniqueLines = array_unique($lines);
+			array_push($uniqueLines,"Hidden Network");
+			echo json_encode($uniqueLines);
+		};
+		
+
+	}
+	
+	if ($_POST['request'] == "connect-wifi") {
+
+		$ssid = $_POST['ssid'];
+		$passphrase = $_POST['passphrase'];
+		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli dev wifi connect "'.$ssid.'" password "'.$passphrase.'"  2>&1');
+		
+		$filename = "/etc/flyt/data/flyt-watchdog-network";
+		$file = fopen($filename, "w+") or die();
+		$text = "";
+		fwrite($file, $text);
+		fclose($file);
+		
+		$output = str_replace("\u001b[2K","",$output);
+		$output = str_replace("\n","",$output);
+		$output = str_replace("\r","",$output);
+		echo json_encode($output);
+		
+	}
+		
+		
+
+	
+	if ($_POST['request'] == "manage-wifi") {
+		
+		$host = "localhost";
+		$port = 65432;
+
+		$f = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+		socket_set_option($f, SOL_SOCKET, SO_SNDTIMEO, array('sec' => 1, 'usec' => 500000));
+		$s = socket_connect($f, $host, $port);
+
+		$msg = "flyt-wifi-manage";
+		$len = strlen($msg);
+
+		socket_sendto($f, $msg, $len, 0, $host, $port);
+
+		socket_close($f);
+		
+		
+		$lines=array();
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-manage.py');
+		$file = '/etc/flyt/data/flyt-wifi-manage.json';
+		if (file_exists($file)) {
+			
+			$reject = array("Wired connection 1","supervisor0","lo");
+			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
+			 foreach ( $fileopen as $line ) {
+				
+				$line=str_replace("\n","",$line);
+				$line=str_replace("\r","",$line);
+				$line=rtrim($line," ");
+				
+				if (strlen($line) > 0) {
+					if(!in_array($line,$reject)){  
+						$lines[]=$line;
+					}
+				}
+				
+			 }
+			 
+
+			$uniqueLines = array_unique($lines);
+			echo json_encode($uniqueLines);
+		};
+		
+
+	}
+		
+		
+		
+	if ($_POST['request'] == "active-wifi") {
+		
+
+		$host = "localhost";
+		$port = 65432;
+
+		$f = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+		socket_set_option($f, SOL_SOCKET, SO_SNDTIMEO, array('sec' => 1, 'usec' => 500000));
+		$s = socket_connect($f, $host, $port);
+
+		$msg = "flyt-wifi-active";
+		$len = strlen($msg);
+
+		socket_sendto($f, $msg, $len, 0, $host, $port);
+
+		socket_close($f);
+
+		
+		
+		$lines=array();
+		exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket python3 /etc/flyt/scripts/flyt-wifi-active.py');
+		$file = '/etc/flyt/data/flyt-wifi-active.json';
+		if (file_exists($file)) {
+			
+			$reject = array("Wired connection 1","supervisor0","lo");
+			 $fileopen = file( $file , FILE_SKIP_EMPTY_LINES);
+			 foreach ( $fileopen as $line ) {
+				
+				$line=str_replace("\n","",$line);
+				$line=str_replace("\r","",$line);
+				$line=rtrim($line," ");
+				
+				if (strlen($line) > 0) {
+					if(!in_array($line,$reject)){  
+						$lines[]=$line;
+					}
+				}
+				
+			 }
+			 
+
+			$uniqueLines = array_unique($lines);
+			echo json_encode($uniqueLines);
+		};
+		
+
+	}
+	
+	
+	
+	
+	
+	
+	if ($_POST['request'] == "delete-wifi") {
+
+		$ssid = $_POST['ssid'];
+		$output = shell_exec('DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket nmcli connection delete "'.$ssid.'"  2>&1');
+		
+		$filename = "/etc/flyt/data/flyt-watchdog-network";
+		$file = fopen($filename, "w+") or die();
+		$text = "";
+		fwrite($file, $text);
+		fclose($file);
+
+		$output = str_replace("\u001b[2K","",$output);
+		$output = str_replace("\n","",$output);
+		$output = str_replace("\r","",$output);
+		echo json_encode($output);
+		
+	}
+	
+	
+	
+
 
 
 
