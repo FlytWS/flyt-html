@@ -282,7 +282,7 @@ clearstatcache();
 		$commandAr['ls'] =  "echo '.\ pineapple pizza' && echo '.\ flux capacitor' && echo '.\ grumpy cat' && echo '.\ success kid'";
 		$commandAr['rm'] = "echo 'rm .\ the-shadows'";
 		$commandAr['rm -r'] = "echo 'rm .\ flyt' && echo 'rm .\ wingbits' && echo 'kidding... everything is safe.'";
-		$commandAr['touch'] = "echo 'Touching you, Touching me, Touching you, God, you\'re touching me... I believe in a thing called love, Just listen to the rhythm of my heart'";
+		$commandAr['touch'] = "echo 'Touching you, Touching me, Touching you, God, you`re touching me... I believe in a thing called love, Just listen to the rhythm of my heart'";
 		$commandAr['echo'] = "echo 'ECHO ECHo ECho Echo'";
 		
 		$request = $_POST['data'];
@@ -295,8 +295,8 @@ clearstatcache();
 			$command = $buildAr[array_rand($buildAr, 1)];
 		} else if ($request == "man") {
 			$command = 'echo "Flyt Manual"';
-			$command .= 'echo " "';
-			foreach(array_keys($commandAr) as $key){ $command .= '"'.$key.'"'; $command .= 'echo " "';};
+			$command .= 'echo "\n "';
+			foreach(array_keys($commandAr) as $key){ $command .= '"'.$key.'"'; $command .= '" "';};
 		} else {
 			$command = 'echo "Terminal Command Not Found"';
 		}
