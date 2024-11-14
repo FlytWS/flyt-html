@@ -295,8 +295,8 @@ clearstatcache();
 			$command = $buildAr[array_rand($buildAr, 1)];
 		} else if ($request == "man") {
 			$command = 'echo "Flyt Manual"';
-			$command .= 'echo "\n "';
-			foreach(array_keys($commandAr) as $key){ $command .= '"'.$key.'"'; $command .= '" "';};
+			$command .= '"\n "';
+			foreach(array_keys($commandAr) as $key){ $command .= '"'.$key.'"'; $command .= '"\n "';};
 		} else {
 			$command = 'echo "Terminal Command Not Found"';
 		}
