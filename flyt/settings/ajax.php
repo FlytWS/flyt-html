@@ -265,7 +265,7 @@ clearstatcache();
 		$buildAr['17'] = "echo ' ' && echo '      __!__' && echo '^----o-(_)-o----^' && echo ' '";
 		$buildAr['18'] = "echo ' ' && echo '__________ __________' && echo '   \    \_e_/    /' && echo '  __\___{_+_}___/__' && echo '       :/   \:' && echo ' '";
 		$buildAr['19'] = "echo ' ' && echo '   ____________' && echo '       _I_' && echo 'O-----(__o)' && echo '       \_\__' && echo ' '";
-		$buildAr['20'] = "echo ' ' && echo '_________' && echo '  ,-'-.____()' && echo ' (____.--\"\"\"' && echo ' -'--'-' && echo ' '";
+		$buildAr['20'] = "echo ' ' && echo '_________' && echo '  ,-\'-.____()' && echo ' (____.--\"\"\"' && echo ' -\'--\'-' && echo ' '";
 
 		
 		
@@ -283,7 +283,7 @@ clearstatcache();
 		$commandAr['rm'] = "echo 'rm .\ the-shadows'";
 		$commandAr['rm -r'] = "echo 'rm .\ flyt' && echo 'rm .\ wingbits' && echo 'kidding... everything is safe.'";
 		$commandAr['touch'] = "Touching you, Touching me, Touching you, God, you're touching me... I believe in a thing called love, Just listen to the rhythm of my heart";
-		
+		$commandAr['echo'] = "ECHO ECHo ECho Echo";
 		
 		$request = $_POST['data'];
 		
@@ -292,9 +292,7 @@ clearstatcache();
 		} else if ($request == "build") {
 			$command = $buildAr[array_rand($buildAr, 1)];
 		} else if ($request == "man") {
-			$command = array_keys($buildAr);
-		}  else if ($request == "echo") {
-			$command = 'echo "'.$command.'"';
+			$command = 'echo "'.array_keys($buildAr).'"';
 		} else {
 			$command = 'echo "Terminal Command Not Found"';
 		}
