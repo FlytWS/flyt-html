@@ -39,3 +39,79 @@
 .leaflet-tile {
     filter:invert(1.2) sepia(1) hue-rotate(190deg)  opacity(0.3);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.large-panel-button-network {
+	width:6rem; height:6rem;  background-color:#ffffff10; border-radius:0.75rem; flex-direction: column; padding:0;
+}
+.large-panel-button-network:hover {
+	background-color:#ffffff20;
+	cursor:pointer;
+}
+.large-panel-button-network.active {
+	background-color:#ffffff20;
+}
+.lets-go-div-ssid {
+	cursor:pointer;
+	padding: 0.5rem;
+}
+#wifiSSIDInput {
+background-color: #ffffff10;
+    border-radius: 0.75rem;
+	    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+	border: 0;
+	color:#fbfbfbCC;
+	width:13rem;
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+}
+#wifiPassphraseInput {
+background-color: #ffffff10;
+    border-radius: 0.75rem;
+	    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+	border: 0;
+	color:#fbfbfbCC;
+	width:13rem;	
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	
+}
+#network-wifi-connect {
+    border-radius: 0.75rem;
+	    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+	background-color: #ffffff10;
+	width:15rem;
+		margin-top: 0.5rem;
+}
+#network-wifi-connect:hover {
+	background-color:#ffffff20;
+	cursor:pointer;
+	font-size: 0.75rem;
+}
+#wifiback {
+	display:none;
+}
