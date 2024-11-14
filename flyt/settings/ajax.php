@@ -248,7 +248,7 @@ clearstatcache();
 		$buildAr = array();
 		$buildAr['1'] = "echo ' ' && echo '     \ /' && echo '+----o0o----+' && echo ' '";
 		$buildAr['2'] = "echo ' ' && echo '   | |' && echo '--=oOo=--' && echo ' '";
-		$buildAr['3'] = "echo ' ' && echo '   _|_' && echo '---(*)---' && echo '  \" \' \"' && echo ' '";
+		$buildAr['3'] = "echo ' ' && echo '   _|_' && echo '---(*)---' && echo '  ` ` `' && echo ' '";
 		$buildAr['4'] = "echo ' ' && echo '  |\    __' && echo '..==========-' && echo '     ~~~' && echo ' '";
 		$buildAr['5'] = "echo ' ' && echo '    __|__' && echo '-----(.)-----' && echo ' '";
 		$buildAr['6'] = "echo ' ' && echo '    __|__' && echo '---o-(_)-o---' && echo ' '";
@@ -257,7 +257,7 @@ clearstatcache();
 		$buildAr['9'] = "echo ' ' && echo '       __|__' && echo '________(*)________' && echo '       o/ \o' && echo ' '";
 		$buildAr['10'] = "echo ' ' && echo '-----------------' && echo '       {*}' && echo '      o   o' && echo ' '";
 		$buildAr['11'] = "echo ' ' && echo '    |' && echo '---=o=---' && echo '  o/!\o' && echo ' '";
-		$buildAr['12'] = "echo ' ' && echo '   -----|-----' && echo '*>=====[_]D' && echo '      -'-`-' && echo ' '";
+		$buildAr['12'] = "echo ' ' && echo '   -----|-----' && echo '*>=====[_]D' && echo '      -`-`-' && echo ' '";
 		$buildAr['13'] = "echo ' ' && echo '    __|__' && echo 'o----(_)----o' && echo ' '";
 		$buildAr['14'] = "echo ' ' && echo '       _____' && echo '         |' && echo '\______0(.)0______/' && echo ' '";
 		$buildAr['15'] = "echo ' ' && echo '   __|__' && echo '\___(o)___/' && echo '   ! ! !' && echo ' '";
@@ -265,7 +265,7 @@ clearstatcache();
 		$buildAr['17'] = "echo ' ' && echo '      __!__' && echo '^----o-(_)-o----^' && echo ' '";
 		$buildAr['18'] = "echo ' ' && echo '__________ __________' && echo '   \    \_e_/    /' && echo '  __\___{_+_}___/__' && echo '       :/   \:' && echo ' '";
 		$buildAr['19'] = "echo ' ' && echo '   ____________' && echo '       _I_' && echo 'O-----(__o)' && echo '       \_\__' && echo ' '";
-		$buildAr['20'] = "echo ' ' && echo '_________' && echo '  ,-\'-.____()' && echo ' (____.--\"\"\"' && echo ' -\'--\'-' && echo ' '";
+		$buildAr['20'] = "echo ' ' && echo '_________' && echo '  ,-\`-.____()' && echo ' (____.--```' && echo ' -\`--\`-' && echo ' '";
 
 		
 		
