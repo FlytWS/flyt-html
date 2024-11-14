@@ -141,6 +141,7 @@
 <?php include_once('wingbits.php') ?>
 <?php include_once('location.php') ?>
 <?php include_once('keys.php') ?>
+<?php include_once('network.php') ?>
 <?php include_once('usb.php') ?>
 <?php include_once('services.php') ?>
 <?php include_once('terminal.php') ?>

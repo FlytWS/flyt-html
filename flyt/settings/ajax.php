@@ -271,7 +271,7 @@ clearstatcache();
 		
 		$commandAr = array();
 		$commandAr['install-tar1090'] = "sudo /etc/flyt/scripts/install-optional-tar1090.sh";
-		$commandAr['install-graphs1090'] = "sudo /etc/flyt/scripts/install-optional-graphs1090.sh";
+		//$commandAr['install-graphs1090'] = "sudo /etc/flyt/scripts/install-optional-graphs1090.sh";
 		$commandAr['update-html'] = "sudo python3 /etc/flyt/scripts/flyt-update-html.py";
 		$commandAr['update-scripts'] = "sudo python3 /etc/flyt/scripts/flyt-update-scripts.py";
 		$commandAr['motd'] = "echo ' ' && echo '  ______ _  __     _________ ' && echo ' |  ____| | \ \   / /__   __|' && echo ' | |__  | |  \ \_/ /   | |   ' && echo ' |  __| | |   \   /    | |   ' && echo ' | |    | |____| |     | |   ' && echo ' |_|    |______|_|     |_|   ' && echo ' '";
