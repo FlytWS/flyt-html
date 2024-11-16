@@ -1501,6 +1501,10 @@ function fetchReADSBCraft() {
 			consoleWindowWrite("Witnessed " + listAcActive + " active aircraft");
 			consoleWindowWrite("Lost " + listAcInactive + " aircraft");
 
+
+			document.getElementById('stats-canvas-aircraft-inactive').innerHTML = listAcInactive + ' inactive aircraft';
+			document.getElementById('stats-canvas-aircraft-active').innerHTML = listAcActive + ' active aircraft';
+					
 			chartStatsAircraft.data.datasets[0].data[0] = listAcInactive;
 			chartStatsAircraft.data.datasets[0].data[1] = listAcActive;			
 			chartStatsAircraft.update();
@@ -1841,11 +1845,11 @@ setDisplayMode();
 		scales: {
 		  r: {
 			ticks: {
-			  display: false // Remove vertical numbers
+			  display: false // vertical numbers
 			},
 			grid: {
-			  display: true, // Removes the circulair lines
-			  color: 'rgb(251, 251, 251)'
+			  display: true, // circulair lines
+			  color: 'rgba(251, 251, 251,90)'
 			}
 		  }
 		}
@@ -1891,7 +1895,18 @@ setDisplayMode();
             legend: {
                 display: false
             }
-        }
+        },
+		scales: {
+		  r: {
+			ticks: {
+			  display: false // vertical numbers
+			},
+			grid: {
+			  display: true, // circulair lines
+			  color: 'rgba(251, 251, 251,90)'
+			}
+		  }
+		}
 	  }
     }
   );
@@ -1934,7 +1949,18 @@ setDisplayMode();
             legend: {
                 display: false
             }
-        }
+        },
+		scales: {
+		  r: {
+			ticks: {
+			  display: false // vertical numbers
+			},
+			grid: {
+			  display: true, // circulair lines
+			  color: 'rgba(251, 251, 251,90)'
+			}
+		  }
+		}
 	  }
     }
   );
@@ -1976,7 +2002,18 @@ setDisplayMode();
             legend: {
                 display: false
             }
-        }
+        },
+		scales: {
+		  r: {
+			ticks: {
+			  display: false // vertical numbers
+			},
+			grid: {
+			  display: true, // circulair lines
+			  color: 'rgba(251, 251, 251,90)'
+			}
+		  }
+		}
 	  }
     }
   );
