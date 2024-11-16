@@ -1825,19 +1825,14 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
-			borderWidth: 0
+			
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true,
-		plugins: {
-            legend: {
-                display: false
-            }
-        }
+		maintainAspectRatio: true
 	  }
     }
   );
@@ -1868,19 +1863,13 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
-			borderWidth: 0
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true,
-		plugins: {
-            legend: {
-                display: false
-            }
-        }
+		maintainAspectRatio: true
 	  }
     }
   );
@@ -1911,19 +1900,13 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
-			borderWidth: 0
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true,
-		plugins: {
-            legend: {
-                display: false
-            }
-        }
+		maintainAspectRatio: true
 	  }
     }
   );
@@ -1953,19 +1936,13 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
-			borderWidth: 0
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true,
-		plugins: {
-            legend: {
-                display: false
-            }
-        }
+		maintainAspectRatio: true
 	  }
     }
   );
