@@ -351,52 +351,7 @@
 
 
 
-
-<div class="map-bar" id="map-stats">
-		<div style="display: flex;    align-items: center;    justify-content: space-between;"><section id="page-title"><header><h1>Stats</h1></header></section><div style="height:2rem; padding:2rem; padding-right:3rem; align-items: center;    display: flex;" class="closeSettings header-action"><svg class="standard-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left" onclick="closeSettings('map-stats')"><polyline points="15 18 9 12 15 6"></polyline></svg></div></div>
-
-		
-		
-		
-		
-		
-	
-	
-	
-		<div class="principle-container" id="messages-hero" style="width:100%; display:flex; justify-content: space-evenly;">
-
-
-
-
-
-			<div class="common-container w-100" style="padding:1rem; display: grid;  grid-gap: 1rem;  grid-template-columns: repeat(4, 1fr); border-radius:0px; border:0px;	border-top-right-radius:0.8rem;	border-top-left-radius:0.8rem;">
-				
-				<div class="common-container" style=""><div class="common-container-header">Aircraft</div><div class="common-container-body card-center" style="height:6rem; justify-content: space-evenly; flex-wrap: wrap;"><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Active</span><span id="list-ac-active"></span></div><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Inactive</span><span id="list-ac-inactive"></span></div></div></div>
-				<div class="common-container" style=""><div class="common-container-header">Distance</div><div class="common-container-body card-center" style="height:6rem; justify-content: space-evenly; flex-wrap: wrap;"><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Min</span><span id="list-di-min"></span></div><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Max</span><span id="list-di-max"></span></div></div></div>
-				<div class="common-container" style=""><div class="common-container-header">Altitude</div><div class="common-container-body card-center" style="height:6rem; justify-content: space-evenly; flex-wrap: wrap;"><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Min</span><span id="list-al-min"></span></div><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Max</span><span id="list-al-max"></span></div></div></div>
-				<div class="common-container" style=""><div class="common-container-header">RSSI</div><div class="common-container-body card-center" style="height:6rem; justify-content: space-evenly; flex-wrap: wrap;"><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Min</span><span id="list-rs-min"></span></div><div style="padding:0.5rem;"><span style="font-size:0.9rem; margin-right:0.4rem;">Max</span><span id="list-rs-max"></span></div></div></div>
-				
-
-
-			</div>
-
-
-
-
-
-	
-		</div>
-		
-		
-		
-		
-		
-		
-		
-
-	
-</div>
-
+<?php include_once('stats.php'); ?>
 
 
 
