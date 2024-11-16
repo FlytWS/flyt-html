@@ -1841,10 +1841,11 @@ setDisplayMode();
 		scales: {
 		  r: {
 			ticks: {
-			  display: true // Remove vertical numbers
+			  display: false // Remove vertical numbers
 			},
 			grid: {
 			  display: true // Removes the circulair lines
+			  backdropColor = 'rgb(251, 251, 251)';
 			}
 		  }
 		}
