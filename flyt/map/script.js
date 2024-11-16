@@ -1496,91 +1496,98 @@ function fetchReADSBCraft() {
 		try {
 			
 			document.getElementById('list-ac-active').innerHTML = listAcActive;
-			consoleWindowWrite("Witnessed " + listAcActive + " active aircraft");
-			
-		} catch(err) {
-			
-			console.log(err);
-			
-		}
-		
-		
-		try {
-			
 			document.getElementById('list-ac-inactive').innerHTML = listAcInactive;
+			
+			consoleWindowWrite("Witnessed " + listAcActive + " active aircraft");
 			consoleWindowWrite("Lost " + listAcInactive + " aircraft");
+
+			chartStatsAircraft.data.datasets[0].data[0] = listAcInactive;
+			chartStatsAircraft.data.datasets[0].data[1] = listAcActive;			
+			chartStatsAircraft.update();
+
 			
 		} catch(err) {
 			
 			console.log(err);
 			
 		}
+		
+
+		
+		
+		
+		
+		
 		
 		try {
 			
 			document.getElementById('list-di-min').innerHTML = listDiMin + "<span style='font-size:1rem; margin-left:0.4rem;'>km</span>";
-			consoleWindowWrite(listDiMin + "km to the nearest aircraft");
-		
-		} catch(err) {
-			
-			console.log(err);
-			
-		}
-		
-		try {
-			
 			document.getElementById('list-di-max').innerHTML = numberWithCommas(listDiMax) + "<span style='font-size:1rem; margin-left:0.4rem;'>km</span>";
+			
+			consoleWindowWrite(numberWithCommas(listDiMin) + "km to the nearest aircraft");
 			consoleWindowWrite(numberWithCommas(listDiMax) + "km to the farthest aircraft");
+			
+			chartStatsDistance.data.datasets[0].data[0] = listDiMin;
+			chartStatsDistance.data.datasets[0].data[1] = listDiMax;
+			chartStatsDistance.update();
+
+		
 		
 		} catch(err) {
 			
 			console.log(err);
 			
 		}
+		
+
 		
 		try {
 			
 			document.getElementById('list-al-min').innerHTML = numberWithCommas(listAlMin) + "<span style='font-size:1rem; margin-left:0.4rem;'>ft</span>";
-			consoleWindowWrite("Lowest aircraft witnessed is at " + numberWithCommas(listAlMin) + "ft");
-		
-		} catch(err) {
-			
-			console.log(err);
-			
-		}
-		
-		try {
-			
 			document.getElementById('list-al-max').innerHTML = numberWithCommas(listAlMax) + "<span style='font-size:1rem; margin-left:0.4rem;'>ft</span>";
+			
+			consoleWindowWrite("Lowest aircraft witnessed is at " + numberWithCommas(listAlMin) + "ft");
 			consoleWindowWrite("Highest aircraft witnessed is at " + numberWithCommas(listAlMax) + "ft");
+			
+			
+			chartStatsAltitude.data.datasets[0].data[0] = listAlMin;
+			chartStatsAltitude.data.datasets[0].data[1] = listAlMax;
+			chartStatsAltitude.update();
+
+
+
 		
 		} catch(err) {
 			
 			console.log(err);
 			
 		}
+		
+
 		
 		try {
 			
 			document.getElementById('list-rs-min').innerHTML = listRsMin + "<span style='font-size:1rem; margin-left:0.4rem;'>dBm</span>";
-			consoleWindowWrite("Lowest RSSI to aircraft is " + listRsMin + "dBm");
-		
-		} catch(err) {
-			
-			console.log(err);
-			
-		}
-		
-		try {
-			
 			document.getElementById('list-rs-max').innerHTML = listRsMax + "<span style='font-size:1rem; margin-left:0.4rem;'>dBm</span>";
+			
+			consoleWindowWrite("Lowest RSSI to aircraft is " + listRsMin + "dBm");
 			consoleWindowWrite("Highest RSSI to aircraft is " + listRsMax + "dBm");
+			
+			
+			chartStatsRSSI.data.datasets[0].data[0] = listRsMin;
+			chartStatsRSSI.data.datasets[0].data[1] = listRsMax;
+			chartStatsRSSI.update();
+
+
+
 		
 		} catch(err) {
 			
 			console.log(err);
 			
 		}
+		
+
 	
 	
   });
@@ -1778,6 +1785,216 @@ function zoom(direction) {
 
 
 setDisplayMode();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Stats
+
+
+(async function() {
+  const data = [
+    { element: "Inactive", count: 0 },
+    { element: "Active", count: 0 },
+  ];
+
+  chartStatsAircraft = new Chart(
+    document.getElementById('stats-canvas-aircraft'),
+    {
+      type: 'polarArea',
+      data: {
+        labels: data.map(row => row.element),
+        datasets: [
+          {
+            data: data.map(row => row.count),
+			backgroundColor: [
+                '#6ba7ff',
+				'rgb(255, 99, 132)'
+			],
+			borderWidth: 0
+          }
+        ]
+      }, 
+	  options: {
+		  
+		responsive: true,
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
+	  }
+    }
+  );
+})();
+
+
+
+
+
+
+
+(async function() {
+  const data = [
+    { element: "Min Distance", count: 0 },
+    { element: "Max Distance", count: 0 },
+  ];
+
+  chartStatsDistance = new Chart(
+    document.getElementById('stats-canvas-distance'),
+    {
+      type: 'polarArea',
+      data: {
+        labels: data.map(row => row.element),
+        datasets: [
+          {
+            data: data.map(row => row.count),
+			backgroundColor: [
+                '#6ba7ff',
+				'rgb(255, 99, 132)'
+			],
+			borderWidth: 0
+          }
+        ]
+      }, 
+	  options: {
+		  
+		responsive: true,
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
+	  }
+    }
+  );
+})();
+
+
+
+
+
+
+
+(async function() {
+  const data = [
+    { element: "Min Altitude", count: 0 },
+    { element: "Max Altitude", count: 0 },
+  ];
+
+  chartStatsAltitude = new Chart(
+    document.getElementById('stats-canvas-altitude'),
+    {
+      type: 'polarArea',
+      data: {
+        labels: data.map(row => row.element),
+        datasets: [
+          {
+            data: data.map(row => row.count),
+			backgroundColor: [
+                '#6ba7ff',
+				'rgb(255, 99, 132)'
+			],
+			borderWidth: 0
+          }
+        ]
+      }, 
+	  options: {
+		  
+		responsive: true,
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
+	  }
+    }
+  );
+})();
+
+
+
+
+
+
+(async function() {
+  const data = [
+    { element: "Min RSSI", count: 0 },
+    { element: "Max RSSI", count: 0 },
+  ];
+
+  chartStatsRSSI = new Chart(
+    document.getElementById('stats-canvas-rssi'),
+    {
+      type: 'polarArea',
+      data: {
+        labels: data.map(row => row.element),
+        datasets: [
+          {
+            data: data.map(row => row.count),
+			backgroundColor: [
+                '#6ba7ff',
+				'rgb(255, 99, 132)'
+			],
+			borderWidth: 0
+          }
+        ]
+      }, 
+	  options: {
+		  
+		responsive: true,
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
+	  }
+    }
+  );
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
