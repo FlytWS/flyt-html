@@ -1845,7 +1845,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // Removes the circulair lines
-			  backdropColor: 'rgb(251, 251, 251)'
+			  color: 'rgb(251, 251, 251)'
 			}
 		  }
 		}
