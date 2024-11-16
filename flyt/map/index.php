@@ -355,6 +355,8 @@
 
 
 
+<?php include_once('stats.php'); ?>
+
 
 
 
@@ -434,6 +436,7 @@
 
 
 
+
 <script src="/global/script/jquery.min.3.7.1.js"></script>
 <script src="/global/script/jquery-ui.min.1.11.3.js"></script>
 <script src="/global/script/leaflet.min.1.9.4.js"></script>
@@ -448,7 +451,3 @@
 
 
 
-
-
-
-<?php include_once('stats.php'); ?>
