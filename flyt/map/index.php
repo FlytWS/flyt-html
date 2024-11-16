@@ -351,7 +351,6 @@
 
 
 
-<?php include_once('stats.php'); ?>
 
 
 
@@ -444,3 +443,12 @@
 <script src="/global/script/registrations.js"></script>
 <script src="/global/script/script.js"></script>
 <script src="script.js"></script>
+
+
+
+
+
+
+
+
+<?php include_once('stats.php'); ?>
