@@ -1825,14 +1825,29 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
-			
+			borderWidth: 0
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        },
+		scales: {
+		  r: {
+			ticks: {
+			  display: true // Remove vertical numbers
+			},
+			grid: {
+			  display: true // Removes the circulair lines
+			}
+		  }
+		}
 	  }
     }
   );
@@ -1863,13 +1878,19 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
+			borderWidth: 0
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
 	  }
     }
   );
@@ -1900,13 +1921,19 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
+			borderWidth: 0
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
 	  }
     }
   );
@@ -1936,13 +1963,19 @@ setDisplayMode();
                 '#6ba7ff',
 				'rgb(255, 99, 132)'
 			],
+			borderWidth: 0
           }
         ]
       }, 
 	  options: {
 		  
 		responsive: true,
-		maintainAspectRatio: true
+		maintainAspectRatio: true,
+		plugins: {
+            legend: {
+                display: false
+            }
+        }
 	  }
     }
   );
