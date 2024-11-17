@@ -1529,7 +1529,11 @@ function fetchReADSBCraft() {
 			document.getElementById('list-di-max').innerHTML = numberWithCommas(listDiMax) + "<span style='font-size:1rem; margin-left:0.4rem;'>km</span>";
 			
 			consoleWindowWrite(numberWithCommas(listDiMin) + "km to the nearest aircraft");
-			consoleWindowWrite(numberWithCommas(listDiMax) + "km to the farthest aircraft");
+			consoleWindowWrite(numberWithCommas(listDiMax) + "km to the furthest aircraft");
+			
+			
+			document.getElementById('stats-canvas-distance-min').innerHTML = numberWithCommas(listDiMin) + 'km to the nearest aircraft';
+			document.getElementById('stats-canvas-distance-max').innerHTML = numberWithCommas(listDiMax) + 'km to the furthest aircraft';
 			
 			chartStatsDistance.data.datasets[0].data[0] = listDiMin;
 			chartStatsDistance.data.datasets[0].data[1] = listDiMax;
@@ -1554,6 +1558,9 @@ function fetchReADSBCraft() {
 			consoleWindowWrite("Highest aircraft witnessed is at " + numberWithCommas(listAlMax) + "ft");
 			
 			
+			document.getElementById('stats-canvas-altitude-min').innerHTML = numberWithCommas(listAlMin) + 'ft lowest altitude aircraft';
+			document.getElementById('stats-canvas-altitude-max').innerHTML = numberWithCommas(listAlMax) + 'ft highest altitude aircraft';
+			
 			chartStatsAltitude.data.datasets[0].data[0] = listAlMin;
 			chartStatsAltitude.data.datasets[0].data[1] = listAlMax;
 			chartStatsAltitude.update();
@@ -1577,6 +1584,9 @@ function fetchReADSBCraft() {
 			consoleWindowWrite("Lowest RSSI to aircraft is " + listRsMin + "dBm");
 			consoleWindowWrite("Highest RSSI to aircraft is " + listRsMax + "dBm");
 			
+			
+			document.getElementById('stats-canvas-rssi-min').innerHTML = listRsMin + 'ft lowest RSSI';
+			document.getElementById('stats-canvas-rssi-max').innerHTML = listRsMax + 'ft highest RSSI';
 			
 			chartStatsRSSI.data.datasets[0].data[0] = listRsMin;
 			chartStatsRSSI.data.datasets[0].data[1] = listRsMax;
@@ -1849,7 +1859,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251,90)'
+			  color: 'rgba(251, 251, 251, 0.5)'
 			}
 		  }
 		}
@@ -1903,7 +1913,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251,90)'
+			  color: 'rgba(251, 251, 251, 0.5)'
 			}
 		  }
 		}
@@ -1957,7 +1967,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251,90)'
+			  color: 'rgba(251, 251, 251, 0.5)'
 			}
 		  }
 		}
@@ -2010,7 +2020,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251,90)'
+			  color: 'rgba(251, 251, 251, 0.5)'
 			}
 		  }
 		}
