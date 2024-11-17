@@ -1495,9 +1495,7 @@ function fetchReADSBCraft() {
 			
 		try {
 			
-			document.getElementById('list-ac-active').innerHTML = listAcActive;
-			document.getElementById('list-ac-inactive').innerHTML = listAcInactive;
-			
+	
 			consoleWindowWrite("Witnessed " + listAcActive + " active aircraft");
 			consoleWindowWrite("Lost " + listAcInactive + " aircraft");
 
@@ -1525,9 +1523,7 @@ function fetchReADSBCraft() {
 		
 		try {
 			
-			document.getElementById('list-di-min').innerHTML = listDiMin + "<span style='font-size:1rem; margin-left:0.4rem;'>km</span>";
-			document.getElementById('list-di-max').innerHTML = numberWithCommas(listDiMax) + "<span style='font-size:1rem; margin-left:0.4rem;'>km</span>";
-			
+	
 			consoleWindowWrite(numberWithCommas(listDiMin) + "km to the nearest aircraft");
 			consoleWindowWrite(numberWithCommas(listDiMax) + "km to the furthest aircraft");
 			
@@ -1551,9 +1547,7 @@ function fetchReADSBCraft() {
 		
 		try {
 			
-			document.getElementById('list-al-min').innerHTML = numberWithCommas(listAlMin) + "<span style='font-size:1rem; margin-left:0.4rem;'>ft</span>";
-			document.getElementById('list-al-max').innerHTML = numberWithCommas(listAlMax) + "<span style='font-size:1rem; margin-left:0.4rem;'>ft</span>";
-			
+
 			consoleWindowWrite("Lowest aircraft witnessed is at " + numberWithCommas(listAlMin) + "ft");
 			consoleWindowWrite("Highest aircraft witnessed is at " + numberWithCommas(listAlMax) + "ft");
 			
@@ -1578,15 +1572,13 @@ function fetchReADSBCraft() {
 		
 		try {
 			
-			document.getElementById('list-rs-min').innerHTML = listRsMin + "<span style='font-size:1rem; margin-left:0.4rem;'>dBm</span>";
-			document.getElementById('list-rs-max').innerHTML = listRsMax + "<span style='font-size:1rem; margin-left:0.4rem;'>dBm</span>";
-			
+
 			consoleWindowWrite("Lowest RSSI to aircraft is " + listRsMin + "dBm");
 			consoleWindowWrite("Highest RSSI to aircraft is " + listRsMax + "dBm");
 			
 			
-			document.getElementById('stats-canvas-rssi-min').innerHTML = listRsMin + 'ft lowest RSSI';
-			document.getElementById('stats-canvas-rssi-max').innerHTML = listRsMax + 'ft highest RSSI';
+			document.getElementById('stats-canvas-rssi-min').innerHTML = listRsMin + 'dBm lowest RSSI';
+			document.getElementById('stats-canvas-rssi-max').innerHTML = listRsMax + 'dBm highest RSSI';
 			
 			chartStatsRSSI.data.datasets[0].data[0] = listRsMin;
 			chartStatsRSSI.data.datasets[0].data[1] = listRsMax;
@@ -1859,7 +1851,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251, 0.5)'
+			  color: 'rgba(251, 251, 251, 0.2)'
 			}
 		  }
 		}
@@ -1913,7 +1905,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251, 0.5)'
+			  color: 'rgba(251, 251, 251, 0.2)'
 			}
 		  }
 		}
@@ -1967,7 +1959,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251, 0.5)'
+			  color: 'rgba(251, 251, 251, 0.2)'
 			}
 		  }
 		}
@@ -2020,7 +2012,7 @@ setDisplayMode();
 			},
 			grid: {
 			  display: true, // circulair lines
-			  color: 'rgba(251, 251, 251, 0.5)'
+			  color: 'rgba(251, 251, 251, 0.2)'
 			}
 		  }
 		}
