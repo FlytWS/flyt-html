@@ -885,13 +885,22 @@ function fetchReADSBCraft() {
 
 
     let request = jQuery.ajax({ url: '/data/aircraft.json', cache: false, dataType: 'json' });
-    request.done(function(data) {		
+    request.done(function(data) {
 		
 
 		var resParse = data;
+		
+		var now_json = resParse.now;
+		var now_utc = Math.floor((new Date()).getTime() / 1000);
+		
 
 		acArray = resParse.aircraft;
 		//console.log(acArray);
+		
+		if (now_json < now_utc - 120) {
+			acArray = [];
+		}
+		
 
 		markers.clearLayers();		
 		
